@@ -21,11 +21,13 @@ const Hero = () => {
         
         <div className='flex flex-col'>
         <Image
-        className=""
+        
         src="/hero.svg"
-        alt="hero"
-        width={880}
-        height={880}
+        alt="Example Image"
+        width={0} // Required for layout 'intrinsic'
+        height={0} // Required for layout 'intrinsic'
+        sizes="100vw" // Optional, ensures responsive behavior
+        className="w-auto h-auto"
         />
         
         </div>
