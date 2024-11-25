@@ -1,14 +1,9 @@
 'use client';
-import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 
 const Hero = () => {
-
-  const handleClick = () => {
-    alert('Button clicked!');
-  };
-
   return (
     <div>
     <div className='mt-56 flex px-8 justify-between gap-20 lg:mt-24 '>
@@ -17,9 +12,10 @@ const Hero = () => {
         <br /> lead the way<a className='font-bold'>...</a></p>
 
         <div className=' mt-10'>
-          <button onClick={handleClick} className='flex items-center text-3xl bg-black text-white px-7 py-4 rounded-xl gap-5 font-light'><span>Initiate Now</span> 
+          <Link href="/login/invigilator" >
+          <button className='flex items-center text-3xl bg-black text-white px-7 py-4 rounded-xl gap-5 font-light'><span>Initiate Now</span> 
             <FaLongArrowAltRight className='ml-2 '/> 
-          </button> 
+          </button></Link>
         </div>
       </div>
         

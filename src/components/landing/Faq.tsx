@@ -21,7 +21,7 @@ const Faq = () => {
   };
 
   return (
-    <div className=''>
+    <section className=''>
 
       <div className=' relative mt-24 flex justify-center'>
         <Image
@@ -114,7 +114,7 @@ const Faq = () => {
     </div>
 
 
-    </div>
+    </section>
   )
 }
 
