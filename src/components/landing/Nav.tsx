@@ -14,7 +14,7 @@ const Nav = () => {
 
 
   return (
-    <div>
+    <div className='absolute top-0 w-screen'>
     <nav className='flex justify-between px-10 mt-6'>
       <div>
         <Image
