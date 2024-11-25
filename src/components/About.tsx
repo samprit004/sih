@@ -1,10 +1,9 @@
-import React from 'react'
 import Image from 'next/image'
 
 
 const About = () => {
   return (
-    <div className='px-24'>
+    <section className='px-24'>
      <div className=' relative mt-24 flex justify-center'>
         <Image
             src="/About Us.svg"
@@ -27,7 +26,7 @@ const About = () => {
                  reduce manual efforts, and support impactful innovations.</p>
         </div>
 
-    </div>
+    </section>
   )
 }
 

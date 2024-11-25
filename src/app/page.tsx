@@ -1,5 +1,5 @@
-import Nav from "../components/Nav";
-import Hero from "../components/Hero";
+import Nav from "@/components/Nav";
+import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Guidelines from "@/components/Guidelines";
 import Footer from "@/components/Footer";

@@ -1,12 +1,11 @@
 'use client';
-import React from 'react'
 import Image from 'next/image'
 import ExpandableCard from './ExpandableCard';
 
 
 const Faq = () => {
   return (
-    <div className=''>
+    <section className=''>
 
       <div className=' relative mt-24 flex justify-center'>
         <Image
@@ -18,7 +17,7 @@ const Faq = () => {
         <div className="absolute inset-0 flex justify-center items-center">
             <p className="text-black text-6xl font-bold ">Frequently Ask Question</p>
         </div>
-        <p> Click here  to know more</p>
+        <p> Click here to know more</p>
       </div>
         
       <div className="flex pl-24">
@@ -64,7 +63,7 @@ const Faq = () => {
     </div>
 
 
-    </div>
+    </section>
   )
 }
 

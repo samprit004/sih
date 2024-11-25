@@ -1,18 +1,11 @@
 'use client';
 
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 
 
 const Nav = () => {
-
-    const handleClick = () => {
-        alert('Button clicked!');
-      };
-
-
   return (
     <div>
     <nav className='flex justify-between px-10 mt-6'>
@@ -32,8 +25,9 @@ const Nav = () => {
         <Link href="/" className=" ">Guidelines</Link>
         <Link href="/" className=" ">FAQ</Link>
         
-        <button className='bg-black text-white px-3 py-2 rounded-xl text-center ' onClick={handleClick}>Login/Register</button>
-       
+        <Link href="/login">
+        <button className='bg-black text-white px-3 py-2 rounded-xl text-center '>Login/Register</button>
+        </Link>
       </div>
       
       
