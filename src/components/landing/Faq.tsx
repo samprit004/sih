@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image'
 import React, { useState } from 'react';
-import ExpandableCard from './ExpandableCard';
+import ExpandableCard from '../ExpandableCard';
 
 
 const Faq = () => {
