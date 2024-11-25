@@ -6,6 +6,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ title, description, imageUrl }) => {
+  // absolute w-screen top-0
   return (
     <div>
     <div className=" relative max-w-sm rounded mt-8  bg-[#D9D9D9]">
