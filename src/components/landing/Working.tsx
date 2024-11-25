@@ -16,7 +16,7 @@ const Working = () => {
         </div>
       </div>
 
-      <div className='flex gap-16 justify-center mt-16'>
+      <div className='flex justify-center mt-16'>
         
         <Card 
         title="Get Approved: Start Your Journey!"
