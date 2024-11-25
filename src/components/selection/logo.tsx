@@ -5,8 +5,7 @@ import Image from 'next/image'
 
 const Logo = () => {
 return (
-    <div>
-    
+    <section>
       <div>
         <Image
         className=""
@@ -16,8 +15,7 @@ return (
         height={160}
         />
       </div>
-    </div>
-
+    </section>
     )
 }
 export default Logo
