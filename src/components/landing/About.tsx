@@ -18,7 +18,7 @@ const About = () => {
       </div>
 
         <div className='mt-10 flex'>
-            <p className='text-3xl text-center '>
+            <p className='text-3xl text-center lg:text-xl'>
                 At <a className='font-semibold'>MineFlow</a>, we simplify project management in the coal sector. It has been designed for <a className='font-semibold'>CMPDI(Central Mine Planning and Design Institute)</a>,
                  our platform streamlines the oversight of <a className='font-semibold'>R&D</a> and <a className='font-semibold'>S&T</a> projects funded by<a>Coal India Limited (CIL)</a> and the <a className='font-semibold'>Ministry of Coal (MoC)</a>.We eliminate 
                  inefficiencies in managing over <a className='font-semibold'>100 project reports</a> quarterly by offering a <a className='font-semibold'>secure, user-friendly</a> platform for <a className='font-semibold'>real-time tracking</a>, automated processes, 

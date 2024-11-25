@@ -1,10 +1,25 @@
 'use client';
-import React from 'react'
 import Image from 'next/image'
+import React, { useState } from 'react';
 import ExpandableCard from './ExpandableCard';
 
 
 const Faq = () => {
+
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value); 
+  };
+
+  const handleClear = () => {
+    setInputValue(''); 
+  };
+
+  const handleButtonClick = () => {
+    alert(`You entered: ${inputValue}`); 
+  };
+
   return (
     <div className=''>
 
@@ -13,15 +28,16 @@ const Faq = () => {
             src="/Frequently Ask Question.svg"
             alt="hero"
             width={1100}
-            height={100}
+            height={500}
             />
-        <div className="absolute inset-0 flex justify-center items-center">
+        <div className=" absolute inset-0 flex justify-center items-center">
             <p className="text-black text-6xl font-bold ">Frequently Ask Question</p>
         </div>
-        <p> Click here  to know more</p>
-      </div>
         
-      <div className="flex pl-24">
+      </div>
+      <p className='flex justify-center font-bold text-lg text-[#3F3F3F]'> <a href="" className='underline px-1 font-semibold'>CLICK HERE </a> to know more</p>
+        
+      <div className="flex px-24 justify-between">
         <div>
         <h1 className='text-4xl font-bold mb-4'>Popular Questions</h1>
       <ExpandableCard
@@ -60,6 +76,40 @@ const Faq = () => {
         extraContent="This is some extra content about implementing dropdowns. It could include code examples or further instructions."
         imageUrl="/Dropdown.svg"  
       />
+      </div>
+
+      <div className='flex flex-col'>
+
+        <div>
+          <Image
+            src="/ASk top.svg"
+            alt="hero"
+            width={640}
+            height={300}
+            />
+        </div>
+
+        <div><h1 className='text-center text-4xl font-semibold mt-5'>Any Question?</h1></div>
+
+        <div className='mt-5'>
+          <h1 className='text-semibold'>Let me know.</h1>
+
+          <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Write here"
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
+        />
+        <div className='flex justify-center mt-5'>
+         <button
+          onClick={handleButtonClick}
+          className="bg-black text-white rounded-full px-6 py-2 "> Send
+          </button>
+        </div>
+          
+        </div>
+      
       </div>
     </div>
 

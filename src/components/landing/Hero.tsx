@@ -11,9 +11,9 @@ const Hero = () => {
 
   return (
     <div>
-    <div className='mt-56 flex px-8 justify-center gap-20'>
-      <div className='pt-8'>
-        <p className='text-8xl'>Follow the <a className='font-semibold'>rules,</a><br /> <a className='font-semibold'>track</a> the journey,
+    <div className='mt-56 flex px-8 justify-between gap-20 lg:mt-24 '>
+      <div className=''>
+        <p className='text-8xl lg:text-6xl lg:mt-4'>Follow the <a className='font-semibold'>rules,</a><br /> <a className='font-semibold'>track</a> the journey,
         <br /> lead the way<a className='font-bold'>...</a></p>
 
         <div className=' mt-10'>
@@ -23,15 +23,15 @@ const Hero = () => {
         </div>
       </div>
         
-        <div className='flex flex-col'>
+        <div className=' '>
         <Image
         
         src="/hero.svg"
         alt="Example Image"
-        width={0} // Required for layout 'intrinsic'
+        width={640} // Required for layout 'intrinsic'
         height={0} // Required for layout 'intrinsic'
-        sizes="100vw" // Optional, ensures responsive behavior
-        className="w-auto h-auto"
+        
+        // className="w-auto h-auto"
         />
         
         </div>

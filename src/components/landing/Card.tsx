@@ -10,7 +10,7 @@ const Card: React.FC<CardProps> = ({ title, description, imageUrl }) => {
   return (
     <div>
     <div className="relative max-w-sm rounded mt-8 bg-[#D9D9D9]">
-  <div className="flex justify-center items-center bottom-96 absolute left-1/2">
+  <div className="flex justify-center items-center bottom-96 absolute left-36">
     <img className="object-cover" src={imageUrl} alt={title} />
   </div>
   <div className="p-4 text-center">
