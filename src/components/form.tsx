@@ -24,7 +24,7 @@ const Form = () => {
         console.log("Form submitted:", formData);
       };
     return (
-        <><div className='mt-12 '>
+        <><div className='mt-6 '>
             <h1 className='text-black  text-2xl font-semibold ' style={{ marginLeft: "460px" }}>Name:</h1>
             <div className='flex justify-center'>
                 <input
@@ -47,7 +47,7 @@ const Form = () => {
                     onChange={handleChange}
                     required />
             </div>
-            <h1 className='text-black  text-2xl font-semibold mt-4 ' style={{ marginLeft: "460px" }}>Username:  <label htmlFor="password" style={{marginLeft:"198px"}}>Password:</label></h1>
+            <h1 className='text-black  text-2xl font-semibold mt-2 ' style={{ marginLeft: "460px" }}>Username:  <label htmlFor="password" style={{marginLeft:"198px"}}>Password:</label></h1>
             <div className='flex justify-center'>
                 <input
                     className='border-2 border-black rounded-md h-12 w-72 mt-2 p-4'
