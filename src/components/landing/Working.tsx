@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Card from './Card'
+import Card from '../Card'
 
 const Working = () => {
   return (
@@ -16,7 +16,7 @@ const Working = () => {
         </div>
       </div>
 
-      <div className='flex gap-16 justify-center mt-16'>
+      <div className='flex px-8 justify-center mt-16'>
         
         <Card 
         title="Get Approved: Start Your Journey!"

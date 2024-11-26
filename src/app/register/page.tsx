@@ -1,11 +1,11 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-export default function Invigilator() {
+export default function Register() {
   return (
     <>
     <Nav />
-    Hi from Invigilator
+    Register Here
     <Footer />
     </>
   );
