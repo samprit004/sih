@@ -8,7 +8,7 @@ const Option = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const handelNext = ()=>{
     if(selectedOption == "option1"){
-      redirect("/admin");
+      redirect("/login/admin");
     }else if(selectedOption == "option2"){
       redirect("/login/PI");
     }
