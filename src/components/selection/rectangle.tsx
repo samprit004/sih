@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 const Rectangle = () => {
     return (
         <div className='flex'>
-        <Image className=' ml-auto -mt-44'
+        <Image className=' ml-auto -mt-52'
         
         src="/Rectangle 19.svg"
         alt="Next.js logo"
-        width={600}
+        width={612}
         height={0}
       />
       </div>
