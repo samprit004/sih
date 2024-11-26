@@ -10,8 +10,8 @@ const Logo = () => {
         className='ml-8 mt-8'
         src="/Main logo.svg"
         alt="Next.js logo"
-        width={160}
-        height={160}
+        width={120}
+        height={120}
       />
     </div>
   );
