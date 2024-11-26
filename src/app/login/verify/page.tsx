@@ -8,8 +8,7 @@ export default function Login(){
   return (
     <>
       <Logo />
-      <Frame/>
-      <Option/>
+      <h1>Verify</h1>
       <Rectangle/>
     </>
 );

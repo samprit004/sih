@@ -4,12 +4,11 @@ import Option from "@/components/selection/option";
 import Rectangle from "@/components/selection/rectangle";
 
 
-export default function Login(){
+export default function Submit_docs(){
   return (
     <>
       <Logo />
-      <Frame/>
-      <Option/>
+      <h1>Submit here</h1>
       <Rectangle/>
     </>
 );
