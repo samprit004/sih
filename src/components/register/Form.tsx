@@ -28,7 +28,7 @@ const SignupForm = () => {
 
   return (
     <div className=" w-full m-auto ">
-      <form onSubmit={handleSubmit} className=" p-8 rounded-lg  w-full flex flex-col  ">
+      <form onSubmit={handleSubmit} className=" mt-2 rounded-lg  w-full flex flex-col  ">
         
         <div className="flex flex-col gap-3">
             <div className="flex gap-5 justify-center">
@@ -43,7 +43,7 @@ const SignupForm = () => {
                 name="firstname"
                 value={formData.firstname}
                 onChange={handleChange}
-                className=" border border-black rounded-md h-12 px-4 w-72  "
+                className=" border border-black rounded-md h-9 px-4 w-72  "
                 placeholder=" Firstname" 
                 required
                 />
@@ -61,7 +61,7 @@ const SignupForm = () => {
               placeholder="Last name"
               value={formData.lastname}
               onChange={handleChange}
-              className="border border-black rounded-md h-12 px-4 w-72"
+              className="border border-black rounded-md h-9 px-4 w-72"
               required
             />
             <div className="absolute bottom-1/4 left-5 w-3/4 h-0.5 bg-gray-300"></div>
@@ -82,7 +82,7 @@ const SignupForm = () => {
                 placeholder="email@gmail.com"
                 value={formData.email}
                 onChange={handleChange}
-                className="border border-black rounded-md h-12 px-4 w-72"
+                className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
                 <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
@@ -98,7 +98,7 @@ const SignupForm = () => {
                 placeholder="xxxxxxxxxx"
                 value={formData.phone}
                 onChange={handleChange}
-                className="border border-black rounded-md h-12 px-4 w-72"
+                className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
                 <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
@@ -117,7 +117,7 @@ const SignupForm = () => {
                  placeholder="username"
                  value={formData.username}
                  onChange={handleChange}
-                className="border border-black rounded-md h-12 px-4 w-72"
+                className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
                 <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
@@ -133,7 +133,7 @@ const SignupForm = () => {
                  placeholder="password"
                  value={formData.password}
                 onChange={handleChange}
-                className="border border-black rounded-md h-12 px-4 w-72"
+                className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
                 <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
@@ -146,7 +146,7 @@ const SignupForm = () => {
                 name="confirmPassword"
                 placeholder="password"
                 value={formData.confirmPassword}
-                className="border border-black rounded-md h-12 px-4 w-72"
+                className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
                 <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
@@ -170,7 +170,7 @@ const SignupForm = () => {
                     <span className="font-semibold text-xl">Back</span>
                 </button>
 
-                <button className="flex gap-8 items-center bg-black px-10 py-2 rounded-md border-2 border-black">
+                <button className="flex gap-8 items-center bg-black px-9 py-2 rounded-md border-2 border-black">
                 <span className="font-semibold text-xl text-white">Create</span>
                 <Image
                     className=""
