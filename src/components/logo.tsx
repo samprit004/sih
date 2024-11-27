@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const Logo = () => {
   return (
-    <div >
+    <div>
       <Image
         className='ml-8 mt-8'
         src="/Main logo.svg"

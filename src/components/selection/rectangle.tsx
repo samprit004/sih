@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 const Rectangle = () => {
     return (
-        <div className='flex'>
+        <div className='flex buttom-0'>
         <Image className=' ml-auto -mt-52'
         
         src="/Rectangle 19.svg"
