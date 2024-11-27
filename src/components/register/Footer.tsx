@@ -9,7 +9,7 @@ const Footer = () => {
         className=""
         src="/nocheck.svg"
         alt="/"
-        width={220}
+        width={260}
         height={220}
         />
       </div>
