@@ -13,6 +13,7 @@ const Footer = () => {
         height={220}
         />
       </div>
+      <div></div>
       
 
     </div>
