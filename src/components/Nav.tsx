@@ -31,10 +31,10 @@ const Nav = () => {
 
       <div className='flex gap-14 text-2xl font-medium items-center mr-16 lg:gap-8 lg:text-lg lg:mr-0'>
         <Link href="/" className=" ">Home</Link>
-        <Link href="/" className=" ">About Us</Link>
-        <Link href="/" className=" ">Guidelines</Link>
-        <Link href="/" className=" ">Work Progress</Link>
-        <Link href="/" className=" ">FAQ</Link>
+        <Link href="/#about" className=" ">About Us</Link>
+        <Link href="/#guidelines" className=" ">Guidelines</Link>
+        <Link href="/#working" className=" ">Work Progress</Link>
+        <Link href="/#faq" className=" ">FAQ</Link>
         
         <Link href="/login">
         <button className='bg-black text-white px-3 py-2 rounded-xl text-center '>Login/Register</button>
