@@ -30,7 +30,7 @@ const Faq = () => {
             width={1100}
             height={500}
             />
-        <div className=" absolute inset-0 flex justify-center items-center">
+        <div className=" absolute inset-0 flex justify-center items-center ">
             <p className="text-black text-6xl font-bold ">Frequently Ask Question</p>
         </div>
         
@@ -38,7 +38,7 @@ const Faq = () => {
       <p className='flex justify-center font-bold text-lg text-[#3F3F3F]'> <a href="" className='underline px-1 font-semibold'>CLICK HERE </a> to know more</p>
         
       <div className="flex px-24 justify-between">
-        <div>
+        <div className='w-3/5'>
         <h1 className='text-4xl font-bold mb-4'>Popular Questions</h1>
       <ExpandableCard
         title="What is the meaning of life?"

@@ -1,12 +1,13 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
-const Rectangle = () => {
+const Rectangle2 = () => {
     return (
         <div className='flex'>
-        <Image className=' ml-auto -mt-44 mb-0'
-        
-        src="/Rectangle 19.svg"
+        <Image 
+        className='w-full'
+        style={{marginTop: '47px'}}
+        src="/Rectangle 20.svg"
         alt="Next.js logo"
         width={612}
         height={0}
@@ -14,4 +15,4 @@ const Rectangle = () => {
       </div>
     );
 }
-export default Rectangle;
+export default Rectangle2;

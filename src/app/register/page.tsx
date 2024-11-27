@@ -1,12 +1,14 @@
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import Footer from "@/components/register/Footer";
+import SignupForm from "@/components/register/Form";
+import Header from "@/components/register/header";
+import React from "react";
 
 export default function Register() {
   return (
     <>
-    <Nav />
-    Register Here
-    <Footer />
+    <Header/>
+    <SignupForm/>
+    <Footer/>
     </>
   );
 }

@@ -4,6 +4,9 @@ import Card from '../Card'
 const Working = () => {
   return (
     <div>
+      <style>
+        
+      </style>
        <div className=' relative mt-24 flex justify-center'>
         <Image
             src="/Working Process.svg"
