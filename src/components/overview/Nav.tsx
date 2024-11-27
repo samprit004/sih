@@ -33,7 +33,7 @@ const Nav = () => {
                     src="/pfp.svg"
                     alt="Next.js logo"
                     width={40}
-                    height={0}
+                    height={10}
                 />
 
             </div>
