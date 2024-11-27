@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const Rectangle = () => {
     return (
         <div className='flex'>
-        <Image className=' ml-auto -mt-52 mb-0'
+        <Image className=' ml-auto -mt-44 mb-0'
         
         src="/Rectangle 19.svg"
         alt="Next.js logo"
