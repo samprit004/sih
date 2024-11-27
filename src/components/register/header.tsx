@@ -16,7 +16,7 @@ const Header = () => {
         
         <h1 className='text-black  text-5xl font-semibold flex  justify-center '>Register</h1>
         <h1 className='text-xl mt-2 flex  justify-center'>Register to create an account for submission </h1>
-        <hr className=' mt-3  mx-auto border-t-2 border-2 border-black w-2/4 rounded-md'/>
+        <hr className=' mt-3  mx-auto border-t-2 border-2 border-black w-2/5 rounded-md'/>
         </div>
     </div>
   )

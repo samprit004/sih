@@ -28,14 +28,14 @@ const SignupForm = () => {
 
   return (
     <div className=" w-full m-auto ">
-      <form onSubmit={handleSubmit} className=" mt-2 rounded-lg  w-full flex flex-col  ">
+      <form onSubmit={handleSubmit} className=" mt-5 rounded-lg  w-full flex flex-col  ">
         
         <div className="flex flex-col gap-3">
             <div className="flex gap-5 justify-center">
 
               
             <div className="flex flex-col">
-            <label className="">Name:</label>
+            <label className="font-semibold">Name:</label>
             <div className="relative">
                 
                 <input
@@ -53,7 +53,7 @@ const SignupForm = () => {
             </div>
 
             <div className="flex flex-col">
-            <label>‎  </label>
+            <label className="font-semibold">‎  </label>
             <div className="relative">
             <input
               type="text"
@@ -74,7 +74,7 @@ const SignupForm = () => {
 
               
             <div className="flex flex-col">
-                <label>Email:</label>
+                <label className="font-semibold">E-mail:</label>
                 <div className="relative">
                 <input
                 type="email"
@@ -90,7 +90,7 @@ const SignupForm = () => {
 
 
             <div className="flex flex-col">
-            <label>Phone No.: </label>
+            <label className="font-semibold">Phone No.: </label>
             <div className="relative">
                 <input
                 type="text"
@@ -109,7 +109,7 @@ const SignupForm = () => {
 
             <div className="flex gap-5 justify-center h-40">
             <div className="flex flex-col justify-center">
-            <label>Username:</label>
+            <label className="font-semibold">Username:</label>
             <div className="relative">
                 <input
                  type="text"
@@ -125,7 +125,7 @@ const SignupForm = () => {
             </div>
 
             <div className="flex flex-col justify-between">
-            <label>Password: </label>
+            <label className="font-semibold">Password: </label>
             <div className="relative">
                 <input
                  type="password"
@@ -139,7 +139,7 @@ const SignupForm = () => {
                 <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
                 </div>
 
-                <label>Updated Password: </label>
+                <label className="font-semibold">Updated Password: </label>
                 <div className="relative">
                 <input
                 type="password"
@@ -159,22 +159,22 @@ const SignupForm = () => {
             </div>
             
             <div className="flex justify-center mt-5 gap-12">
-                <button className="flex gap-4 items-center bg-[#D2D6E1] px-4 py-2 rounded-md border-2 border-black">
+                <button className="flex gap-3 items-center bg-[#D2D6E1] px-4  rounded-lg border-2 border-black">
                 <Image
                     className=""
                     src="/Arrow 5.svg"
                     alt="//"
-                    width={30}
+                    width={20}
                     height={0}
                     />
-                    <span className="font-semibold text-xl">Back</span>
+                    <span className="font-semibold text-lg">Back</span>
                 </button>
 
-                <button className="flex gap-8 items-center bg-black px-9 py-2 rounded-md border-2 border-black">
-                <span className="font-semibold text-xl text-white">Create</span>
+                <button className="flex gap-5 items-center bg-[#1E1E1E] px-16 py-1 rounded-lg border-2 border-[#1E1E1E]">
+                <span className="font-semibold text-lg text-white">Create</span>
                 <Image
                     className=""
-                    src="/Arrow 6.svg"
+                    src="/createarrow.svg"
                     alt="//"
                     width={30}
                     height={0}
