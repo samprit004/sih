@@ -47,7 +47,7 @@ const SignupForm = () => {
                 placeholder=" Firstname" 
                 required
                 />
-                <div className="absolute bottom-1/4 left-5 w-3/4 h-0.5 bg-gray-300"></div>
+               
   
             </div>
             </div>
@@ -64,7 +64,7 @@ const SignupForm = () => {
               className="border border-black rounded-md h-9 px-4 w-72"
               required
             />
-            <div className="absolute bottom-1/4 left-5 w-3/4 h-0.5 bg-gray-300"></div>
+            
             </div>
             </div>   
 
@@ -85,7 +85,7 @@ const SignupForm = () => {
                 className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
-                <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
+                
             </div></div>
 
 
@@ -101,7 +101,7 @@ const SignupForm = () => {
                 className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
-                <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
+                
             </div> 
             </div>   
 
@@ -120,7 +120,7 @@ const SignupForm = () => {
                 className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
-                <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
+                
                 </div>
             </div>
 
@@ -136,7 +136,7 @@ const SignupForm = () => {
                 className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
-                <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
+               
                 </div>
 
                 <label className="font-semibold">Confirm Password: </label>
@@ -150,7 +150,7 @@ const SignupForm = () => {
                 className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
-                <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
+                
 
                 </div>
             </div> 
