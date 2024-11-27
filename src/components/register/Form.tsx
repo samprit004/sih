@@ -28,7 +28,7 @@ const SignupForm = () => {
 
   return (
     <div className=" w-full m-auto ">
-      <form onSubmit={handleSubmit} className=" mt-5 rounded-lg  w-full flex flex-col  ">
+      <form onSubmit={handleSubmit} className=" mt-10 rounded-lg  w-full flex flex-col  ">
         
         <div className="flex flex-col gap-3">
             <div className="flex gap-5 justify-center">
@@ -43,7 +43,7 @@ const SignupForm = () => {
                 name="firstname"
                 value={formData.firstname}
                 onChange={handleChange}
-                className=" border border-black rounded-md h-9 px-4 w-72  "
+                className=" border border-black rounded-md h-12 px-4 w-72  "
                 placeholder=" Firstname" 
                 required
                 />
@@ -61,7 +61,7 @@ const SignupForm = () => {
               placeholder="Last name"
               value={formData.lastname}
               onChange={handleChange}
-              className="border border-black rounded-md h-9 px-4 w-72"
+              className="border border-black rounded-md h-12 px-4 w-72"
               required
             />
             
@@ -82,7 +82,7 @@ const SignupForm = () => {
                 placeholder="email@gmail.com"
                 value={formData.email}
                 onChange={handleChange}
-                className="border border-black rounded-md h-9 px-4 w-72"
+                className="border border-black rounded-md h-12 px-4 w-72"
                 required
                 />
                 
@@ -98,7 +98,7 @@ const SignupForm = () => {
                 placeholder="xxxxxxxxxx"
                 value={formData.phone}
                 onChange={handleChange}
-                className="border border-black rounded-md h-9 px-4 w-72"
+                className="border border-black rounded-md h-12 px-4 w-72"
                 required
                 />
                 
@@ -107,58 +107,10 @@ const SignupForm = () => {
 
             </div>
 
-            <div className="flex gap-5 justify-center h-40">
-            <div className="flex flex-col justify-center">
-            <label className="font-semibold">Username:</label>
-            <div className="relative">
-                <input
-                 type="text"
-                 name="username"
-                 placeholder="username"
-                 value={formData.username}
-                 onChange={handleChange}
-                className="border border-black rounded-md h-9 px-4 w-72"
-                required
-                />
-                
-                </div>
-            </div>
-
-            <div className="flex flex-col justify-between">
-            <label className="font-semibold">Password: </label>
-            <div className="relative">
-                <input
-                 type="password"
-                 name="password"
-                 placeholder="password"
-                 value={formData.password}
-                onChange={handleChange}
-                className="border border-black rounded-md h-9 px-4 w-72"
-                required
-                />
-               
-                </div>
-
-                <label className="font-semibold">Confirm Password: </label>
-                <div className="relative">
-                <input
-                type="password"
-                name="confirmPassword"
-                placeholder="password"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                className="border border-black rounded-md h-9 px-4 w-72"
-                required
-                />
-                
-
-                </div>
-            </div> 
-            </div>
             
             </div>
             
-            <div className="flex justify-center mt-5 gap-12">
+            <div className="flex justify-center mt-12 gap-12">
                 <button className="flex gap-3 items-center bg-[#D2D6E1] px-4  rounded-lg border-2 border-black">
                 <Image
                     className=""
@@ -182,6 +134,7 @@ const SignupForm = () => {
                 </button>
                 
             </div>
+            <div className="text-center mt-8 font-medium"> Already Registered? <a className="underline font-bold">Login</a></div>
 
             
       </form>
