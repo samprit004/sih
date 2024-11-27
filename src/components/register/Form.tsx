@@ -139,13 +139,14 @@ const SignupForm = () => {
                 <div className="absolute bottom-1/4 left-4 w-3/4 h-0.5 bg-gray-300"></div>
                 </div>
 
-                <label className="font-semibold">Updated Password: </label>
+                <label className="font-semibold">Confirm Password: </label>
                 <div className="relative">
                 <input
                 type="password"
                 name="confirmPassword"
                 placeholder="password"
                 value={formData.confirmPassword}
+                onChange={handleChange}
                 className="border border-black rounded-md h-9 px-4 w-72"
                 required
                 />
@@ -153,7 +154,6 @@ const SignupForm = () => {
 
                 </div>
             </div> 
-
             </div>
             
             </div>
@@ -184,10 +184,6 @@ const SignupForm = () => {
             </div>
 
             
-
-
-
-
       </form>
     </div>
   );
