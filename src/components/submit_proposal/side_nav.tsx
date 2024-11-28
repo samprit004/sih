@@ -13,7 +13,7 @@ const Side_nav = () => {
           }`}
           onClick={() => setActiveButton('Project Overview')}
         >
-          Project Overview
+          View Projects
         </button>
         <button
           className={`text-md font-semibold px-5 py-3 rounded-lg ${
