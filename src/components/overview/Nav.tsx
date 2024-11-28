@@ -38,7 +38,7 @@ const Nav = () => {
 
         {/* Header Section - Moved to the left */}
         <div className="flex flex-col gap-1 mr-[550px]">
-          <h1 className="text-3xl font-semibold">Project Overview:</h1>
+          <h1 className="text-3xl font-semibold">View Projects:</h1>
           <p className="font-medium">
             Dive into available projects: Explore opportunities and take the next step.
           </p>
