@@ -7,7 +7,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ description, viewDetails }) => {
   return (
-    <div className="p-2 w-5/6 rounded mt-2 border border-black">
+    <div className="p-2 w-11/12 rounded mt-2 border border-black">
       <div className="p-4">
         <p className="text-black text-xl">{description}</p>
       </div>
