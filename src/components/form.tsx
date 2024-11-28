@@ -24,30 +24,9 @@ const Form = () => {
         console.log("Form submitted:", formData);
       };
     return (
-        <><div className='mt-6 '>
-            <h1 className='text-black  text-2xl font-semibold ' style={{ marginLeft: "460px" }}>Name:</h1>
-            <div className='flex justify-center'>
-                <input
-                    className='border-2 border-black rounded-md h-12 w-72 mt-2 p-4'
-                    type="text"
-                    id="firstname"
-                    name="firstname"
-                    placeholder='First Name'
-                    value={formData.firstname}
-                    onChange={handleChange}
-                    required />
-
-                <input
-                    type="text"
-                    className='border-2 border-black rounded-md h-12 w-72 mt-2 ml-8 border-b-2 p-4'
-                    id="lastname"
-                    name="lastname"
-                    placeholder='Last Name'
-                    value={formData.lastname}
-                    onChange={handleChange}
-                    required />
-            </div>
-            <h1 className='text-black  text-2xl font-semibold mt-2 ' style={{ marginLeft: "460px" }}>Username:  <label htmlFor="password" style={{marginLeft:"198px"}}>Password:</label></h1>
+        <>
+           
+            <h1 className='text-black  text-2xl font-semibold mt-12 ' style={{ marginLeft: "460px" }}>Username:  <label htmlFor="password" style={{marginLeft:"198px"}}>Password:</label></h1>
             <div className='flex justify-center'>
                 <input
                     className='border-2 border-black rounded-md h-12 w-72 mt-2 p-4'
@@ -71,7 +50,7 @@ const Form = () => {
             </div>
             <button className='hover:text-blue-600' style={{ marginLeft: "780px" }}>Forgot Password?</button>
 
-        </div>
+        
         <div className='border-2 border-black w-40 h-10 flex justify-center items-center rounded-md hover:bg-slate-200' style={{ marginLeft: "460px" }}>
         <input type="checkbox" className='w-4  mt-1' /> 
         <div className='ml-2 '><b>Remember me</b></div>
