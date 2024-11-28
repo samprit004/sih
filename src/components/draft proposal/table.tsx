@@ -11,7 +11,7 @@ const Table = () => {
         
       </div>
     </div>
-      <table className="w-[1000px] border-black mt-4 mx-8">
+      <table className="w-[1200px] border-black mt-4 mx-8">
         <thead>
           <tr>
             <th className="border border-black px-4 py-2">Project Statement</th>

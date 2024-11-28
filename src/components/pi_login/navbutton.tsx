@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 const NavButton = () => {
     return (
-        <><div className='flex mt-6 ' style={{ marginLeft: "550px" }}>
+        <><div className='flex mt-16' style={{ marginLeft: "550px" }}>
             <button className='flex justify-center items-center w-36 h-12 border-2 border-black rounded-md hover:bg-gray-500'>
                 <Image className=' pt-1 w-8'
                     src="/Arrow 5.svg"
