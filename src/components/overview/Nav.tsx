@@ -1,47 +1,113 @@
-import React from 'react'
-import Image from 'next/image'
-
+'use client';
+import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 const Nav = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div>
-        <div className='flex  items-center sticky mx-4 mt-2'>
-            <div className='w-[15%]'>
-                <Image
-                className=''
-                src="/Main logo.svg"
-                alt="Next.js logo"
-                width={120}
-                height={120}
-                />
-            </div>
-            <div className='flex justify-between w-[85%] px-5'>
-            <div  className='flex flex-col gap-1' >
-                <h1 className='text-3xl font-semibold'>Project Overview:</h1>
-                <p className='font-medium'>Dive into available projects: Explore opportunities and take next step. </p>
-            </div>
-            <div className='flex gap-4'>
-                <Image 
-                    className=''
-                    src="/bell.svg"
-                    alt="Next.js logo"
-                    width={20}
-                    height={0}
-                />
-                <Image
-                    className=''
-                    src="/pfp.svg"
-                    alt="Next.js logo"
-                    width={40}
-                    height={10}
-                />
-
-            </div>
-            </div>
+      <div className="flex items-center sticky mx-4 mt-2">
+        {/* Logo */}
+        <div className="w-[15%]">
+          <Image
+            className=""
+            src="/Main logo.svg"
+            alt="Main Logo"
+            width={120}
+            height={120}
+          />
         </div>
-      
-    </div>
-  )
-}
 
-export default Nav
+        {/* Header Section */}
+        <div className="flex justify-between w-[85%] px-5">
+          <div className="flex flex-col gap-1">
+            <h1 className="text-3xl font-semibold">Project Overview:</h1>
+            <p className="font-medium">
+              Dive into available projects: Explore opportunities and take the
+              next step.
+            </p>
+          </div>
+
+          {/* Notification and Profile Section */}
+          <div className="flex gap-4 items-center">
+            {/* Notification Bell */}
+            <Image
+              className=""
+              src="/bell.svg"
+              alt="Notification Bell"
+              width={20}
+              height={20}
+            />
+
+            {/* Profile Picture and Dropdown */}
+            <div className="relative flex items-center gap-2" ref={dropdownRef}>
+              <Image
+                className=""
+                src="/pfp.svg"
+                alt="Profile Picture"
+                width={40}
+                height={40}
+              />
+
+              {/* Dropdown Button */}
+              <button onClick={toggleDropdown}>
+                <Image
+                  className="hover:w-6"
+                  src="/drop.svg"
+                  alt="Dropdown Icon"
+                  width={20}
+                  height={20}
+                />
+              </button>
+
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div className="absolute top-12 right-0 w-40 bg-white border border-black rounded-md shadow-lg">
+                  <ul className="py-1">
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700 border border-b-black hover:bg-gray-100"
+                      >
+                        My Account
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Sign Out
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Nav;
