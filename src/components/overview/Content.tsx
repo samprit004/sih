@@ -1,13 +1,14 @@
 import React from 'react'
-import Card from '../Card'
+import Card from './Project_card'
 
 const Content = () => {
   return (
-    <div className=''>
-      <div className='mt-6 px-8 '>
-        <h1 className='text-xl font-semibold underline'>Explore Projects</h1>
-        <div>
-            <Card
+    <div className='ml-[16%] '>
+      <div className='mt-[84px] px-8 '>
+        <h1 className='text-xl fixed bg-white font-semibold pt-4 mb-8 underline w-full'>Explore Projects</h1>
+        <div >
+         <br/><br/>
+            <Card 
              description="Scaling up the conversion of CO2 to methanol and other value-added chemicals with 500 Kg CO2/day capacity."
              />
              <Card
@@ -28,6 +29,7 @@ const Content = () => {
         </div>
       </div>
     </div>
+ 
   )
 }
 

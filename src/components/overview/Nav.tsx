@@ -24,10 +24,10 @@ const Nav = () => {
   }, []);
 
   return (
-    <div>
-      <div className="flex items-center sticky mx-4 mt-2">
+    <div className='relative'>
+      <div className="flex fixed items-center  ml-12 ">
         {/* Logo */}
-        <div className="w-[15%]">
+        <div className="w-[15%] mr-8">
           <Image
             className=""
             src="/Main logo.svg"
@@ -38,17 +38,16 @@ const Nav = () => {
         </div>
 
         {/* Header Section */}
-        <div className="flex justify-between w-[85%] px-5">
+        <div className="flex justify-between w-full px-5  bg-white">
           <div className="flex flex-col gap-1">
             <h1 className="text-3xl font-semibold">Project Overview:</h1>
             <p className="font-medium">
-              Dive into available projects: Explore opportunities and take the
-              next step.
+              Dive into available projects: Explore opportunities and take the next step.
             </p>
           </div>
 
           {/* Notification and Profile Section */}
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 ml-[630px] items-center">
             {/* Notification Bell */}
             <Image
               className=""
@@ -71,7 +70,7 @@ const Nav = () => {
               {/* Dropdown Button */}
               <button onClick={toggleDropdown}>
                 <Image
-                  className="hover:w-6"
+                  className={`transition-transform transform ${isDropdownOpen ? "rotate-180" : "rotate-0"}`}
                   src="/drop.svg"
                   alt="Dropdown Icon"
                   width={20}
@@ -81,7 +80,7 @@ const Nav = () => {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute top-12 right-0 w-40 bg-white border border-black rounded-md shadow-lg">
+                <div className=" absolute top-12 right-0 w-40 bg-white border border-black rounded-md shadow-lg">
                   <ul className="py-1">
                     <li>
                       <a

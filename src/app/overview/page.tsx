@@ -5,7 +5,9 @@ import Side_nav from "@/components/overview/Side_nav";
 export default function overview() {
     return (
       <>
+      <div>
       <Nav/>
+      </div>
       <div className="flex">
       <Side_nav/>
       <Content/>
