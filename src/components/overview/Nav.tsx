@@ -25,9 +25,9 @@ const Nav = () => {
 
   return (
     <div className='relative'>
-      <div className="flex fixed items-center  ml-12 ">
+      <div className="flex fixed items-center  ml-8 ">
         {/* Logo */}
-        <div className="w-[15%] mr-8">
+        <div className="w-[15%]  mr-8">
           <Image
             className=""
             src="/Main logo.svg"
@@ -106,6 +106,7 @@ const Nav = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Table = () => {
   return (
-    <div className=""> 
+    <div className="ml-56"> 
      
       <div className='flex mt-6 px-8 w-full'>
         <h1 className='text-xl font-semibold underline'>Project State:</h1>

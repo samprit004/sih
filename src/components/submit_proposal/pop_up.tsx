@@ -2,7 +2,7 @@ import React from 'react';
 
 const Table = () => {
   return (
-    <div className="px-8">
+    <div className="px-8 ml-56">
       <div className="mt-6">
         <h1 className="text-xl font-semibold underline">Project State:</h1>
       </div>
