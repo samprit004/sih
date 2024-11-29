@@ -1,7 +1,6 @@
 import Logo from "@/components/logo";
 import Caption from "@/components/admin_login/caption";
-import Form from "@/components/form";
-import NavButton from "@/components/navbutton";
+import Form from "@/components/admin_login/form";
 import Rectangle2 from "@/components/blackbox";
 export default function Login(){
     return (
@@ -9,7 +8,6 @@ export default function Login(){
         <Logo />
         <Caption/>
         <Form/>
-        <NavButton/>
         <Rectangle2/>
         
       </>

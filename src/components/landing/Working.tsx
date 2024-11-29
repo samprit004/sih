@@ -4,7 +4,7 @@ import Card2 from '../card2'
 
 const Working = () => {
   return (
-    <div>
+    <div id='working'>
       <style>
         
       </style>

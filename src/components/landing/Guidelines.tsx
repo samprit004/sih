@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Guidelines = () => {
   return (
-    <div className='px-24'>
+    <div className='px-24' id='guidelines'>
 
       <div className=' relative mt-24 flex justify-center'>
         <Image

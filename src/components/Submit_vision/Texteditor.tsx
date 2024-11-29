@@ -1,0 +1,101 @@
+"use client";
+
+import React, { useRef, useState } from "react";
+
+interface TextEditorProps {
+  onContentChange?: (content: string) => void; // Optional callback for content updates
+}
+
+const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
+  const editorRef = useRef<HTMLDivElement>(null);
+  const [content, setContent] = useState("");
+
+  const applyCommand = (command: string, value?: string) => {
+    if (editorRef.current) {
+      const selection = window.getSelection();
+      if (selection && selection.rangeCount > 0) {
+        const range = selection.getRangeAt(0);
+        const selectedText = selection.toString();
+
+        // Apply the command (e.g., bold, italic, etc.)
+        document.execCommand(command, false, value || "");
+        const updatedContent = editorRef.current.innerHTML;
+
+        // If content changed, update state
+        if (updatedContent !== content) {
+          setContent(updatedContent);
+          if (onContentChange) {
+            onContentChange(updatedContent);
+          }
+        }
+      }
+    }
+  };
+
+  const handleBulletList = () => {
+    if (editorRef.current) {
+      document.execCommand("insertUnorderedList");
+      const updatedContent = editorRef.current.innerHTML;
+      setContent(updatedContent);
+      if (onContentChange) {
+        onContentChange(updatedContent);
+      }
+    }
+  };
+
+  const handleInput = () => {
+    if (editorRef.current) {
+      const updatedContent = editorRef.current.innerHTML;
+      setContent(updatedContent);
+      if (onContentChange) {
+        onContentChange(updatedContent);
+      }
+    }
+  };
+
+  return (
+    <div className="p-4 bg-gray-100 flex flex-col ">
+      {/* Toolbar */}
+      <div className="flex"> 
+      <div className="mb-4 flex gap-2 w-full">
+        <button
+          onClick={() => applyCommand("bold")}
+          className="px-4 text-sm py-2 bg-gray-300 rounded hover:bg-gray-400"
+        >
+          Bold
+        </button>
+        <button
+          onClick={() => applyCommand("italic")}
+          className="px-4 text-sm py-2 bg-gray-300 rounded hover:bg-gray-400"
+        >
+          Italic
+        </button>
+        <button
+          onClick={() => applyCommand("underline")}
+          className="px-4 text-sm py-2 bg-gray-300 rounded hover:bg-gray-400"
+        >
+          Underline
+        </button>
+        <button
+          onClick={handleBulletList}
+          className="px-4 text-sm py-2 bg-gray-300 rounded hover:bg-gray-400"
+        >
+          Bullets
+        </button>
+      </div>
+      <div>
+        <button>Get help with writing</button>
+      </div>
+      </div>
+      {/* Editable Area */}
+      <div
+        ref={editorRef}
+        contentEditable
+        onInput={handleInput}
+        className="w-full max-w-2xl min-h-[200px] p-4 bg-white border border-gray-300 rounded shadow-sm focus:outline-none"
+      />
+    </div>
+  );
+};
+
+export default TextEditor;
