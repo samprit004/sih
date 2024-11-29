@@ -33,15 +33,25 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
   };
 
   const handleBulletList = () => {
-    if (editorRef.current) {
+  if (editorRef.current) {
+    // Check if the browser supports execCommand (fallback for older browsers)
+    if (document.queryCommandSupported && document.queryCommandSupported("insertUnorderedList")) {
       document.execCommand("insertUnorderedList");
-      const updatedContent = editorRef.current.innerHTML;
-      setContent(updatedContent);
-      if (onContentChange) {
-        onContentChange(updatedContent);
-      }
+    } else {
+      console.warn("insertUnorderedList is not supported in this browser.");
     }
-  };
+
+    // Update React state with the new content
+    const updatedContent = editorRef.current.innerHTML;
+    setContent(updatedContent);
+
+    // Trigger the onContentChange callback, if provided
+    if (onContentChange) {
+      onContentChange(updatedContent);
+    }
+  }
+};
+
 
   const handleInput = () => {
     if (editorRef.current) {
