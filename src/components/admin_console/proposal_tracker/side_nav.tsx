@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Side_nav = () => {
-  const [activeButton, setActiveButton] = useState('Upcoming');
+  const [activeButton, setActiveButton] = useState('Proposal Tracker');
 
   return (
     <div className='fixed top-[84px] mt-8 left-0 bg-black h-[100vh] w-[15%] flex justify-center rounded-r-3xl'>

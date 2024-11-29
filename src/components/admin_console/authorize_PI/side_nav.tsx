@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Side_nav = () => {
-  const [activeButton, setActiveButton] = useState('Upcoming');
+  const [activeButton, setActiveButton] = useState('Authorize PI');
 
   return (
     <div className='fixed top-[84px] mt-8 left-0 bg-black h-[100vh] w-[15%] flex justify-center rounded-r-3xl'>
@@ -40,7 +40,7 @@ const Side_nav = () => {
           Authorize PI
         </button>
         </Link>
-        <Link href='/Admin_console/Project_Records'>
+        <Link href='/Admin_console/Project_records'>
         <button
           className={`text-md font-semibold px-5 py-3 rounded-lg ${activeButton === 'Project Records' ? 'bg-white text-black' : 'text-white'}`}
           onClick={() => setActiveButton('Project Records')}
