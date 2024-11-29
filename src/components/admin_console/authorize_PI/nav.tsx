@@ -37,7 +37,7 @@ const Nav = () => {
         </div>
 
         {/* Header Section - Moved to the left */}
-        <div className="flex flex-col gap-1 mr-[550px]">
+        <div className="flex flex-col gap-1 mr-[500px]">
           <h1 className="text-3xl font-semibold">Manage PI Access</h1>
           <p className="font-medium">
           Authorize new Project Investigators and manage their credentials with ease
