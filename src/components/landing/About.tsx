@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const About = () => {
   return (
-    <section className='px-24'>
+    <section className='px-24' id='about'>
      <div className=' relative mt-24 flex justify-center'>
         <Image
             src="/About Us.svg"

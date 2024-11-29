@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const SignupForm = () => {
   const [formData, setFormData] = useState({
@@ -122,6 +123,7 @@ const SignupForm = () => {
                     <span className="font-semibold text-lg">Back</span>
                 </button>
 
+                <Link href="/invigilator/email_verification">
                 <button className="flex gap-5 items-center bg-[#1E1E1E] px-16 py-1 rounded-lg border-2 border-[#1E1E1E]">
                 <span className="font-semibold text-lg text-white">Create</span>
                 <Image
@@ -131,10 +133,10 @@ const SignupForm = () => {
                     width={30}
                     height={0}
                     />   
-                </button>
+                </button></Link>
                 
             </div>
-            <div className="text-center mt-8 font-medium"> Already Registered? <a className="underline font-bold">Login</a></div>
+            <div className="text-center mt-8 font-medium"> Already Registered? <a href="/login/PI" className="underline font-bold">Login</a></div>
 
             
       </form>

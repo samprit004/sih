@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react';
 import ExpandableCard from '../ExpandableCard';
+import Link from 'next/link';
 
 
 const Faq = () => {
@@ -21,7 +22,7 @@ const Faq = () => {
   };
 
   return (
-    <section className=''>
+    <section className='' id='faq'>
 
       <div className=' relative mt-24 flex justify-center'>
         <Image
@@ -35,7 +36,7 @@ const Faq = () => {
         </div>
         
       </div>
-      <p className='flex justify-center font-bold text-lg text-[#3F3F3F]'> <a href="" className='underline px-1 font-semibold'>CLICK HERE </a> to know more</p>
+      <p className='flex justify-center font-bold text-lg text-[#3F3F3F]'> <Link href="/" className='underline px-1 font-semibold'>CLICK HERE </Link> to know more</p>
         
       <div className="flex px-24 justify-between">
         <div className='w-3/5'>
