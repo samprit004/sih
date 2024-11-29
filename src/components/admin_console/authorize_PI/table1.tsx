@@ -69,7 +69,7 @@ const Table1 = () => {
   return (
     <div className="p-8  ml-60 w-full space-y-8">
       <h1 className="text-2xl font-bold "><u>PI Management</u></h1>
-    <div className="p-4 border-4  border-black h-96 mt-4 rounded-md">
+    <div className="p-4 border-4  border-black  mt-4 rounded-md">
       {/* PI Details Table */}
       <table className="w-full border-collapse border-2 border-black text-left mb-6">
         <thead >
