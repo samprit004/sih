@@ -77,7 +77,7 @@ const Form = () => {
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-50 p-8 justify-center gap-8">
+    <div className="flex min-h-screen bg-[#3F3F3FCC] p-8 justify-center gap-8">
       <div className="w-full sm:w-1/2 p-8 space-y-8 bg-white rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6">Fill Your Details</h2>
 
@@ -118,7 +118,7 @@ const Form = () => {
       </div>
 
       {/* Live preview section */}
-      <div className="w-full sm:w-1/2 p-8 bg-white rounded-lg shadow-lg">
+      <div className="w-full  p-8 bg-white rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6">Live Preview</h2>
         <div className="space-y-6">
           <div className="preview-item">

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-
+import Image from "next/image";
 interface TextEditorProps {
   onContentChange?: (content: string) => void; // Optional callback for content updates
 }
@@ -57,30 +57,50 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
     <div className="p-4 bg-gray-100 flex flex-col ">
       {/* Toolbar */}
       <div className="flex"> 
-      <div className="mb-4 flex gap-2 w-full">
+      <div className="mb-2 flex gap-1 w-full">
         <button
           onClick={() => applyCommand("bold")}
-          className="px-4 text-sm py-2 bg-gray-300 rounded hover:bg-gray-400"
+          className="px-2    hover:bg-gray-400"
         >
-          Bold
+          <Image
+            src="/B.svg"
+            alt="Main Logo"
+            width={10}
+            height={20}
+          />
         </button>
         <button
           onClick={() => applyCommand("italic")}
-          className="px-4 text-sm py-2 bg-gray-300 rounded hover:bg-gray-400"
+          className="px-2  rounded hover:bg-gray-400"
         >
-          Italic
+          <Image
+            src="/I.svg"
+            alt="Main Logo"
+            width={5}
+            height={20}
+          />
         </button>
         <button
           onClick={() => applyCommand("underline")}
-          className="px-4 text-sm py-2 bg-gray-300 rounded hover:bg-gray-400"
+          className="px-2  rounded hover:bg-gray-400"
         >
-          Underline
+          <Image
+            src="/U.svg"
+            alt="Main Logo"
+            width={13}
+            height={20}
+          />
         </button>
         <button
           onClick={handleBulletList}
-          className="px-4 text-sm py-2 bg-gray-300 rounded hover:bg-gray-400"
+          className="px-2    rounded hover:bg-gray-400"
         >
-          Bullets
+          <Image
+            src="/bullet.svg"
+            alt="Main Logo"
+            width={20}
+            height={20}
+          />
         </button>
       </div>
       <div>

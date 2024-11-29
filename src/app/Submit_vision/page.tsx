@@ -8,7 +8,7 @@ import Nav from "@/components/Submit_vision/Nav";
 export default function Submit_vision(){
     return (
     <>
-        <Nav/>
+        {/* <Nav/> */}
         <Form/>
         
     </>
