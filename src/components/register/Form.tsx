@@ -2,16 +2,15 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SignupForm = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
     email: "",
     phone: "",
-    username: "",
-    password: "",
-    confirmPassword: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,9 +21,36 @@ const SignupForm = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+    const jsbody = {
+      email: formData.email,
+      first_name: formData.firstname,
+      last_name: formData.lastname,
+      phone: formData.phone,
+    }
+    console.log("Form Data:", jsbody);
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsbody),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        // add cookies in client-side @samprit
+        alert('Form submitted successfully! '+data.message);
+        router.push('/invigilator/email_verification');
+      } else {
+        alert('User Not Found');
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -111,7 +137,7 @@ const SignupForm = () => {
             
             </div>
             
-            <div className="flex justify-center mt-12 gap-12">
+            <div className="flex justify-center mt-12 gap-12"><Link href="/">
                 <button className="flex gap-3 items-center bg-[#D2D6E1] px-4  rounded-lg border-2 border-black">
                 <Image
                     className=""
@@ -121,10 +147,9 @@ const SignupForm = () => {
                     height={0}
                     />
                     <span className="font-semibold text-lg">Back</span>
-                </button>
+                </button></Link>
 
-                <Link href="/invigilator/email_verification">
-                <button className="flex gap-5 items-center bg-[#1E1E1E] px-16 py-1 rounded-lg border-2 border-[#1E1E1E]">
+                <button className="flex gap-5 items-center bg-[#1E1E1E] px-16 py-1 rounded-lg border-2 border-[#1E1E1E]" type="submit">
                 <span className="font-semibold text-lg text-white">Create</span>
                 <Image
                     className=""
@@ -133,10 +158,10 @@ const SignupForm = () => {
                     width={30}
                     height={0}
                     />   
-                </button></Link>
+                </button>
                 
             </div>
-            <div className="text-center mt-8 font-medium"> Already Registered? <a href="/login/PI" className="underline font-bold">Login</a></div>
+            <div className="text-center mt-8 font-medium"> Already Registered?<Link href="/login/PI"><p className="underline font-bold">Login</p></Link></div>
 
             
       </form>

@@ -100,9 +100,9 @@ const Form = () => {
 
         </div>
         <div className='flex justify-center items-center mt-2'>
-        <Link href="/invigilator/register"><button>Not registered yet?  <b><u><a href="">Register</a></u></b></button></Link>
+        <Link href="/register"><button>Not registered yet?  <b><u>Register</u></b></button></Link>
             <div className='border-black border-2 ml-4 h-6'></div>
-            <Link href="/register">
+            <Link href="/">
             <button className='ml-4'>Proposal approved?<b><u>Approved Login</u></b></button></Link>
             </div>
         </>
