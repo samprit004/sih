@@ -12,7 +12,7 @@ const Hero = () => {
         <br /> lead the way<a className='font-bold'>...</a></p>
 
         <div className=' mt-10'>
-          <Link href="/login/invigilator" >
+          <Link href="/register" >
           <button className='flex items-center text-3xl bg-black text-white px-7 py-4 rounded-xl gap-5 font-light'><span>Initiate Now</span> 
             <FaLongArrowAltRight className='ml-2 '/> 
           </button></Link>

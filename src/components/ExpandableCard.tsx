@@ -22,7 +22,7 @@ const ExpandableCard = ({
   };
 
   return (
-    <div className="w-full max-w-3xl bg-[#E6E6E6] rounded-lg shadow-lg mb-4 transition-all">
+    <div className="w-full max-w-xl bg-[#E6E6E6] rounded-lg shadow-lg mb-4 transition-all">
       <div className="flex px-6 py-4">
         
         <div className="flex-1">
