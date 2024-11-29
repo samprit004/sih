@@ -14,7 +14,7 @@ interface DialogProps {
         <>
     
       <div className="fixed inset-0 flex ml-[500px] items-center justify-center w-1/3  ">
-        <div className="bg-white  pb-16 pt-2 pl-0 p-6 rounded-md shadow-lg border-2 border-black ">
+        <div className="bg-white  pb-16 pt-2  p-6 rounded-md shadow-lg border-2 border-black ">
         <button
               onClick={onClose}
               className="flex ml-[430px] mb-4"

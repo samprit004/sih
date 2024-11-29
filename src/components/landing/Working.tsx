@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Card from '../Card'
+import Card2 from '../card2'
 
 const Working = () => {
   return (
@@ -27,26 +28,29 @@ const Working = () => {
         imageUrl="/Card.svg"
         />
          <Image
+            className='mx-2'
             src="/Arrow 3.svg"
             alt="hero"
-            width={100}
-            height={100}
+            width={80}
+            height={0}
             />
-        <Card 
+        <Card2 
         title="Stay On Track: Manage and Report!"
         description="Maintain your project's progress through the dedicated dashboard, where you can update milestones, submit quarterly progress reports, and upload financial utilization documents as per S&T/R&D guidelines. If needed, you can also submit requests for time extensions or additional funding directly through the platform."
-        imageUrl="/Card.svg"
+        imageUrl="/Card2_2.svg"
         />
         <Image
+        className='mx-2'
             src="/Arrow 3.svg"
             alt="hero"
-            width={100}
-            height={100}
+            width={80}
+            height={0}
             />
         <Card 
+        
         title="Finish Strong: Close Your Project!"
         description="Wrap up your project by uploading the final reports, audited financial statements, and all required closure documents. Ensure all submissions are accurate and complete for a smooth review process by CMPDI. Once verified, your project will be officially closed, marking a successful completion."
-        imageUrl="/Card.svg"
+        imageUrl="/Card2_3.svg"
         />
 
 

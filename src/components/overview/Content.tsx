@@ -59,31 +59,54 @@ const Content = () => {
       cardText:
         'Development of tandem approach for Paste Fill Technology and extraction methodology.',
     },
+    {
+      description:
+        'The project focuses on developing a smart mining system to detect and analyze environmental hazards in real-time. It includes a comprehensive AI model that processes sensor data to predict potential hazards such as gas leaks, seismic events, and equipment malfunctions. The project is led by IIT Gandhinagar.',
+      location: 'Rajasthan',
+      cardText:
+        'Smart Mining System for Real-time Environmental Hazard Detection.',
+    },
+    {
+      description:
+        'This project aims to integrate renewable energy sources with existing coal plants to reduce emissions and improve efficiency. It includes the development of hybrid systems that combine solar and wind energy with coal-fired plants to optimize energy production. The project is being led by NTPC and TERI.',
+      location: 'Delhi, Uttar Pradesh',
+      cardText:
+        'Hybrid Renewable Energy Systems for Enhancing Coal Plant Efficiency.',
+    },
+    {
+      description:
+        'This initiative develops automated drones for inspecting and maintaining mining infrastructure, including tunnels, shafts, and processing plants. The drones are equipped with AI for real-time analysis and reporting, improving safety and operational efficiency. The project is being implemented by IIT Roorkee.',
+      location: 'Uttarakhand',
+      cardText:
+        'Autonomous Drone Systems for Mining Infrastructure Inspection.',
+    },
+    {
+      description:
+        'The project focuses on building a data-driven decision support system for managing mining resources and optimizing operations. It includes the development of predictive models for resource allocation, equipment scheduling, and cost analysis. The project is led by NIT Surathkal.',
+      location: 'Karnataka',
+      cardText:
+        'Data-Driven Decision Support System for Optimizing Mining Operations.',
+    },
   ];
 
   return (
-    <div className="ml-[16%] w-full">
-      <div className="mt-[84px] px-8">
-        <h1 className="text-xl font-semibold pt-4 underline">Explore Projects</h1>
-        <div className="mt-6">
+    <div className="ml-[16%] w-full mt-4  ">
+     
+        <h1 className="text-xl font-semibold pt-4 underline fixed ml-8 bg-white w-full">Explore Projects</h1>
+        <div className="px-8">
+        <div className="mt-12">
           {projects.map((project, index) => (
             <Card
               key={index}
               description={project.cardText}
-              viewDetails={() =>
-                handleViewDetails(project.description, project.location)
-              }
+              viewDetails={() => handleViewDetails(project.description, project.location)}
             />
           ))}
         </div>
       </div>
 
       {/* Dialog Component */}
-      <Dialog
-        isOpen={isDialogOpen}
-        onClose={closeDialog}
-        data={dialogData}
-      />
+      <Dialog isOpen={isDialogOpen} onClose={closeDialog} data={dialogData} />
     </div>
   );
 };

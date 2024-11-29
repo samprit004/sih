@@ -38,9 +38,9 @@ const Nav = () => {
 
         {/* Header Section - Moved to the left */}
         <div className="flex flex-col gap-1 mr-[550px]">
-          <h1 className="text-3xl font-semibold">View Projects:</h1>
+          <h1 className="text-3xl font-semibold">Your Admin Hub:</h1>
           <p className="font-medium">
-            Dive into available projects: Explore opportunities and take the next step.
+          Get a quick overview of proposals, projects, and activities in one place
           </p>
         </div>
 
@@ -51,6 +51,13 @@ const Nav = () => {
             alt="Notification Bell"
             width={20}
             height={20}
+          />
+          <div className="flex gap-4 mx-2 items-center">
+          <Image
+            src="/chat.svg"
+            alt="Chat"
+            width={30}
+            height={24}
           />
 
           <div className="relative flex items-center gap-2" ref={dropdownRef}>
@@ -90,6 +97,7 @@ const Nav = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
