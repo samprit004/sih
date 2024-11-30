@@ -45,31 +45,38 @@ const LivePreview: React.FC<LivePreviewProps> = ({ formData }) => {
   };
 
   const handleDownloadTXT = () => {
-    const content = Object.entries(formData)
-      .map(([key, value]) => `${key.replace(/([A-Z])/g, " $1")}: ${value}`)
-      .join("\n\n");
+    if (!previewRef.current) return;
 
-    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+    // Extract text content from the live preview section
+    const previewContent = previewRef.current.innerText;
+
+    const blob = new Blob([previewContent], { type: "text/plain;charset=utf-8" });
     saveAs(blob, "live-preview.txt");
   };
 
   const handleDownloadDOCX = async () => {
+    if (!previewRef.current) return;
+
+    const previewContent = previewRef.current.innerHTML;
+
     const doc = new Document({
-      sections: [ // Defining the sections property
+      sections: [
         {
-          children: Object.entries(formData).flatMap(([key, value]) => [
-            new Paragraph({
-              children: [
-                new TextRun({
-                  text: `${key.replace(/([A-Z])/g, " $1")}:`,
-                  bold: true,
-                }),
-              ],
-            }),
-            new Paragraph({
-              text: value || "N/A",
-            }),
-          ]),
+          children: Array.from(previewRef.current.querySelectorAll("div.preview-item")).flatMap(
+            (item) => [
+              new Paragraph({
+                children: [
+                  new TextRun({
+                    text: item.querySelector("h4")?.innerText || "",
+                    bold: true,
+                  }),
+                ],
+              }),
+              new Paragraph({
+                text: item.querySelector("p")?.innerText || "N/A",
+              }),
+            ]
+          ),
         },
       ],
     });
