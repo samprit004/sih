@@ -24,7 +24,11 @@ const ParentComponent = () => {
   const [progress, setProgress] = useState(0);
 
   return (
-    <div className="flex min-h-screen bg-[#3F3F3FCC] justify-center">
+    <div>
+      <div>
+      <hr className='border-t-2 border-2 border-black w-full rounded-md'/>
+      </div>
+    <div className="flex bg-[#3F3F3FCC] justify-center">
       <DetailsForm
         formData={formData}
         setFormData={setFormData}
@@ -32,6 +36,7 @@ const ParentComponent = () => {
         setProgress={setProgress}
       />
       <LivePreview formData={formData} />
+    </div>
     </div>
   );
 };

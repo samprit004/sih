@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 interface SideNavProps {
@@ -12,7 +13,7 @@ const Side_nav: React.FC<SideNavProps> = ({ isVisible, onClose }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 h-full w-[15%] bg-black text-white transform ${
+      className={`fixed top-[9%] rounded-r-2xl left-0 h-full w-[15%] bg-black text-white transform ${
         isVisible ? 'translate-x-0' : '-translate-x-full'
       } transition-transform duration-300 ease-in-out z-50`}
     >
@@ -20,9 +21,14 @@ const Side_nav: React.FC<SideNavProps> = ({ isVisible, onClose }) => {
       <div className="flex justify-end p-4">
         <button
           onClick={onClose}
-          className="text-sm bg-red-500 text-white px-2 py-1 rounded-lg"
+          className=""
         >
-          Close
+          <Image
+            src="/back.svg"
+            alt="Main Logo"
+            width={25}
+            height={20}
+          />
         </button>
       </div>
 
