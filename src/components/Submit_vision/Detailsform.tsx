@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import TextEditor from '@/components/Submit_vision/Texteditor';
 import SideNav from '@/components/Submit_vision/Side_nav'; // Import the Side_nav component
+import ProposedOutlayTable from './ProposedOutlayTable';
 
 interface FormData {
   projectTitle: string;
@@ -35,6 +36,14 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
   setProgress,
 }) => {
   const [isNavVisible, setIsNavVisible] = useState(false); // Manage Side_nav visibility
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+  
 
   useEffect(() => {
     const totalFields = 11; // Updated number of fields
@@ -89,7 +98,7 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
       </div>
 
       {/* Progress Bar */}
-      <div className="flex flex-col mt-4 mb-5">
+      <div className="flex flex-col mt-4 mb-2">
         <div className="flex justify-between items-center">
           <span className="font-bold text-md">Progress Tracker:</span>
           <span className="text-md bg-black text-white mb-1 px-2 py-1 rounded-md font-medium">
@@ -102,6 +111,49 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
             style={{ width: `${progress}%` }}
           ></div>
         </div>
+      </div>
+      <div>
+        <div className='flex justify-between'>
+          <h2 className='font-semibold'>
+          In which category would you like to proceed with your project?
+          </h2>
+          <div>
+            
+            
+          <button onClick={toggleDropdown}>
+    <div className="flex bg-[#AAA2A2] px-2 gap-1 rounded">
+      S&T
+      <Image
+        className={`transition-transform transform ${
+          isDropdownOpen ? "rotate-180" : "rotate-0"
+        }`}
+        src="/drop.svg"
+        alt="Dropdown Icon"
+        width={20}
+        height={20}
+      />
+    </div>
+  </button>
+  {isDropdownOpen && (
+    <div className="absolute right-0 w-auto bg-[#AAA2A2] px-2 py-1 gap-1 rounded shadow-md">
+      <ul className="py-1">
+        <li>
+          <a
+            href="#"
+            className="block px-2 py-1 text-sm text-black hover:text-white hover:bg-gray-700 rounded"
+          >
+            R&D
+          </a>
+        </li>
+      </ul>
+    </div>
+  )}
+
+
+            
+            </div>
+        </div>
+        
       </div>
 
       {/* Form Fields */}
@@ -140,6 +192,9 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
           </div>
         </div>
       ))}
+      <div>
+        {/* <ProposedOutlayTable/> */}
+      </div>
     </div>
   );
 };

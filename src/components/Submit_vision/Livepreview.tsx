@@ -6,6 +6,7 @@ import html2canvas from "html2canvas";
 import Image from "next/image";
 import { saveAs } from "file-saver";
 import { Document, Packer, Paragraph, TextRun } from "docx";
+import ProposedOutlayTable from "./ProposedOutlayTable";
 
 interface LivePreviewProps {
   formData: {
@@ -22,6 +23,7 @@ interface LivePreviewProps {
     timeSchedule: string;
   };
 }
+
 
 const LivePreview: React.FC<LivePreviewProps> = ({ formData }) => {
   const previewRef = useRef<HTMLDivElement>(null); // Reference for the preview container
@@ -192,6 +194,7 @@ const LivePreview: React.FC<LivePreviewProps> = ({ formData }) => {
           </div>
         </div>
       </div>
+      {/* <div><ProposedOutlayTable formData={formData} /></div> */}
     </div>
   );
 };
