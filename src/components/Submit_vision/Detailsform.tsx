@@ -6,11 +6,17 @@ import TextEditor from '@/components/Submit_vision/Texteditor';
 import SideNav from '@/components/Submit_vision/Side_nav'; // Import the Side_nav component
 
 interface FormData {
-  sampritWho: string;
-  sampritDOB: string;
-  sampritAge: string;
-  sampritFavFootballer: string;
-  sampritLove: string;
+  projectTitle: string;
+  principalAgency: string;
+  subAgency: string;
+  issueDefinition: string;
+  objectives: string;
+  justification: string;
+  projectBenefits: string;
+  workPlan: string;
+  methodology: string;
+  workOrganization: string;
+  timeSchedule: string;
 }
 
 const WORD_LIMIT = 300;
@@ -31,7 +37,7 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
   const [isNavVisible, setIsNavVisible] = useState(false); // Manage Side_nav visibility
 
   useEffect(() => {
-    const totalFields = 5;
+    const totalFields = 11; // Updated number of fields
     const completedFields = Object.values(formData).filter(
       (val) => val.trim() !== ''
     ).length;
@@ -50,9 +56,10 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
     setFormData((prevData) => ({ ...prevData, [name]: content }));
   };
 
-  const getWordCount = (text: string) => {
-    if (!text.trim()) return 0;
-    return text.trim().split(/\s+/).length;
+  const getWordCount = (text: string | undefined | null) => {
+    const trimmedText = (text || '').trim(); // Use an empty string if text is null or undefined
+    if (!trimmedText) return 0;
+    return trimmedText.split(/\s+/).length;
   };
 
   const isFormComplete = Object.values(formData).every(
@@ -99,14 +106,26 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
 
       {/* Form Fields */}
       {[
-        { label: 'Who is Samprit?', name: 'sampritWho' },
-        { label: "What is Samprit's Date of Birth?", name: 'sampritDOB' },
-        { label: 'How old is Samprit?', name: 'sampritAge' },
+        { label: '1. Project Title', name: 'projectTitle' },
         {
-          label: "Who is Samprit's Favorite Footballer?",
-          name: 'sampritFavFootballer',
+          label: '2. Name and Address of Principal Implementing Agency(s) and Investigator(s)',
+          name: 'principalAgency',
         },
-        { label: 'What does Samprit Love?', name: 'sampritLove' },
+        {
+          label: '3. Name and Address of Sub-Implementing Agency(s) and Co-Investigator(s)',
+          name: 'subAgency',
+        },
+        { label: '4. Definition of the Issue', name: 'issueDefinition' },
+        { label: '5. Objectives', name: 'objectives' },
+        { label: '6. Justification for Subject Area', name: 'justification' },
+        {
+          label: '7.How the Project is Beneficial to Coal Industry',
+          name: 'projectBenefits',
+        },
+        { label: '8. Work Plan', name: 'workPlan' },
+        { label: '8.1. Methodology', name: 'methodology' },
+        { label: '8.2. Organization of Work Elements', name: 'workOrganization' },
+        { label: '8.3. Time Schedule of Activities Giving Milestones', name: 'timeSchedule' },
       ].map(({ label, name }) => (
         <div className="question-card" key={name}>
           <label className="mb-1 block text-md font-semibold">{label}</label>
@@ -115,7 +134,8 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
               handleEditorChange(name, content)
             }
           />
-          <div className="text-right text-sm text-gray-600 mt-1">
+          <div className="text-right text-sm text-gray-600 mt-1 flex justify-between mb-2">
+            <span>Recruiter tip: write 300 words to increase interview chances</span>
             {getWordCount(formData[name as keyof FormData])}/{WORD_LIMIT}
           </div>
         </div>

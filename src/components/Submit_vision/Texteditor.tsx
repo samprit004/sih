@@ -11,6 +11,7 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
   const editorRef = useRef<HTMLDivElement>(null);
   const [content, setContent] = useState("");
 
+  // Function to apply commands like bold, italic, underline
   const applyCommand = (command: string, value?: string) => {
     if (editorRef.current) {
       const selection = window.getSelection();
@@ -33,27 +34,42 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
     }
   };
 
+  // Bullet list function (Correcting the approach)
   const handleBulletList = () => {
-  if (editorRef.current) {
-    // Check if the browser supports execCommand (fallback for older browsers)
-    if (document.queryCommandSupported && document.queryCommandSupported("insertUnorderedList")) {
-      document.execCommand("insertUnorderedList");
-    } else {
-      console.warn("insertUnorderedList is not supported in this browser.");
+    if (editorRef.current) {
+      const selection = window.getSelection();
+      if (selection && selection.rangeCount > 0) {
+        const range = selection.getRangeAt(0);
+        const selectedText = selection.toString().trim();
+
+        // Check if the selection is non-empty
+        if (selectedText.length > 0) {
+          // Create a bullet list with the selected text
+          const listHTML = `<ul><li>${selectedText.replace(/\n/g, "</li><li>")}</li></ul>`;
+          const newContent = editorRef.current.innerHTML.replace(
+            selectedText,
+            listHTML
+          );
+          editorRef.current.innerHTML = newContent;
+          setContent(newContent);
+          if (onContentChange) {
+            onContentChange(newContent);
+          }
+        } else {
+          // If no text is selected, create a new bullet list
+          const currentContent = editorRef.current.innerHTML;
+          const newContent = `${currentContent}<ul></ul>`;
+          editorRef.current.innerHTML = newContent;
+          setContent(newContent);
+          if (onContentChange) {
+            onContentChange(newContent);
+          }
+        }
+      }
     }
+  };
 
-    // Update React state with the new content
-    const updatedContent = editorRef.current.innerHTML;
-    setContent(updatedContent);
-
-    // Trigger the onContentChange callback, if provided
-    if (onContentChange) {
-      onContentChange(updatedContent);
-    }
-  }
-};
-
-
+  // Handle input and update content state
   const handleInput = () => {
     if (editorRef.current) {
       const updatedContent = editorRef.current.innerHTML;
@@ -65,7 +81,7 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
   };
 
   return (
-    <div className=" border border-black rounded-md">
+    <div className="border border-black rounded-md">
       {/* Toolbar */}
       <div className="flex items-center justify-between bg-[#AAA2A2A3] px-2 py-1 border-b border-black rounded-sm">
         {/* Formatting Buttons */}
@@ -97,8 +113,9 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
         </div>
 
         {/* Get Help Button */}
-        <button className="text-sm text-white px-3 py-1 bg-black rounded-sm hover:bg-gray-400">
+        <button className="text-sm text-white px-3 py-1 bg-black rounded-sm hover:bg-gray-400 flex gap-3">
           Get help with writing
+          <Image src="/plus.svg" alt="Bullet List" width={20} height={20} />
         </button>
       </div>
 
