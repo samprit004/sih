@@ -1,6 +1,8 @@
-'use client';
+// 'use client';
 
-import React, { useState } from 'react';
+import { getSession } from '@/app/lib';
+import { redirect } from 'next/navigation';
+// import React, { useState } from 'react';
 const Header = () => {
     return(
         <div className='w-[737px] ml-96 mt-6'>

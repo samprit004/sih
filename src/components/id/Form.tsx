@@ -1,8 +1,18 @@
 'use client';
 import React, { useState } from "react";
 import Image from "next/image";
-
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+function getCookie(name: string) {
+  let cookies = document.cookie.split("; ");
+  for (let cookie of cookies) {
+      let [key, value] = cookie.split("=");
+      if (key === name) return value;
+  }
+  return null;
+}
 const CustomForm = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     governmentId: "",
     projectId: "",
@@ -13,9 +23,36 @@ const CustomForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form Data:", formData);
+    const jsbody = {
+      id: getCookie('margsathi_id'),
+      Auth_token: getCookie('Auth_token'),
+      aadhar_no: formData.governmentId,
+      pi_id: formData.projectId,
+    }
+    try {
+      const response = await fetch('/api/upload_id', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsbody),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        // add cookies in client-side @samprit
+        alert('id submitted successfully! '+data.message);
+        router.push('/invigilator/verification_progress');
+      } else {
+        alert('User Not Found');
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -61,6 +98,7 @@ const CustomForm = () => {
 
         
         <div className="flex justify-center mt-10 gap-8">
+          <Link href="/">
                 <button className="flex gap-3 items-center bg-[#D2D6E1] px-4  rounded-lg border-2 border-black">
                 <Image
                     className=""
@@ -70,9 +108,9 @@ const CustomForm = () => {
                     height={0}
                     />
                     <span className="font-semibold text-lg">Back</span>
-                </button>
+                </button></Link>
 
-                <button className="flex gap-5 items-center bg-[#1E1E1E] px-12 py-1 rounded-lg border-2 border-[#1E1E1E]">
+                <button className="flex gap-5 items-center bg-[#1E1E1E] px-12 py-1 rounded-lg border-2 border-[#1E1E1E]" onClick={handleSubmit}>
                 <span className="font-semibold text-lg text-white">Submit</span>
                 <Image
                     className=""

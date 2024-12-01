@@ -2,10 +2,20 @@
 import Link from "next/link";
 import Image from 'next/image';
 import  { useState } from "react";
-import { cookies } from "next/headers";
+import { useRouter } from "next/navigation";
 
 
 const Form = () => {
+  
+  const router = useRouter();
+  function getCookie(name: string) {
+    let cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        let [key, value] = cookie.split("=");
+        if (key === name) return value;
+    }
+    return null;
+  }
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -23,11 +33,16 @@ const Form = () => {
         e.preventDefault();
         // Handle form submission logic here
         console.log("Form submitted:", formData);
+        const auth = getCookie('Auth_token');
+        if(auth == null){
+          alert("Auth_token not found");
+          return;
+        }
         try {
           const jsbody = {
             username: formData.username,
             password: formData.password,
-            type: "PI",
+            Auth_token: auth,
           }
           const response = await fetch('/api/login', {
             method: 'POST',
@@ -39,9 +54,10 @@ const Form = () => {
     
           if (response.ok) {
             const data = await response.json();
-            console.log(data)
+            console.log(data);
             // add cookies in client-side @samprit
             alert('Form submitted successfully!');
+            router.push("/invigilator/overview");
           } else {
             alert('User Not Found');
           }

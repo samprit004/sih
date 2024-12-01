@@ -1,11 +1,19 @@
-'use client';
+"use client"
 import Link from "next/link";
 import Image from 'next/image';
 import  { useState } from "react";
-
+import { useRouter } from "next/navigation";
 
 const Form = () => {
-  
+  const router = useRouter();
+  function getCookie(name: string) {
+    let cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        let [key, value] = cookie.split("=");
+        if (key === name) return value;
+    }
+    return null;
+  }
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -23,11 +31,16 @@ const Form = () => {
         e.preventDefault();
         // Handle form submission logic here
         console.log("Form submitted:", formData);
+        const auth = getCookie('Admin_Auth_token');
+        if(auth == null){
+          alert("Auth_token not found");
+          return;
+        }
         try {
           const jsbody = {
             username: formData.username,
             password: formData.password,
-            type: "Admin",
+            Auth_token: auth,
           }
           const response = await fetch('/api/login', {
             method: 'POST',
@@ -42,6 +55,7 @@ const Form = () => {
             console.log(data)
             // add cookies in client-side @samprit
             alert('Form submitted successfully!');
+            router.push("/Admin_console/Proposal_tracker")
           } else {
             alert('User Not Found');
           }
