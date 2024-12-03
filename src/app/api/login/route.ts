@@ -18,6 +18,7 @@ async function search_user(username: string, password: string, token: string){
 export async function POST(req: Request) {
   const { username, password, Auth_token } = await req.json();
   const user = await search_user(username, password, Auth_token);
+  console.log(user)
   if(user.length > 0){
     const jsbody = {
       id: user[0].id,

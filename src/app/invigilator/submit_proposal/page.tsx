@@ -4,7 +4,7 @@ import Nav from "@/components/submit_proposal/nav";
 import { getSession } from "@/app/lib";
 import { redirect } from "next/navigation";
 
-export default function DraftProposal(){
+export default async function DraftProposal(){
   "use server";
   const session = getSession();
   if(!session){

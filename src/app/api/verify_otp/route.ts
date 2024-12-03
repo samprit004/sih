@@ -13,8 +13,12 @@ export async function POST(req: Request){
   const record = await pb.collection('CMPDI_users').getOne(id, {
     expand: 'Auth_token,Auth_exp',
   });
+  if(otp!==record.OTP){
+    return new ForbiddenError(JSON.stringify({message: "Invalid OTP"}));
+  }
+  await pb.collection('CMPDI_users').update(id, {verify_status: "PI docs pending"});
   const jsbody = {
-    message: "Hi there!",
+    message: "Done!",
     id: id,
     Auth_token: record.Auth_token,
     Auth_exp: record.Auth_exp,
