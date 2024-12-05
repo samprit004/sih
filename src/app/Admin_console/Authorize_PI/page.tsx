@@ -3,12 +3,18 @@ import Side_nav from "@/components/admin_console/authorize_PI/side_nav";
 import Nav from "@/components/admin_console/authorize_PI/nav";
 import Table from "@/components/admin_console/authorize_PI/table";
 import PocketBase from 'pocketbase';
+import { getSession } from "@/app/lib";
+import { redirect } from "next/navigation";
 const pb = new PocketBase('http://127.0.0.1:8090');
 
-interface piData{ piId: string; piName: string;
+interface piData{ id: string,piId: string; piName: string;
   contactNumber: number; email: string;
-  adharNumber: number; password: string; };
+  adharNumber: number; };
 export default async function Upcoming(){
+  const session = getSession();
+  if(!session){
+    redirect('/');
+  }
   const records = await pb.collection('PI_records').getFullList({
     expand: 'CMPDI_id',
     filter: '(CMPDI_id.verify_status="Verification pending")',
@@ -16,15 +22,14 @@ export default async function Upcoming(){
   let rec_list: piData[]= [];
   records.forEach(e => {
     rec_list.push({
+      id: e.id,
       piId: e.PI_id,
       piName: e.username,
       contactNumber: e.phone_no,
       email: e.expand?.CMPDI_id.user_email,
       adharNumber: e.aadhar_no,
-      password: e.expand?.CMPDI_id.password,
     }) 
   });
-  console.log(rec_list)
     return (
       <>
        <Nav />

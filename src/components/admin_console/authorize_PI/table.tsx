@@ -1,14 +1,15 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Table = ({ piData }:{piData:{
+      id: string,
       piId: string,
       piName: string,
       contactNumber: number,
       email: string,
       adharNumber: number,
-      password: string,
     }}) => {
   // Table data stored as an array of objects
 
@@ -17,6 +18,7 @@ const Table = ({ piData }:{piData:{
     username: "null",
     password: "null",
   });
+  const router = useRouter();
 
   // State to enable the "Generate Credentials" and "Send" buttons
   const [isVerified, setIsVerified] = useState(false);
@@ -37,8 +39,9 @@ const Table = ({ piData }:{piData:{
   };
 
   // Handlers
-  const handleVerifyPI = () => {
+  const handleVerifyPI = async () => {
     setIsVerified(true);
+        
     setVerificationMessage("PI Verified Successfully!");
   };
 
@@ -46,7 +49,7 @@ const Table = ({ piData }:{piData:{
     if (isVerified && !isGenerated) {
       setCredentials({
         username: piData.email, // Use email from the PI table
-        password: piData.password, // Generate an 8-character random password
+        password: generateRandomString(8), // Generate an 8-character random password
       });
       setIsGenerated(true); // Mark credentials as generated
     }
@@ -60,8 +63,33 @@ const Table = ({ piData }:{piData:{
     setVerificationMessage("");
   };
 
-  const handleSend = () => {
-    alert("Credentials sent successfully!");
+  const handleSend = async () => {
+    try {
+      const jsbody = {
+        id: piData.id,
+        username: credentials.username,
+        password: credentials.password,
+      }
+      const response = await fetch('/api/PI_verfication', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsbody),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        // add cookies in client-side @samprit
+        alert('Credentials sent successfully!');
+        router.refresh();
+      } else {
+        alert('User Not Found');
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
