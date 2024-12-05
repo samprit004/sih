@@ -19,7 +19,7 @@ interface FormData {
   timeSchedule: string;
 }
 
-const ParentComponent = () => {
+const Form = () => {
   const [formData, setFormData] = useState<FormData>({
     projectTitle: "",
     principalAgency: "",
@@ -57,4 +57,4 @@ const ParentComponent = () => {
   );
 };
 
-export default ParentComponent;
+export default Form;
