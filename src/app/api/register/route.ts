@@ -68,7 +68,11 @@ export async function POST(req: Request) {
     return new Response(JSON.stringify({ 'message': "This Email has been Used" }), { status: 403 });
   } else if (search_result.length === 1) {
     const userEmail = search_result[0].user_email;
-    const otp = search_result[0].OTP; // Assuming this is already generated and stored
+    const data={
+      OTP: generateNumericOTP(6),
+    }
+    const user = await pb.collection('CMPDI_users').update(search_result[0].id,data);
+    const otp = user.OTP; // Assuming this is already generated and stored
 
     if (!userEmail || !otp) {
       return new Response(JSON.stringify({ 'message': "Missing email or OTP in the database" }), { status: 500 });
