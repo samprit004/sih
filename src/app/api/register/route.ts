@@ -46,6 +46,7 @@ export async function POST(req: Request) {
   if(search_result.length > 1){
     return new ForbiddenError(JSON.stringify({'message':"This Email has been Used"}));
   }else if(search_result.length == 1){
+    console.log(search_result[0].OTP)
     return new Response(JSON.stringify({
       'message':"User already there",
       'id': search_result[0].id,
