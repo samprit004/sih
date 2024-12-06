@@ -48,6 +48,13 @@ async function sendOTP(email: string, otp: number) {
   }
 }
 
+// Function to generate a numeric OTP
+function generateNumericOTP(length: number = 6): number {
+  const min = Math.pow(10, length - 1); // Minimum value with the given length
+  const max = Math.pow(10, length) - 1; // Maximum value with the given length
+  return Math.floor(Math.random() * (max - min + 1)) + min; // Random number in the range
+}
+
 /**
  * 
  * @param req - first_name, last_name, email, phone
@@ -83,8 +90,8 @@ export async function POST(req: Request) {
     const OTP_expDate = new Date(currentDate);
     OTP_expDate.setMinutes(currentDate.getMinutes() + 5);
 
-    // Generate a new 6-digit random OTP
-    const otp = Math.floor(100000 + Math.random() * 900000);
+    // Generate a new 6-digit random OTP (numeric only)
+    const otp = generateNumericOTP(6);
 
     const data = {
       "user_email": email,
