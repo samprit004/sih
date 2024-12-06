@@ -76,7 +76,7 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
   );
 
   return (
-    <div className="w-[60%] max-h-screen overflow-y-auto bg-white p-8 relative">
+    <div className="w-[50%] max-h-screen overflow-y-auto bg-white p-8 relative">
       {/* Side Navigation */}
       <SideNav isVisible={isNavVisible} onClose={() => setIsNavVisible(false)} />
 
