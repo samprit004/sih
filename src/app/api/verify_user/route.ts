@@ -53,8 +53,9 @@ export async function POST(req: Request) {
 
     // Check if a record exists in gov_list
     const records = await pb.collection('gov_list').getFullList({
-        filter: `(PI_id = '${PI_id}' && aadhar = ${aadhar})`
+        filter: `(PI_id = '${PI_id}' && aadhar = '${aadhar}')`
       });
+      
       
 
     if (records.length === 0) {
