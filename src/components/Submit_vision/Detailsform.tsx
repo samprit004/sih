@@ -193,7 +193,7 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
         </div>
       ))}
       <div>
-        {/* <ProposedOutlayTable/> */}
+        <ProposedOutlayTable/>
       </div>
     </div>
   );
