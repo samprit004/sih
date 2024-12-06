@@ -89,7 +89,7 @@ const LivePreview: React.FC<LivePreviewProps> = ({ formData }) => {
   };
 
   return (
-    <div className="w-[40%] p-7 bg-[#3F3F3FCC]">
+    <div className="w-[50%] p-7 bg-[#3F3F3FCC]">
       {/* Download Button */}
       <div className="flex justify-end gap-4 relative">
         <button
