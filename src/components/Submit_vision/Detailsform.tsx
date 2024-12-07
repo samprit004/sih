@@ -67,11 +67,12 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
   };
 
   const getWordCount = (text: string | undefined | null) => {
-    const trimmedText = (text || '').trim();
-    if (!trimmedText) return 0;
-    return trimmedText.split(/\s+/).length;
+    // Ensure the input is a string
+    const plainText = (text || '').replace(/<[^>]*>/g, '').trim(); // Remove HTML tags like <br>
+    if (!plainText) return 0; // Return 0 if empty after trimming
+    return plainText.split(/\s+/).length; // Split by whitespace to count words
   };
-
+  
   useEffect(() => {
     const totalFields = 11;
     const completedFields = Object.values(formData).filter(
@@ -81,21 +82,26 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
     setProgress(progressValue);
   }, [formData]);
 
-  const handleDownloadPDF = async () => {
+  const handleDownloadPDF = () => {
     if (!previewRef.current) return;
-
+  
     const previewElement = previewRef.current;
-    const canvas = await html2canvas(previewElement, { scale: 2 });
-    const imgData = canvas.toDataURL('image/png');
-
+    const textContent = previewElement.innerText; // Extract text content from the element
+  
     const pdf = new jsPDF('p', 'mm', 'a4');
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('live-preview.pdf');
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const margin = 10; // Margin from the edges
+    const contentWidth = pageWidth - margin * 2;
+  
+    // Split the text into lines that fit within the PDF width
+    const lines = pdf.splitTextToSize(textContent, contentWidth);
+  
+    // Add the lines to the PDF, starting with a margin at the top
+    pdf.text(lines, margin, margin);
+  
+    pdf.save('text-content.pdf');
   };
-
+  
   const handleDownloadTXT = () => {
     if (!previewRef.current) return;
 
@@ -205,8 +211,8 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
       </div>
 
       {/* <div className="flex space-x-4"> */}
-        
-          <div className="space-y-4">
+                  
+         <div className="space-y-4">
             {[
               { label: 'Project Title', name: 'projectTitle' },
               { label: 'Principal Agency', name: 'principalAgency' },
@@ -223,17 +229,16 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
               <div className="question-card" key={name}>
                 <label className="mb-1 block text-md font-semibold">{label}</label>
                 <TextEditor
-                  onContentChange={(content: string) =>
-                    handleEditorChange(name, content)
-                  }
+                  onContentChange={(content: string) => handleEditorChange(name, content)}
                 />
                 <div className="text-right text-sm text-gray-600 mt-1 flex justify-between mb-2">
                   <span>Recruiter tip: write 300 words to increase interview chances</span>
-                  {getWordCount(formData[name as keyof FormData])}/{WORD_LIMIT}
+                  {getWordCount(formData[name as keyof FormData] || '')}/{WORD_LIMIT}
                 </div>
               </div>
             ))}
           </div>
+
 
           <div>
             <h1 className='text-md font-medium mt-4 mb-2'>9. Details of proposed outlay</h1>
