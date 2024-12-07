@@ -1,10 +1,15 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import TextEditor from '@/components/Submit_vision/Texteditor';
-import SideNav from '@/components/Submit_vision/Side_nav'; // Import the Side_nav component
+import DisplayBox from './Displaybox';
 import ProposedOutlayTable from './ProposedOutlayTable';
+import SideNav from '@/components/Submit_vision/Side_nav'; // Import the Side_nav component
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+import { saveAs } from "file-saver";
+import { Document, Packer, Paragraph, TextRun } from "docx";
 
 interface FormData {
   projectTitle: string;
@@ -36,23 +41,19 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
   setProgress,
 }) => {
   const [isNavVisible, setIsNavVisible] = useState(false); // Manage Side_nav visibility
-
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDownloadDropdownVisible, setIsDownloadDropdownVisible] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const previewRef = useRef<HTMLDivElement>(null);
+  const [tableData, setTableData] = useState<{ [key: string]: string }>({});
+
+  const handleInputChange = (key: string, value: string) => {
+    setTableData((prev) => ({ ...prev, [key]: value }));
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-  
-
-  useEffect(() => {
-    const totalFields = 11; // Updated number of fields
-    const completedFields = Object.values(formData).filter(
-      (val) => val.trim() !== ''
-    ).length;
-    const progressValue = (completedFields / totalFields) * 100;
-    setProgress(progressValue);
-  }, [formData]);
 
   const handleEditorChange = (name: string, content: string) => {
     const wordCount = getWordCount(content);
@@ -66,38 +67,93 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
   };
 
   const getWordCount = (text: string | undefined | null) => {
-    const trimmedText = (text || '').trim(); // Use an empty string if text is null or undefined
+    const trimmedText = (text || '').trim();
     if (!trimmedText) return 0;
     return trimmedText.split(/\s+/).length;
   };
 
-  const isFormComplete = Object.values(formData).every(
-    (val) => val.trim() !== ''
-  );
+  useEffect(() => {
+    const totalFields = 11;
+    const completedFields = Object.values(formData).filter(
+      (val) => val.trim() !== ''
+    ).length;
+    const progressValue = (completedFields / totalFields) * 100;
+    setProgress(progressValue);
+  }, [formData]);
+
+  const handleDownloadPDF = async () => {
+    if (!previewRef.current) return;
+
+    const previewElement = previewRef.current;
+    const canvas = await html2canvas(previewElement, { scale: 2 });
+    const imgData = canvas.toDataURL('image/png');
+
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+    pdf.save('live-preview.pdf');
+  };
+
+  const handleDownloadTXT = () => {
+    if (!previewRef.current) return;
+
+    const previewContent = previewRef.current.innerText;
+    const blob = new Blob([previewContent], { type: 'text/plain;charset=utf-8' });
+    saveAs(blob, 'live-preview.txt');
+  };
+
+  const handleDownloadDOCX = async () => {
+    if (!previewRef.current) return;
+
+    const doc = new Document({
+      sections: [
+        {
+          children: Array.from(previewRef.current.querySelectorAll('div.preview-item')).flatMap(
+            (item) => [
+              new Paragraph({
+                children: [
+                  new TextRun({
+                    text: item.querySelector('h4')?.innerText || '',
+                    bold: true,
+                  }),
+                ],
+              }),
+              new Paragraph({
+                text: item.querySelector('p')?.innerText || 'N/A',
+              }),
+            ]
+          ),
+        },
+      ],
+    });
+
+    const blob = await Packer.toBlob(doc);
+    saveAs(blob, 'live-preview.docx');
+  };
 
   return (
-    <div className="w-[60%] max-h-screen overflow-y-auto bg-white p-8 relative">
-      {/* Side Navigation */}
+
+    <div className="w-full flex gap-4 max-h-screen bg-white px-3 relative">
+      <div className="w-1/2 flex overflow-y-auto flex-col ">
       <SideNav isVisible={isNavVisible} onClose={() => setIsNavVisible(false)} />
 
-      {/* Top Buttons */}
       <div className="flex justify-between">
         <button onClick={() => setIsNavVisible(true)}>
-          {/* Show Side_nav */}
           <Image src="/menu.svg" alt="Menu Icon" width={40} height={120} />
         </button>
 
         <button
-          disabled={!isFormComplete}
+          disabled={!Object.values(formData).every((val) => val.trim() !== '')}
           className={`mt-4 px-14 py-3 text-white ${
-            isFormComplete ? 'bg-black' : 'bg-gray-300 cursor-not-allowed'
+            Object.values(formData).every((val) => val.trim() !== '') ? 'bg-black' : 'bg-gray-300 cursor-not-allowed'
           } rounded-lg shadow-md`}
         >
           Submit
         </button>
       </div>
 
-      {/* Progress Bar */}
       <div className="flex flex-col mt-4 mb-2">
         <div className="flex justify-between items-center">
           <span className="font-bold text-md">Progress Tracker:</span>
@@ -112,89 +168,143 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
           ></div>
         </div>
       </div>
-      <div>
-        <div className='flex justify-between'>
-          <h2 className='font-semibold'>
+
+      <div className="flex justify-between">
+        <h2 className="font-semibold">
           In which category would you like to proceed with your project?
-          </h2>
-          <div>
-            
-            
-          <button onClick={toggleDropdown}>
-    <div className="flex bg-[#AAA2A2] px-2 gap-1 rounded">
-      S&T
-      <Image
-        className={`transition-transform transform ${
-          isDropdownOpen ? "rotate-180" : "rotate-0"
-        }`}
-        src="/drop.svg"
-        alt="Dropdown Icon"
-        width={20}
-        height={20}
-      />
-    </div>
-  </button>
-  {isDropdownOpen && (
-    <div className="absolute right-0 w-auto bg-[#AAA2A2] px-2 py-1 gap-1 rounded shadow-md">
-      <ul className="py-1">
-        <li>
-          <a
-            href="#"
-            className="block px-2 py-1 text-sm text-black hover:text-white hover:bg-gray-700 rounded"
-          >
-            R&D
-          </a>
-        </li>
-      </ul>
-    </div>
-  )}
+        </h2>
+        <button onClick={toggleDropdown} className="relative">
+  <div className="flex bg-[#AAA2A2] px-2 gap-1 rounded">
+    S&T
+    <Image
+      className={`transition-transform transform ${
+        isDropdownOpen ? 'rotate-180' : 'rotate-0'
+      }`}
+      src="/drop.svg"
+      alt="Dropdown Icon"
+      width={20}
+      height={20}
+    />
+  </div>
+</button>
+{isDropdownOpen && (
+  <div className="absolute left-0 w-auto bg-[#AAA2A2] px-2 py-1 gap-1 rounded shadow-md">
+    <ul className="py-1">
+      <li>
+        <a
+          href="#"
+          className="block px-2 py-1 text-sm text-black hover:text-white hover:bg-gray-700 rounded"
+        >
+          R&D
+        </a>
+      </li>
+    </ul>
+  </div>
+)}
 
-
-            
-            </div>
-        </div>
-        
       </div>
 
-      {/* Form Fields */}
-      {[
-        { label: '1. Project Title', name: 'projectTitle' },
-        {
-          label: '2. Name and Address of Principal Implementing Agency(s) and Investigator(s)',
-          name: 'principalAgency',
-        },
-        {
-          label: '3. Name and Address of Sub-Implementing Agency(s) and Co-Investigator(s)',
-          name: 'subAgency',
-        },
-        { label: '4. Definition of the Issue', name: 'issueDefinition' },
-        { label: '5. Objectives', name: 'objectives' },
-        { label: '6. Justification for Subject Area', name: 'justification' },
-        {
-          label: '7.How the Project is Beneficial to Coal Industry',
-          name: 'projectBenefits',
-        },
-        { label: '8. Work Plan', name: 'workPlan' },
-        { label: '8.1. Methodology', name: 'methodology' },
-        { label: '8.2. Organization of Work Elements', name: 'workOrganization' },
-        { label: '8.3. Time Schedule of Activities Giving Milestones', name: 'timeSchedule' },
-      ].map(({ label, name }) => (
-        <div className="question-card" key={name}>
-          <label className="mb-1 block text-md font-semibold">{label}</label>
-          <TextEditor
-            onContentChange={(content: string) =>
-              handleEditorChange(name, content)
-            }
-          />
-          <div className="text-right text-sm text-gray-600 mt-1 flex justify-between mb-2">
-            <span>Recruiter tip: write 300 words to increase interview chances</span>
-            {getWordCount(formData[name as keyof FormData])}/{WORD_LIMIT}
+      {/* <div className="flex space-x-4"> */}
+        
+          <div className="space-y-4">
+            {[
+              { label: 'Project Title', name: 'projectTitle' },
+              { label: 'Principal Agency', name: 'principalAgency' },
+              { label: 'Sub Agency', name: 'subAgency' },
+              { label: 'Issue Definition', name: 'issueDefinition' },
+              { label: 'Objectives', name: 'objectives' },
+              { label: 'Justification', name: 'justification' },
+              { label: 'Project Benefits', name: 'projectBenefits' },
+              { label: 'Work Plan', name: 'workPlan' },
+              { label: 'Methodology', name: 'methodology' },
+              { label: 'Work Organization', name: 'workOrganization' },
+              { label: 'Time Schedule', name: 'timeSchedule' },
+            ].map(({ label, name }) => (
+              <div className="question-card" key={name}>
+                <label className="mb-1 block text-md font-semibold">{label}</label>
+                <TextEditor
+                  onContentChange={(content: string) =>
+                    handleEditorChange(name, content)
+                  }
+                />
+                <div className="text-right text-sm text-gray-600 mt-1 flex justify-between mb-2">
+                  <span>Recruiter tip: write 300 words to increase interview chances</span>
+                  {getWordCount(formData[name as keyof FormData])}/{WORD_LIMIT}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <h1 className='text-md font-medium mt-4 mb-2'>9. Details of proposed outlay</h1>
+            <ProposedOutlayTable tableData={tableData} onInputChange={handleInputChange} />
+            {/* <DisplayBox tableData={tableData} /> */}
           </div>
         </div>
-      ))}
-      <div>
-        {/* <ProposedOutlayTable/> */}
-      </div>
+
+        <div className="w-1/2 p-6 bg-[#3F3F3FCC]">
+          <div className="flex justify-end gap-4 relative">
+            <button
+              className="px-4 py-2 text-white rounded-lg bg-black mb-2"
+              onClick={handleDownloadPDF}
+            >
+              Download
+            </button>
+            <button
+              className="relative"
+              onClick={() => setIsDownloadDropdownVisible(!isDownloadDropdownVisible)}
+            >
+              <Image src="/3dots.svg" alt="Options" width={40} height={0} />
+            </button>
+            {isDownloadDropdownVisible && (
+              <div className="absolute right-0 top-12 bg-white shadow-md border rounded-lg z-50">
+                <button
+                  className="block px-4 py-2 text-left hover:bg-gray-100 w-full"
+                  onClick={() => {
+                    handleDownloadTXT();
+                    setIsDownloadDropdownVisible(false);
+                  }}
+                >
+                  Download as .txt
+                </button>
+                <button
+                  className="block px-4 py-2 text-left hover:bg-gray-100 w-full"
+                  onClick={() => {
+                    handleDownloadDOCX();
+                    setIsDownloadDropdownVisible(false);
+                  }}
+                >
+                  Download as .docx
+                </button>
+              </div>
+            )}
+          </div>
+
+          <div
+            ref={previewRef}
+            className="bg-white p-8 h-[87vh] overflow-y-auto"
+            style={{
+              overflowX: 'hidden',
+              wordWrap: 'break-word',
+              whiteSpace: 'pre-wrap',
+            }}
+          >
+            <h2 className="text-lg font-semibold text-center mb-8">PROJECT PROPOSAL FOR <a className='font-bold'>S&T</a> GRANT OF MOC</h2>
+            <div className="space-y-6">
+              {Object.entries(formData).map(([key, value]) => (
+                <div key={key} className="preview-item">
+                  <h4 className="font-bold text-md mb-2">{key.replace(/([a-z])([A-Z])/g, '$1 $2')}</h4>
+                  <p>{value}</p>
+                </div>
+              ))}
+            </div>
+            <div>
+            <DisplayBox tableData={tableData} />
+            </div>
+          </div>
+        </div>
+
+      {/* </div> */}
     </div>
   );
 };

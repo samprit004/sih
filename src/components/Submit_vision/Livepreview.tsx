@@ -6,7 +6,9 @@ import html2canvas from "html2canvas";
 import Image from "next/image";
 import { saveAs } from "file-saver";
 import { Document, Packer, Paragraph, TextRun } from "docx";
+import DisplayBox from "./Displaybox";
 import ProposedOutlayTable from "./ProposedOutlayTable";
+
 
 interface LivePreviewProps {
   formData: {
@@ -24,11 +26,17 @@ interface LivePreviewProps {
   };
 }
 
-
 const LivePreview: React.FC<LivePreviewProps> = ({ formData }) => {
   const previewRef = useRef<HTMLDivElement>(null); // Reference for the preview container
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  
+  const [tableData, setTableData] = useState<{ [key: string]: string }>({});
 
+  const handleInputChange = (key: string, value: string) => {
+    setTableData((prev) => ({ ...prev, [key]: value }));
+  };
+
+  
   const handleDownloadPDF = async () => {
     if (!previewRef.current) return;
 
@@ -88,8 +96,10 @@ const LivePreview: React.FC<LivePreviewProps> = ({ formData }) => {
     saveAs(blob, "live-preview.docx");
   };
 
+    
+
   return (
-    <div className="w-[40%] p-7 bg-[#3F3F3FCC]">
+    <div className="w-[50%] p-7 bg-[#3F3F3FCC]">
       {/* Download Button */}
       <div className="flex justify-end gap-4 relative">
         <button
@@ -148,13 +158,13 @@ const LivePreview: React.FC<LivePreviewProps> = ({ formData }) => {
           </div>
           <div className="preview-item">
             <h4 className="text-sm font-semibold">
-             2. Name and Address of Principal Implementing Agency(s)
+              2. Name and Address of Principal Implementing Agency(s)
             </h4>
             <p dangerouslySetInnerHTML={{ __html: formData.principalAgency }} />
           </div>
           <div className="preview-item">
             <h4 className="text-sm font-semibold">
-             3. Name and Address of Sub-Implementing Agency(s)
+              3. Name and Address of Sub-Implementing Agency(s)
             </h4>
             <p dangerouslySetInnerHTML={{ __html: formData.subAgency }} />
           </div>
@@ -193,8 +203,11 @@ const LivePreview: React.FC<LivePreviewProps> = ({ formData }) => {
             <p dangerouslySetInnerHTML={{ __html: formData.timeSchedule }} />
           </div>
         </div>
+        
+        {/* Pass the tableData and handleTableInputChange to Table2 */}
+        <ProposedOutlayTable tableData={tableData} onInputChange={handleInputChange} />
+        <DisplayBox tableData={tableData} /> 
       </div>
-      {/* <div><ProposedOutlayTable formData={formData} /></div> */}
     </div>
   );
 };

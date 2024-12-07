@@ -1,6 +1,6 @@
 import Logo from "@/components/logo";
-import Footer from "@/components/verification/footer";
-import Header from "@/components/verification/header";
+import Footer from "@/components/verification_failed/footer";
+import Header from "@/components/verification_failed/header";
 export default function VerificationProgress() {
     return (
         

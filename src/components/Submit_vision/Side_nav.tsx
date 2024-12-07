@@ -13,7 +13,7 @@ const Side_nav: React.FC<SideNavProps> = ({ isVisible, onClose }) => {
 
   return (
     <div
-      className={`fixed top-[9%] rounded-r-2xl left-0 h-full w-[15%] bg-black text-white transform ${
+      className={`fixed top-0 rounded-r-2xl left-0 h-full w-[15%] bg-black text-white transform ${
         isVisible ? 'translate-x-0' : '-translate-x-full'
       } transition-transform duration-300 ease-in-out z-50`}
     >

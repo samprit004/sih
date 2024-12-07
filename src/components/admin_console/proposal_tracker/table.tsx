@@ -1,12 +1,13 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import Dialog from "./dialog";
+
 
 interface TableRow {
   projectId: string;
   piName: string;
   response: string;
   proposalStatus: string;
+  meetingTimeSlot: string;
 }
 
 const Table = () => {
@@ -44,8 +45,8 @@ const Table = () => {
 
   return (
     <div className="ml-48">
-      <div className="mt-32 px-8 w-full">
-        <h1 className="text-2xl font-semibold ml-24 underline">Proposal Overview</h1>
+      <div className="mt-12 px-8 w-full">
+        <h1 className="text-2xl font-semibold ml-24 underline">Project Oversight</h1>
       </div>
       <table className="w-[1200px] ml-32 border-4 border-black mt-2 mx-8 content-center">
         <thead>
@@ -53,8 +54,9 @@ const Table = () => {
             <th className="border-4 border-black px-4 py-2">Project ID</th>
             <th className="border-4 border-black px-4 py-2">PI Name</th>
             <th className="border-4 border-black px-4 py-2">Proposal</th>
-            <th className="border-4 border-black px-4 py-2">Agent Analysis</th>
-            <th className="border-4 border-black px-4 py-2">Decision</th>
+            <th className="border-4 border-black px-4 py-2">Latest Updates</th>
+            <th className="border-4 border-black px-4 py-2">Current Status</th>
+            <th className="border-4 border-black px-4 py-2">Meeting time slot</th>
           </tr>
         </thead>
         <tbody>
@@ -76,11 +78,13 @@ const Table = () => {
                 </button>
               </td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.proposalStatus}</td>
+              <td className="border-4 border-black px-4 py-2 text-center">{row.meetingTimeSlot}</td>
             </tr>
+            
           ))}
         </tbody>
       </table>
-      <Dialog isOpen={isDialogOpen} onClose={closeDialog} response={selectedResponse} />
+    
     </div>
   );
 };
