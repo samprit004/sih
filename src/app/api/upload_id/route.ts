@@ -29,10 +29,13 @@ export async function POST(req: Request){
 
   const record = await pb.collection('PI_records').update(resultList[0].id, data);
   await pb.collection('CMPDI_users').update(id, {verify_status: "Verification pending"});
+  
+  await verify_user(resultList[0].id, resultList[0].PI_id, resultList[0].aadhar_no, user.user_email);
+  const pi = await pb.collection('CMPDI_users').getOne(id);
   const jsbody = {
-    message: 'docs added'
+    message: 'docs added',
+    success: pi.verify_status,
   }
 
-  verify_user(resultList[0].id, resultList[0].PI_id, resultList[0].aadhar_no, user.user_email);
   return new Response(JSON.stringify(jsbody));
 }

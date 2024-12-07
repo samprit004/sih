@@ -46,7 +46,7 @@ const CustomForm = () => {
         console.log(data)
         // add cookies in client-side @samprit
         alert('id submitted successfully! '+data.message);
-        router.push('/invigilator/verification_progress');
+        router.push('/invigilator/verification_successful');
       } else {
         alert('User Not Found');
       }

@@ -24,7 +24,7 @@ export default async function Upcoming(){
     rec_list.push({
       id: e.id,
       piId: e.PI_id,
-      piName: e.username,
+      piName: e.name,
       contactNumber: e.phone_no,
       email: e.expand?.CMPDI_id.user_email,
       adharNumber: e.aadhar_no,

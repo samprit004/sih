@@ -5,6 +5,82 @@ import path from 'path';
 
 dotenv.config({ path: path.resolve(__dirname, '../../../../.env') });
 
+async function cancelmail(name: string, email: string) {
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: false, // Use STARTTLS
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: `"CMPDI System" <${process.env.SMTP_USER}>`,
+    to: email,
+    subject: 'Your OTP for CMPDI Verification',
+    text: `Subject: Proposal Registration Declined  
+
+Dear Tonima,  
+
+Thank you for your submission. After a thorough review by the admin team, we regret to inform you that your registration has not been approved at this time.  
+
+The decision was based on the following reasons:  
+1. Incomplete Documentation: Essential documents such as Aadhaar card or project concept note were missing or only partially submitted
+2. Eligibility Non-Compliance: The project proposal did not meet the eligibility criteria outlined in the S&T or R&D guidelines.
+
+You are welcome to review the submission requirements and reapply after addressing the issues mentioned above. Should you have any questions or require further clarification, feel free to contact us at marg_sathi@gmail.com 
+
+We appreciate your interest and effort, and we look forward to receiving an updated submission.  
+
+Best regards,  
+Saugata Kundu
+Admin Team  
+MARG (Mine Allrounder Research Guide)`,
+    html: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Registration Declined</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 20px;">
+    <h2>Subject: Proposal Registration Declined</h2>
+    <p>Dear <strong>Tonima</strong>,</p>
+    <p>
+        Thank you for your submission. After a thorough review by the admin team, we regret to inform you that your registration has not been approved at this time.
+    </p>
+    <p>The decision was based on the following reasons:</p>
+    <ol>
+        <li><strong>Incomplete Documentation:</strong> Essential documents such as Aadhaar card or project concept note were missing or only partially submitted.</li>
+        <li><strong>Eligibility Non-Compliance:</strong> The project proposal did not meet the eligibility criteria outlined in the S&T or R&D guidelines.</li>
+    </ol>
+    <p>
+        You are welcome to review the submission requirements and reapply after addressing the issues mentioned above. Should you have any questions or require further clarification, feel free to contact us at 
+        <a href="mailto:marg_sathi@gmail.com">marg_sathi@gmail.com</a>.
+    </p>
+    <p>
+        We appreciate your interest and effort, and we look forward to receiving an updated submission.
+    </p>
+    <p>
+        Best regards,<br>
+        <strong>Saugata Kundu</strong><br>
+        Admin Team<br>
+        <strong>MARG (Mine Allrounder Research Guide)</strong>
+    </p>
+</body>
+</html>`,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log(`OTP sent successfully to ${email}`);
+  } catch (error) {
+    console.error('Error sending email:', error);
+    throw new Error('Failed to send OTP email.');
+  }
+}
 // Function to send OTP via email
 async function sendOTP(name: string, username: string,email: string, otp: number) {
   const transporter = nodemailer.createTransport({
@@ -36,7 +112,7 @@ Ensure you complete all necessary steps promptly to avoid any delays. If you hav
 Thank you for your cooperation, and we look forward to your successful project submission!
 
 Best regards,
-Akash Mehta
+Saugata Kundu
 Admin Team
 MARG (Mine Allrounder Research Guide)`,
     html: `<!DOCTYPE html>
@@ -74,7 +150,7 @@ MARG (Mine Allrounder Research Guide)`,
     </p>
     <p>
         Best regards,<br>
-        <strong>Akash Mehta</strong><br>
+        <strong>Saugata Kundu</strong><br>
         Admin Team<br>
         <strong>MARG (Mine Allrounder Research Guide)</strong>
     </p>
@@ -108,8 +184,11 @@ export async function verify_user(id: string, PI_id: string, aadhar: number, ema
   const records = await pb.collection('gov_list').getFullList({
     filter: `(PI_id = '${PI_id}' && aadhar = '${aadhar}')`
   });
+  const PI = await pb.collection('PI_records').getOne(id);
   
   if (records.length === 0) {
+    //cancel mail
+    await cancelmail(PI.name, email);
     return;
   }
 
@@ -123,12 +202,13 @@ export async function verify_user(id: string, PI_id: string, aadhar: number, ema
     OTP: otp,
     OTP_exp: OTP_expDate.toISOString(),
   });
-  const PI = await pb.collection('PI_records').getOne(id,{
-    fields: "username,expand.CMPDI_id.user_email",
-  });
+  
   // Send OTP to the provided email
   try {
-    await sendOTP(record.name ,PI.username ,email, otp);
+    await sendOTP(PI.name ,PI.username ,email, otp);
+    await pb.collection('CMPDI_users').update(PI.CMPDI_id, {
+      verify_status: "Verified",
+    });
   } catch (error) {
     console.error("Error sending OTP email:", error);
     return;

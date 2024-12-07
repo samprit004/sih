@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 
-interface TableRow {
+export interface TableRow {
   projectId: string;
   piName: string;
   response: string;
@@ -19,7 +19,7 @@ const Table = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/proposals"); // Replace with your API endpoint
+        const response = await fetch("/api/proposal_list"); // Replace with your API endpoint
         if (response.ok) {
           const data = await response.json();
           setTableData(data);

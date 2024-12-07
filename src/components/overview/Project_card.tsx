@@ -1,3 +1,4 @@
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 interface CardProps {
@@ -5,7 +6,11 @@ interface CardProps {
   viewDetails: () => void; // Function to open the dialog
 }
 
-const Card: React.FC<CardProps> = ({ description, viewDetails }) => {
+const Card: React.FC<CardProps> = ({ description, location, viewDetails }) => {
+  const router = useRouter()
+  async function open_vision() {
+    router.push('/invigilatorSubmit_vision')
+  }
   return (
     <div className="p-2 w-11/12 rounded mt-2 border border-black">
       <div className="p-4">

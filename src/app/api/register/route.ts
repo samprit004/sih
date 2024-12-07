@@ -112,7 +112,7 @@ export async function POST(req: Request) {
     const docs = {
       'CMPDI_id': user.id,
       'phone_no': phone,
-      'username': `${first_name} ${last_name}`,
+      'name': `${first_name} ${last_name}`,
     };
     await pb.collection('PI_records').create(docs);
 
