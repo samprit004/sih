@@ -134,7 +134,9 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
   };
 
   return (
-    <div className="w-full max-h-screen overflow-y-auto bg-white p-8 relative">
+
+    <div className="w-full flex gap-4 max-h-screen bg-white px-3 relative">
+      <div className="w-1/2 flex overflow-y-auto flex-col ">
       <SideNav isVisible={isNavVisible} onClose={() => setIsNavVisible(false)} />
 
       <div className="flex justify-between">
@@ -171,38 +173,39 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
         <h2 className="font-semibold">
           In which category would you like to proceed with your project?
         </h2>
-        <button onClick={toggleDropdown}>
-          <div className="flex bg-[#AAA2A2] px-2 gap-1 rounded">
-            S&T
-            <Image
-              className={`transition-transform transform ${
-                isDropdownOpen ? 'rotate-180' : 'rotate-0'
-              }`}
-              src="/drop.svg"
-              alt="Dropdown Icon"
-              width={20}
-              height={20}
-            />
-          </div>
-        </button>
-        {isDropdownOpen && (
-          <div className="absolute right-0 w-auto bg-[#AAA2A2] px-2 py-1 gap-1 rounded shadow-md">
-            <ul className="py-1">
-              <li>
-                <a
-                  href="#"
-                  className="block px-2 py-1 text-sm text-black hover:text-white hover:bg-gray-700 rounded"
-                >
-                  R&D
-                </a>
-              </li>
-            </ul>
-          </div>
-        )}
+        <button onClick={toggleDropdown} className="relative">
+  <div className="flex bg-[#AAA2A2] px-2 gap-1 rounded">
+    S&T
+    <Image
+      className={`transition-transform transform ${
+        isDropdownOpen ? 'rotate-180' : 'rotate-0'
+      }`}
+      src="/drop.svg"
+      alt="Dropdown Icon"
+      width={20}
+      height={20}
+    />
+  </div>
+</button>
+{isDropdownOpen && (
+  <div className="absolute left-0 w-auto bg-[#AAA2A2] px-2 py-1 gap-1 rounded shadow-md">
+    <ul className="py-1">
+      <li>
+        <a
+          href="#"
+          className="block px-2 py-1 text-sm text-black hover:text-white hover:bg-gray-700 rounded"
+        >
+          R&D
+        </a>
+      </li>
+    </ul>
+  </div>
+)}
+
       </div>
 
-      <div className="flex space-x-4">
-        <div className="w-1/2">
+      {/* <div className="flex space-x-4"> */}
+        
           <div className="space-y-4">
             {[
               { label: 'Project Title', name: 'projectTitle' },
@@ -233,12 +236,13 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
           </div>
 
           <div>
+            <h1 className='text-md font-medium mt-4 mb-2'>9. Details of proposed outlay</h1>
             <ProposedOutlayTable tableData={tableData} onInputChange={handleInputChange} />
             {/* <DisplayBox tableData={tableData} /> */}
           </div>
         </div>
 
-        <div className="w-1/2 p-7 bg-[#3F3F3FCC]">
+        <div className="w-1/2 p-6 bg-[#3F3F3FCC]">
           <div className="flex justify-end gap-4 relative">
             <button
               className="px-4 py-2 text-white rounded-lg bg-black mb-2"
@@ -285,7 +289,7 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
               whiteSpace: 'pre-wrap',
             }}
           >
-            <h2 className="text-xl font-bold text-center mb-6">Live Preview</h2>
+            <h2 className="text-lg font-semibold text-center mb-8">PROJECT PROPOSAL FOR <a className='font-bold'>S&T</a> GRANT OF MOC</h2>
             <div className="space-y-6">
               {Object.entries(formData).map(([key, value]) => (
                 <div key={key} className="preview-item">
@@ -299,7 +303,8 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
             </div>
           </div>
         </div>
-      </div>
+
+      {/* </div> */}
     </div>
   );
 };
