@@ -23,9 +23,11 @@ async function sendOTP(email: string, otp: number) {
     from: `"CMPDI System" <${process.env.SMTP_USER}>`,
     to: email,
     subject: 'Your OTP for CMPDI Verification',
-    text: `Hello, your OTP for verification is ${otp}. This OTP is valid for 30 days.`,
+    text: `Subject: Registration Approved and Login Credentials\n\nDear Tonima,\n\nWe are pleased to inform you that your registration has been successfully approved by the admin. You are now authorized to proceed with your project submission process. Below are your login credentials to access the system:\nUsername: PI_Tonima001\nOTP:${otp}\n\nThe OTP is valid for 30 days from the date of this email. After the OTP expires, you will be required to register again.\nLog in to your account and upload all the essential documents required for the project proposal as soon as possible.
+Ensure you complete all necessary steps promptly to avoid any delays. If you have any questions or need assistance, feel free to contact us at marg_sathi@gmail.com\n\nThank you for your cooperation, and we look forward to your successful project submission!\n\nBest regards,\nAkash Mehta\nAdmin Team\nMARG (Mine Allrounder Research Guide)`,
     html: `<p>Hello,</p><p>Your OTP for verification is <b>${otp}</b>.</p><p>This OTP is valid for 30 days.</p>`,
   };
+  console.log(mailOptions);
 
   try {
     await transporter.sendMail(mailOptions);
@@ -45,11 +47,11 @@ function generateNumericOTP(length: number = 6): number {
 
 /**
  * POST /verify_user
- * Verifies a user based on `PI_id`, `aadhar`, and `email`.
+ * Verifies a user based on `id`, `PI_id`, `aadhar`, and `email`.
  */
 export async function POST(req: Request) {
   try {
-    const { PI_id, aadhar, email } = await req.json();
+    const { id, PI_id, aadhar, email } = await req.json();
 
     // Check if a record exists in gov_list
     const records = await pb.collection('gov_list').getFullList({
