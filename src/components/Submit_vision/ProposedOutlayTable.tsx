@@ -1,21 +1,33 @@
 'use client';
-import React from "react";
+import React from 'react';
 
-const ProposedOutlayTable: React.FC = () => {
-  // State to capture input values entered in the table
-  const [tableData, setTableData] = React.useState<{ [key: string]: string }>({});
+interface ProposedOutlayTableProps {
+  tableData: { [key: string]: string };
+  onInputChange: (key: string, value: string) => void;
+}
 
-  // Function to handle changes in input fields and update the state
-  const handleInputChange = (key: string, value: string) => {
-    setTableData((prev) => ({ ...prev, [key]: value }));
-  };
+const ProposedOutlayTable: React.FC<ProposedOutlayTableProps> = ({ tableData, onInputChange }) => {
+  const renderRow = (id: string, label: string) => (
+    <tr key={id}>
+      <td className="border border-black px-4 py-2 text-center">{id}</td>
+      <td className="border border-black px-4 py-2">{label}</td>
+      {['total', '1st', '2nd', '3rd'].map((period) => (
+        <td key={`${id}_${period}`} className="border border-black px-4 py-2">
+          <input
+            type="text"
+            className="w-full border border-black p-1"
+            value={tableData[`${id}_${period}`] || ''}
+            onChange={(e) => onInputChange(`${id}_${period}`, e.target.value)}
+          />
+        </td>
+      ))}
+    </tr>
+  );
 
   return (
     <div className="overflow-x-auto bg-white">
-      {/* Table container for horizontal scrolling on small screens */}
       <table className="table-auto border-collapse border border-black w-full text-black">
         <thead>
-          {/* Table header */}
           <tr>
             <th className="border border-black px-4 py-2">Sl. No.</th>
             <th className="border border-black px-4 py-2">Items</th>
@@ -27,108 +39,12 @@ const ProposedOutlayTable: React.FC = () => {
         </thead>
         <tbody>
           {/* Capital Expenditure Section */}
-          <tr>
-            <td className="border border-black px-4 py-2 text-center">9.1</td>
-            <td className="border border-black px-4 py-2">Land & Building</td>
-            {/* Input for Total project cost */}
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.1_total", e.target.value)}
-              />
-            </td>
-            {/* Input for 1st year cost */}
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.1_1st", e.target.value)}
-              />
-            </td>
-            {/* Input for 2nd year cost */}
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.1_2nd", e.target.value)}
-              />
-            </td>
-            {/* Input for 3rd year cost */}
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.1_3rd", e.target.value)}
-              />
-            </td>
-          </tr>
-          <tr>
-            {/* Similar row structure for Equipment */}
-            <td className="border border-black px-4 py-2 text-center">9.2</td>
-            <td className="border border-black px-4 py-2">Equipment</td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.2_total", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.2_1st", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.2_2nd", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.2_3rd", e.target.value)}
-              />
-            </td>
-          </tr>
-          <tr>
-            {/* Summarizing Capital Expenditure */}
-            <td className="border border-black px-4 py-2 text-center">9.3</td>
-            <td className="border border-black px-4 py-2">Total Capital (9.1+9.2)</td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.3_total", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.3_1st", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.3_2nd", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.3_3rd", e.target.value)}
-              />
-            </td>
-          </tr>
+          {[
+            { id: "9.1", label: "Land & Building" },
+            { id: "9.2", label: "Equipment" },
+            { id: "9.3", label: "Total Capital (9.1+9.2)" },
+          ].map((row) => renderRow(row.id, row.label))}
+
           {/* Revenue Expenditure Section */}
           {[
             { id: "9.4", label: "Salaries/allowances" },
@@ -137,139 +53,54 @@ const ProposedOutlayTable: React.FC = () => {
             { id: "9.7", label: "Contingency" },
             { id: "9.8", label: "Institutional Overhead" },
             { id: "9.9", label: "Attending or organizing Workshop/Seminar" },
-          ].map((row) => (
-            <tr key={row.id}>
-              {/* Mapping through Revenue Expenditure items */}
-              <td className="border border-black px-4 py-2 text-center">{row.id}</td>
-              <td className="border border-black px-4 py-2">{row.label}</td>
-              <td className="border border-black px-4 py-2">
-                <input
-                  type="text"
-                  className="w-full border border-black p-1"
-                  onChange={(e) => handleInputChange(`${row.id}_total`, e.target.value)}
-                />
-              </td>
-              <td className="border border-black px-4 py-2">
-                <input
-                  type="text"
-                  className="w-full border border-black p-1"
-                  onChange={(e) => handleInputChange(`${row.id}_1st`, e.target.value)}
-                />
-              </td>
-              <td className="border border-black px-4 py-2">
-                <input
-                  type="text"
-                  className="w-full border border-black p-1"
-                  onChange={(e) => handleInputChange(`${row.id}_2nd`, e.target.value)}
-                />
-              </td>
-              <td className="border border-black px-4 py-2">
-                <input
-                  type="text"
-                  className="w-full border border-black p-1"
-                  onChange={(e) => handleInputChange(`${row.id}_3rd`, e.target.value)}
-                />
-              </td>
-            </tr>
-          ))}
+          ].map((row) => renderRow(row.id, row.label))}
+
+          {/* Total Revenue Expenditure */}
           <tr>
-            {/* Summarizing Revenue Expenditure */}
             <td className="border border-black px-4 py-2 text-center">9.10</td>
             <td className="border border-black px-4 py-2">Total Revenue Expenditure</td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.10_total", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-            <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.10_total", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-            <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.10_total", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-            <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.10_total", e.target.value)}
-              />
-            </td>
+            {['total', '1st', '2nd', '3rd'].map((period) => (
+              <td key={`9.10_${period}`} className="border border-black px-4 py-2">
+                <input
+                  type="text"
+                  className="w-full border border-black p-1"
+                  value={tableData[`9.10_${period}`] || ''}
+                  onChange={(e) => onInputChange(`9.10_${period}`, e.target.value)}
+                />
+              </td>
+            ))}
           </tr>
+
+          {/* Additional Costs Section */}
           <tr>
-            {/* Additional Costs Section */}
             <td className="border border-black px-4 py-2 text-center">9.11</td>
             <td className="border border-black px-4 py-2">Applicable taxes/duties/charges etc.</td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.11_total", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-            <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.11_total", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-            <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.11_total", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-            <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.11_total", e.target.value)}
-              />
-            </td>
+            {['total', '1st', '2nd', '3rd'].map((period) => (
+              <td key={`9.11_${period}`} className="border border-black px-4 py-2">
+                <input
+                  type="text"
+                  className="w-full border border-black p-1"
+                  value={tableData[`9.11_${period}`] || ''}
+                  onChange={(e) => onInputChange(`9.11_${period}`, e.target.value)}
+                />
+              </td>
+            ))}
           </tr>
+
+          {/* Grand Total */}
           <tr>
-            {/* Grand Total */}
             <td className="border border-black px-4 py-2 text-center">9.12</td>
             <td className="border border-black px-4 py-2">Grand Total (9.3+9.8+9.9+9.10+9.11)</td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.12_total", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.12_1st", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.12_2nd", e.target.value)}
-              />
-            </td>
-            <td className="border border-black px-4 py-2">
-              <input
-                type="text"
-                className="w-full border border-black p-1"
-                onChange={(e) => handleInputChange("9.12_3rd", e.target.value)}
-              />
-            </td>
+            {['total', '1st', '2nd', '3rd'].map((period) => (
+              <td key={`9.12_${period}`} className="border border-black px-4 py-2">
+                <input
+                  type="text"
+                  className="w-full border border-black p-1"
+                  value={tableData[`9.12_${period}`] || ''}
+                  onChange={(e) => onInputChange(`9.12_${period}`, e.target.value)}
+                />
+              </td>
+            ))}
           </tr>
         </tbody>
       </table>

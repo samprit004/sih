@@ -14,23 +14,9 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
   // Function to apply commands like bold, italic, underline
   const applyCommand = (command: string, value?: string) => {
     if (editorRef.current) {
-      const selection = window.getSelection();
-      if (selection && selection.rangeCount > 0) {
-        const range = selection.getRangeAt(0);
-        const selectedText = selection.toString();
-
-        // Apply the command (e.g., bold, italic, etc.)
-        document.execCommand(command, false, value || "");
-        const updatedContent = editorRef.current.innerHTML;
-
-        // If content changed, update state
-        if (updatedContent !== content) {
-          setContent(updatedContent);
-          if (onContentChange) {
-            onContentChange(updatedContent);
-          }
-        }
-      }
+      document.execCommand(command, false, value || "");
+      const updatedContent = editorRef.current.innerHTML;
+      handleContentUpdate(updatedContent);
     }
   };
 
@@ -51,19 +37,13 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
             listHTML
           );
           editorRef.current.innerHTML = newContent;
-          setContent(newContent);
-          if (onContentChange) {
-            onContentChange(newContent);
-          }
+          handleContentUpdate(newContent);
         } else {
           // If no text is selected, create a new bullet list
           const currentContent = editorRef.current.innerHTML;
-          const newContent = `${currentContent}<ul></ul>`;
+          const newContent = `${currentContent}<ul><li></li></ul>`;
           editorRef.current.innerHTML = newContent;
-          setContent(newContent);
-          if (onContentChange) {
-            onContentChange(newContent);
-          }
+          handleContentUpdate(newContent);
         }
       }
     }
@@ -72,11 +52,23 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
   // Handle input and update content state
   const handleInput = () => {
     if (editorRef.current) {
-      const updatedContent = editorRef.current.innerHTML;
-      setContent(updatedContent);
-      if (onContentChange) {
-        onContentChange(updatedContent);
+      let updatedContent = editorRef.current.innerHTML;
+
+      // Remove unnecessary <br> tags when the content is empty
+      if (updatedContent === "<br>" || updatedContent.trim() === "") {
+        updatedContent = "";
+        editorRef.current.innerHTML = ""; // Clear the editor
       }
+
+      handleContentUpdate(updatedContent);
+    }
+  };
+
+  // Centralized content update handler
+  const handleContentUpdate = (updatedContent: string) => {
+    setContent(updatedContent);
+    if (onContentChange) {
+      onContentChange(updatedContent);
     }
   };
 
@@ -85,7 +77,7 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
       {/* Toolbar */}
       <div className="flex items-center justify-between bg-[#AAA2A2A3] px-2 py-1 border-b border-black rounded-sm">
         {/* Formatting Buttons */}
-        <div className="flex gap-2 ">
+        <div className="flex gap-2">
           <button
             onClick={() => applyCommand("bold")}
             className="px-2 hover:bg-gray-300"
@@ -104,10 +96,7 @@ const TextEditor: React.FC<TextEditorProps> = ({ onContentChange }) => {
           >
             <Image src="/U.svg" alt="Underline" width={13} height={20} />
           </button>
-          <button
-            onClick={handleBulletList}
-            className="px-2 hover:bg-gray-300"
-          >
+          <button onClick={handleBulletList} className="px-2 hover:bg-gray-300">
             <Image src="/bullet.svg" alt="Bullet List" width={20} height={20} />
           </button>
         </div>
