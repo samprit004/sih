@@ -69,8 +69,9 @@ const Form = () => {
         
         </div>
         </div>
-        <LivePreview formData={formData} />
+        {/* <LivePreview formData={formData} /> */}
       </div>
+
     </div>
   );
 };
