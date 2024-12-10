@@ -14,7 +14,7 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, aiScore, response }) =
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white w-[500px] p-6 border-2 border-black rounded-lg shadow-lg">
+      <div className="bg-white w-[500px] h-[600px] p-6 border-2 border-black rounded-lg shadow-lg flex flex-col">
         {/* Close button */}
         <div className="flex justify-end">
           <button
@@ -25,28 +25,31 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, aiScore, response }) =
           </button>
         </div>
 
-        {/* AI Score Section */}
-        <div className="border-2 border-black rounded-md mb-4">
-          <h2 className="text-2xl mb-4 bg-black text-white text-center">Agent Score</h2>
-          <div className="flex items-center justify-center p-2 text-xl font-bold">
-            {aiScore !== undefined ? aiScore : "Loading..."}
+        {/* Scrollable content */}
+        <div className="flex-1 overflow-y-auto">
+          {/* AI Score Section */}
+          <div className="border-2 border-black rounded-md mb-4">
+            <h2 className="text-2xl mb-4 bg-black text-white text-center">Agent Score</h2>
+            <div className="flex items-center justify-center p-2 text-xl font-bold">
+              {aiScore !== undefined ? aiScore : "Loading..."}
+            </div>
+          </div>
+
+          {/* Acceptance Response Section */}
+          <div className="border-2 border-black rounded-md">
+            <h2 className="text-2xl mb-4 bg-black text-white text-center">Acceptance Response</h2>
+            <ul className="pl-6 text-sm">
+              {response
+                ? response.split("\n").map((line, index) => <li key={index}>{line}</li>)
+                : <li>Loading...</li>}
+            </ul>
           </div>
         </div>
 
-        {/* Acceptance Response Section */}
-        <div className="border-2 border-black rounded-md">
-          <h2 className="text-2xl mb-4 bg-black text-white text-center">Acceptance Response</h2>
-          <ul className="pl-6 text-sm">
-            {response
-              ? response.split("\n").map((line, index) => <li key={index}>{line}</li>)
-              : <li>Loading...</li>}
-          </ul>
-        </div>
-
-        {/* Button to View Both */}
-        <div className="flex justify-center">
+        {/* Fixed View Both Button */}
+        <div className="flex justify-center mt-4">
           <Link href="/Admin_console/proposal_overview">
-            <button className="bg-black text-white rounded-md mt-4 p-2 text-sm">
+            <button className="bg-black text-white rounded-md p-2 text-sm fixed bottom-6">
               View Both <br />
               (Proposal and AI Report)
             </button>
