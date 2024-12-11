@@ -20,7 +20,7 @@ const Dialog2: React.FC<Dialog2Props> = ({ isOpen, onClose, onFix }) => {
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [availableSlots, setAvailableSlots] = useState<string[]>([]);
-
+    
     // Function to generate random available time slots
     const generateDummySlots = () => {
         return Array.from({ length: 31 }, () => {
