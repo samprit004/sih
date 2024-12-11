@@ -1,5 +1,5 @@
 import Side_nav from "@/components/pi_console/budget_flow/side_nav";
-export default function Proposal_tracker() {
+export default function budget_flow() {
     return (
       <>
         <Side_nav />
