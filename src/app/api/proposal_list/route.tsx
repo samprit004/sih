@@ -23,6 +23,7 @@ export async function GET(req: Request) {
       meetingTimeSlot: element.meetingTimeSlot,
       fileURL: fileUrl,
       agent_score: element.Agent_Score,
+      id: element.id,
     })
     
     

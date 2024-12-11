@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 export interface TableRow {
+  id: string;
   projectId: string;
   piName: string;
   response: string;
@@ -17,7 +18,7 @@ const Table = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedResponse, setSelectedResponse] = useState("");
 
-  // Fetch table data from the backend (disabled for now)
+  // Fetch table data from the backend
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,8 +34,7 @@ const Table = () => {
       }
     };
 
-    // Uncomment this line to enable fetching once the backend is ready
-    // fetchData();
+    fetchData();
   }, []);
 
   const handleViewClick = (response: React.SetStateAction<string>) => {

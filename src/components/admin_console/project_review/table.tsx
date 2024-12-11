@@ -1,9 +1,9 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import Dialog from "./dialog";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export interface TableRow {
+  id: string;
   projectId: string;
   piName: string;
   response: string;
@@ -15,9 +15,7 @@ export interface TableRow {
 
 const Table = () => {
   const [tableData, setTableData] = useState<TableRow[]>([]);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [aiScore, setAiScore] = useState("");
-  const [selectedResponse, setSelectedResponse] = useState("");
+  const router = useRouter();
 
   // Fetch table data from the backend
   useEffect(() => {
@@ -38,28 +36,11 @@ const Table = () => {
     fetchData();
   }, []);
 
-  function handleViewClick(response: string, score: string) {
-    setSelectedResponse(response);
-    setAiScore(score);
-    setIsDialogOpen(true);
+  function handleViewClick(id: string) {
+    router.push(`/Admin_console/proposal_overview?id=${id}`)
   };
 
-  const closeDialog = () => {
-    setIsDialogOpen(false);
-  };
 
-  const addRow = () => {
-    const newRow: TableRow = {
-      projectId: "P12345",
-      piName: "New PI",
-      response: "This is a new response",
-      proposalStatus: "Pending",
-      agent_score: "",
-      meetingTimeSlot: "",
-      fileURL: ""
-    };
-    setTableData((prevData) => [...prevData, newRow]);
-  };
 
   return (
     <div className="ml-48">
@@ -88,21 +69,18 @@ const Table = () => {
                 </button>
               </td>
               <td className="px-4 py-2 flex justify-center border-2 border-black">
-              <Link href="/Admin_console/proposal_overview">
                 <button
                   className="bg-black text-white w-20 h-7 rounded-md hover:bg-gray-500"
-                  onClick={() => handleViewClick(row.response, row.agent_score)}
+                  onClick={() => handleViewClick(row.id)}
                 >
                   View
                 </button>
-                </Link>
               </td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.proposalStatus}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Dialog isOpen={isDialogOpen} aiScore={aiScore} onClose={closeDialog} response={selectedResponse} />
     </div>
   );
 };
