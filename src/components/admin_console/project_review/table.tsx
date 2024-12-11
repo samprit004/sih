@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import Dialog from "./dialog";
+import Link from "next/link";
 
 interface TableRow {
   projectId: string;
@@ -10,30 +11,18 @@ interface TableRow {
 }
 
 const Table = () => {
-  const [tableData, setTableData] = useState<TableRow[]>([]);
+  const [tableData, setTableData] = useState<TableRow[]>([
+    {
+      projectId: "P12345",
+      piName: "John Doe",
+      response: "This is a sample response for design purposes.",
+      proposalStatus: "Pending",
+    },
+  ]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedResponse, setSelectedResponse] = useState("");
 
-  // Fetch table data from the backend
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/api/proposals"); // Replace with your API endpoint
-        if (response.ok) {
-          const data = await response.json();
-          setTableData(data);
-        } else {
-          console.error("Failed to fetch data");
-        }
-      } catch (error) {
-        console.error("Error fetching table data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const handleViewClick = (response: React.SetStateAction<string>) => {
+  const handleViewClick = (response: string) => {
     setSelectedResponse(response);
     setIsDialogOpen(true);
   };
@@ -42,26 +31,10 @@ const Table = () => {
     setIsDialogOpen(false);
   };
 
-  const addRow = () => {
-    const newRow: TableRow = {
-      projectId: "P12345",
-      piName: "New PI",
-      response: "This is a new response",
-      proposalStatus: "Pending"
-    };
-    setTableData((prevData) => [...prevData, newRow]);
-  };
-
   return (
     <div className="ml-48">
-      <div className="mt-32 px-8 w-full flex justify-between">
+      <div className="mt-32 px-8 w-full">
         <h1 className="text-2xl font-semibold ml-24 underline">Proposal Overview</h1>
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
-          onClick={addRow}
-        >
-          Add Row
-        </button>
       </div>
       <table className="w-[1200px] ml-32 border-4 border-black mt-2 mx-8 content-center">
         <thead>
@@ -84,12 +57,14 @@ const Table = () => {
                 </button>
               </td>
               <td className="px-4 py-2 flex justify-center border-2 border-black">
+              <Link href="/Admin_console/proposal_overview">
                 <button
                   className="bg-black text-white w-20 h-7 rounded-md hover:bg-gray-500"
                   onClick={() => handleViewClick(row.response)}
                 >
                   View
                 </button>
+                </Link>
               </td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.proposalStatus}</td>
             </tr>

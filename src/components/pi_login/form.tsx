@@ -53,8 +53,10 @@ const Form = () => {
     return (
         <>
            
-            <h1 className='text-black  text-2xl font-semibold mt-12 ' style={{ marginLeft: "410px" }}>Username:  <label htmlFor="password" style={{marginLeft:"198px"}}>Enter OTP:</label></h1>
-            <div className='flex justify-center gap-8'>
+          
+            <div className='flex flex-col  items-center '>
+              <div>
+              <h1 className='text-black  text-2xl font-semibold mt-12 ' >Username: </h1>
                 <input
                     className='border-2 border-black rounded-md h-12 w-72 mt-2 p-4'
                     type="text"
@@ -64,17 +66,30 @@ const Form = () => {
                     value={formData.username}
                     onChange={handleChange}
                     required />
-          <div className="mt-2">
+              </div>
+              
+              <div>
+               <div  className="text-xl mt-4 ">Enter OTP:</div>
+                <div className="mt-2">
                <OtpInput onChange={(otp: string) => console.log(otp)} />
-               </div>
-            </div>
-            <button className='hover:text-blue-600' style={{ marginLeft: "730px" }}>Resend OTP?</button>
 
+               <div>Don’t receive any e-mail? 
+            <button className='hover:text-blue-600 font-semibold' >Try Again.</button>
+            </div>
+               </div>
+              </div>
+           
+           <div></div>
+          
+               
+            </div>
+           
         
-        <div className='border-2 border-black w-40 h-10 flex justify-center items-center rounded-md hover:bg-slate-200' style={{ marginLeft: "410px" }}>
+        <div className='border-2 border-black w-40 h-10 flex justify-center items-center rounded-md hover:bg-slate-200' >
         <input type="checkbox" className='w-4  mt-1' /> 
         <div className='ml-2 '><b>Remember me</b></div>
-        </div><div className='flex mt-16' style={{ marginLeft: "550px" }}>
+        </div>
+        <div className='flex mt-16' style={{ marginLeft: "550px" }}>
             <Link href="/">
             <button className='flex justify-center items-center w-36 h-12 border-2 border-black rounded-md hover:bg-gray-500'>
                 <Image className=' pt-1 w-8'
