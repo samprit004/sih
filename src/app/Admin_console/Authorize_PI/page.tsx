@@ -3,21 +3,12 @@ import Side_nav from "@/components/admin_console/authorize_PI/side_nav";
 import Nav from "@/components/admin_console/authorize_PI/nav";
 import Table from "@/components/admin_console/authorize_PI/table";
 import PocketBase from 'pocketbase';
-import { getSession } from "@/app/lib";
-import { redirect } from "next/navigation";
-import { useEffect } from "react";
 const pb = new PocketBase('http://127.0.0.1:8090');
 
 interface piData{ id: string,piId: string; piName: string;
   contactNumber: number; email: string;
   adharNumber: number; };
 export default async function Upcoming(){
-  useEffect(()=>{
-    const session = sessionStorage.getItem('margsathi_session');
-    if(!session){
-      redirect('/');
-    }
-  }, [redirect])
   const records = await pb.collection('PI_records').getFullList({
     expand: 'CMPDI_id',
     filter: '(CMPDI_id.verify_status="Verification pending")',
