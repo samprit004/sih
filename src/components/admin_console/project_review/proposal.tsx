@@ -1,63 +1,113 @@
 'use client';
-import React, { useState } from 'react';
-import Dialog2 from './dialog2'; // Adjust path as needed
+import React, { useState } from "react";
+import Image from "next/image";
+import PSide_nav from "./PSide_nav";
+import TextEditor from "@/components/Submit_vision/Texteditor";
+import Dialog2 from "./dialog2";
 
-const Proposal: React.FC = () => {
+const Proposal = () => {
+    const [isNavVisible, setIsNavVisible] = useState(false);
+    const [isApprovedChecked, setIsApprovedChecked] = useState(false);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
-    const [timeSlotReview, setTimeSlotReview] = useState<{ date: string; slots: string[] } | null>(
-        null
-    );
+    const [fixedDate, setFixedDate] = useState<string | null>(null);
+    const [fixedSlots, setFixedSlots] = useState<string[]>([]);
 
-    const handleOpenDialog = () => {
-        setIsDialogOpen(true);
+    const handleApprovedChange = () => {
+        setIsApprovedChecked(!isApprovedChecked);
     };
 
-    const handleCloseDialog = () => {
+    const handleFixMeeting = (date: string | null, slots: string[]) => {
+        setFixedDate(date);
+        setFixedSlots(slots);
         setIsDialogOpen(false);
     };
 
-    const handleFixMeeting = (date: string, slots: string[]) => {
-        setTimeSlotReview({ date, slots });
-        setIsDialogOpen(false); // Close the dialog after fixing the meeting
-    };
-
     return (
-        <div className="p-4">
-            <h1 className="text-2xl font-bold mb-4">Meeting Scheduler</h1>
-            <button
-                onClick={handleOpenDialog}
-                className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            >
-                Schedule a Meeting
-            </button>
+        <div className="w-[60%]">
+            {/* Button to toggle side navigation */}
+            <div className="flex">
+                <button onClick={() => setIsNavVisible(true)}>
+                    <Image src="/menu.svg" alt="Menu Icon" width={40} height={120} />
+                </button>
+            </div>
 
-            {/* Time Slot Review Table */}
-            {timeSlotReview && (
-                <div className="mt-6">
-                    <h2 className="text-xl font-semibold underline mb-4">Time Slot Review</h2>
-                    <table className="w-full border-2 border-black rounded-lg">
+            <PSide_nav 
+                isVisible={isNavVisible} 
+                onClose={() => setIsNavVisible(false)} 
+            />
+            
+            <div className="flex">
+                <TextEditor />
+            </div>
+
+            {/* Buttons below the TextEditor */}
+            <div className="mt-4 flex gap-4">
+                {/* Approved Button */}
+                <button
+                    className={`p-2 border rounded ${
+                        isApprovedChecked ? "bg-gray-200" : "bg-white"
+                    }`}
+                    onClick={handleApprovedChange}
+                >
+                    <input type="checkbox" checked={isApprovedChecked} readOnly className="mr-2" />
+                    Approve
+                </button>
+
+                {/* Resubmit Button */}
+                <button
+                    className="p-2 border rounded bg-white text-black"
+                    disabled={isApprovedChecked}
+                >
+                    Resubmit
+                </button>
+
+                {/* Cancel Button */}
+                <button
+                    className="p-2 border rounded bg-white text-black"
+                    disabled={isApprovedChecked}
+                >
+                    Cancel
+                </button>
+
+                {/* Fix Meeting Date Button */}
+                <button
+                    onClick={() => setIsDialogOpen(true)}
+                    className="p-2 border rounded bg-white text-black"
+                    disabled={!isApprovedChecked}
+                >
+                    Fix Meeting Date
+                </button>
+            </div>
+
+            {/* Dialog */}
+            <Dialog2
+                isOpen={isDialogOpen}
+                onClose={() => setIsDialogOpen(false)}
+                onFix={handleFixMeeting}
+            />
+
+            {/* Fixed Meeting Details */}
+            {fixedDate && (
+                <div className="mt-4">
+                    <h3 className="font-semibold text-lg underline mb-2">Fixed Meeting Details</h3>
+                    <table className="w-96 border-2 border-black rounded-lg">
                         <thead>
                             <tr>
                                 <th className="border border-gray-300 p-2 bg-black text-white">Date</th>
-                                <th className="border border-gray-300 p-2 bg-black text-white">Time Slots</th>
+                                <td className="border border-gray-300 p-2">{fixedDate}</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td className="border border-gray-300 p-2">{timeSlotReview.date}</td>
+                                <th className="border border-gray-300 p-2 bg-black text-white">Time</th>
                                 <td className="border border-gray-300 p-2">
-                                    {timeSlotReview.slots.length > 0
-                                        ? timeSlotReview.slots.join(', ')
-                                        : 'No slots available'}
+                                    {fixedSlots.length > 0 ? fixedSlots.join(' or ') : 'N/A'}
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             )}
-
-            {/* Dialog2 Component */}
-            <Dialog2 isOpen={isDialogOpen} onClose={handleCloseDialog} onFix={handleFixMeeting} />
         </div>
     );
 };

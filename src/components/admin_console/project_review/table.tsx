@@ -44,10 +44,26 @@ const Table = () => {
     setIsDialogOpen(false);
   };
 
+  const addRow = () => {
+    const newRow: TableRow = {
+      projectId: "P12345",
+      piName: "New PI",
+      response: "This is a new response",
+      proposalStatus: "Pending"
+    };
+    setTableData((prevData) => [...prevData, newRow]);
+  };
+
   return (
     <div className="ml-48">
-      <div className="mt-32 px-8 w-full">
+      <div className="mt-32 px-8 w-full flex justify-between">
         <h1 className="text-2xl font-semibold ml-24 underline">Proposal Overview</h1>
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+          onClick={addRow}
+        >
+          Add Row
+        </button>
       </div>
       <table className="w-[1200px] ml-32 border-4 border-black mt-2 mx-8 content-center">
         <thead>

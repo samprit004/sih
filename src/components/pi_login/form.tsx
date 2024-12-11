@@ -68,8 +68,8 @@ const Form = () => {
     return (
         <>
            
-            <h1 className='text-black  text-2xl font-semibold mt-12 ' style={{ marginLeft: "460px" }}>Username:  <label htmlFor="password" style={{marginLeft:"198px"}}>Password:</label></h1>
-            <div className='flex justify-center'>
+            <h1 className='text-black  text-2xl font-semibold mt-12 ' style={{ marginLeft: "410px" }}>Username:  <label htmlFor="password" style={{marginLeft:"198px"}}>Enter OTP:</label></h1>
+            <div className='flex justify-center gap-8'>
                 <input
                     className='border-2 border-black rounded-md h-12 w-72 mt-2 p-4'
                     type="text"
@@ -79,21 +79,14 @@ const Form = () => {
                     value={formData.username}
                     onChange={handleChange}
                     required />
-
-                <input
-                    className='border-2 border-black rounded-md h-12 w-72 mt-2 ml-8 p-4'
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder='Password'
-                    value={formData.password}
-                    onChange={handleChange}
-                    required />
+          <div className="mt-2">
+               <OtpInput onChange={(otp: string) => console.log(otp)} />
+               </div>
             </div>
-            <button className='hover:text-blue-600' style={{ marginLeft: "780px" }}>Forgot Password?</button>
+            <button className='hover:text-blue-600' style={{ marginLeft: "730px" }}>Resend OTP?</button>
 
         
-        <div className='border-2 border-black w-40 h-10 flex justify-center items-center rounded-md hover:bg-slate-200' style={{ marginLeft: "460px" }}>
+        <div className='border-2 border-black w-40 h-10 flex justify-center items-center rounded-md hover:bg-slate-200' style={{ marginLeft: "410px" }}>
         <input type="checkbox" className='w-4  mt-1' /> 
         <div className='ml-2 '><b>Remember me</b></div>
         </div><div className='flex mt-16' style={{ marginLeft: "550px" }}>
