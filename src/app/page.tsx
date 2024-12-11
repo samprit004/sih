@@ -5,6 +5,7 @@ import About from "@/components/landing/About";
 import Guidelines from "@/components/landing/Guidelines";
 import Working from "@/components/landing/Working";
 import Faq from "@/components/landing/Faq";
+import styles from '@/components/landing/Faq.module.css'
 
 export default function Home() {
   

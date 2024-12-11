@@ -3,9 +3,13 @@ import Image from 'next/image'
 import React, { useState } from 'react';
 import ExpandableCard from '../ExpandableCard';
 import Link from 'next/link';
+import styles from '@/components/landing/Faq.module.css'
 
 
 const Faq = () => {
+
+  
+  
 
   const [inputValue, setInputValue] = useState('');
 
@@ -38,18 +42,18 @@ const Faq = () => {
       </div>
       <p className='flex justify-center font-bold text-lg text-[#3F3F3F]'> <Link href="/" className='underline px-1 font-semibold'>CLICK HERE </Link> to know more</p>
         
-      <div className="flex px-24 justify-between">
+      <div className="card flex px-24 justify-between">
         <div className='w-3/5'>
         <h1 className='text-4xl font-bold mb-4'>Popular Questions</h1>
       <ExpandableCard
-        title="What is the meaning of life?"
-        description="This is a short description of the card content."
-        extraContent="Here is some more detailed information that will expand when the arrow is clicked. This could be an explanation, further details, or any other content you want to display."
+        title="What is the purpose of this platform?"
+        description=""
+        extraContent="This platform is designed to streamline the management of R&D and S&T projects in the coal sector. It enables CMPDI administrators and project investigators to efficiently track progress, submit updates, and manage project documentation in one centralized system."
         imageUrl="/Dropdown.svg"  
       />
       <ExpandableCard
         title="How do I implement a dropdown?"
-        description="Learn how to create dropdowns in React and Next.js."
+        description=""
         extraContent="This is some extra content about implementing dropdowns. It could include code examples or further instructions."
         imageUrl="/Dropdown.svg"  
       />

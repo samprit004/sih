@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 
 
+
 const Nav = () => {
 
 
@@ -24,7 +25,7 @@ const Nav = () => {
         />
       </div>
 
-      <div className='flex gap-14 text-2xl font-medium items-center mr-16 lg:gap-8 lg:text-lg lg:mr-0 sm:text-sm'>
+      <div className='flex gap-14  text-2xl font-medium items-center mr-16 sm:display-none lg:gap-8 lg:text-lg lg:mr-0 sm:text-sm'>
         <Link href="/" className=" ">Home</Link>
         <Link href="/#about" className=" ">About Us</Link>
         <Link href="/#guidelines" className=" ">Guidelines</Link>
