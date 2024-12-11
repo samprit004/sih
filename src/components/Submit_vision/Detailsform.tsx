@@ -7,9 +7,11 @@ import DisplayBox from './Displaybox';
 import ProposedOutlayTable from './ProposedOutlayTable';
 import SideNav from '@/components/Submit_vision/Side_nav'; // Import the Side_nav component
 import jsPDF from "jspdf";
+import TurndownService from 'turndown';
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import { Document, Packer, Paragraph, TextRun } from "docx";
+import { useRouter } from 'next/navigation';
 
 interface FormData {
   projectTitle: string;
@@ -24,7 +26,14 @@ interface FormData {
   workOrganization: string;
   timeSchedule: string;
 }
-
+function getCookie(name: string) {
+  let cookies = document.cookie.split("; ");
+  for (let cookie of cookies) {
+      let [key, value] = cookie.split("=");
+      if (key === name) return value;
+  }
+  return null;
+}
 const WORD_LIMIT = 300;
 
 interface DetailsFormProps {
@@ -40,6 +49,8 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
   progress,
   setProgress,
 }) => {
+  const router = useRouter();
+
   const [isNavVisible, setIsNavVisible] = useState(false); // Manage Side_nav visibility
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDownloadDropdownVisible, setIsDownloadDropdownVisible] = useState(false);
@@ -83,17 +94,22 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
 
   const handleDownloadPDF = async () => {
     if (!previewRef.current) return;
+    const turndownService = new TurndownService();
 
-    const previewElement = previewRef.current;
-    const canvas = await html2canvas(previewElement, { scale: 2 });
-    const imgData = canvas.toDataURL('image/png');
+    // Get HTML content
+    const htmlContent = previewRef.current.innerText;
 
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+    // Convert HTML to Markdown
+    const markdown = turndownService.turndown(htmlContent);
 
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('live-preview.pdf');
+    // Create PDF instance
+    const doc = new jsPDF();
+
+    // Add Markdown to the PDF
+    doc.text(markdown, 10, 10);
+
+    // Save the PDF
+    doc.save('output.pdf');
   };
 
   const handleDownloadTXT = () => {
@@ -103,6 +119,51 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
     const blob = new Blob([previewContent], { type: 'text/plain;charset=utf-8' });
     saveAs(blob, 'live-preview.txt');
   };
+  async function SubmitProp() {
+    if (!previewRef.current) return;
+    const turndownService = new TurndownService();
+
+    // Get HTML content
+    const htmlContent = previewRef.current.innerText;
+
+    // Convert HTML to Markdown
+    // const markdown = turndownService.turndown(htmlContent);
+
+    // Create PDF instance
+    // const doc = new jsPDF();
+
+    // Add Markdown to the PDF
+    // doc.text(markdown, 10, 10);
+    // Convert the PDF to Base64
+    // const base64PDF = btoa(doc.output("arraybuffer"));
+
+    // Step 2: Send the Base64 PDF to the backend as JSON
+    const payload = {
+        id: getCookie("margsathi_id"),
+        fileName: "sample.pdf",
+        fileData: htmlContent,
+    };
+    console.log(payload)
+
+    try {
+        const response = await fetch("/api/Submit_proposal", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+            alert("PDF uploaded successfully!");
+            router
+        } else {
+          alert("Failed to upload PDF.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+  }
 
   const handleDownloadDOCX = async () => {
     if (!previewRef.current) return;
@@ -148,7 +209,7 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
           disabled={!Object.values(formData).every((val) => val.trim() !== '')}
           className={`mt-4 px-14 py-3 text-white ${
             Object.values(formData).every((val) => val.trim() !== '') ? 'bg-black' : 'bg-gray-300 cursor-not-allowed'
-          } rounded-lg shadow-md`}
+          } rounded-lg shadow-md`} onClick={SubmitProp}
         >
           Submit
         </button>

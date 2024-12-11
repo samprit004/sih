@@ -34,7 +34,7 @@ const Side_nav: React.FC<SideNavProps> = ({ isVisible, onClose }) => {
 
       {/* Navigation Buttons */}
       <div className="flex flex-col gap-5 mt-14 items-center">
-        <Link href="/overview">
+        <Link href="/invigilator/overview">
           <button
             className={`text-md font-semibold px-5 py-3 rounded-lg ${
               activeButton === 'View Projects'
@@ -47,7 +47,7 @@ const Side_nav: React.FC<SideNavProps> = ({ isVisible, onClose }) => {
           </button>
         </Link>
 
-        <Link href="/draft_proposal">
+        <Link href="/invigilator/draft_proposal">
           <button
             className={`text-md font-semibold px-5 py-3 rounded-lg ${
               activeButton === 'Draft Proposal'
@@ -60,7 +60,7 @@ const Side_nav: React.FC<SideNavProps> = ({ isVisible, onClose }) => {
           </button>
         </Link>
 
-        <Link href="/submit_proposal">
+        <Link href="/invigilator/submit_proposal">
           <button
             className={`text-md font-semibold px-5 py-3 rounded-lg ${
               activeButton === 'Submit Proposal'

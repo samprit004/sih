@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 const Home: React.FC = () => {
   
   const [otp, setOtp] = useState<string>('');
-  const router = useRouter();
+  const  = useRouter();
   function getCookie(name: string) {
     let cookies = document.cookie.split("; ");
     for (let cookie of cookies) {

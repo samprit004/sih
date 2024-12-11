@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from "react";
 import Dialog from "./dialog";
 
-interface TableRow {
+export interface TableRow {
   projectId: string;
   piName: string;
   response: string;
   proposalStatus: string;
+  meetingTimeSlot: string;
+  fileURL: string;
 }
 
 const Table = () => {
@@ -18,7 +20,7 @@ const Table = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/proposals"); // Replace with your API endpoint
+        const response = await fetch("/api/proposal_list"); // Replace with your API endpoint
         if (response.ok) {
           const data = await response.json();
           setTableData(data);
@@ -63,7 +65,8 @@ const Table = () => {
               <td className="border-4 border-black px-4 py-2 text-center">{row.projectId}</td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.piName}</td>
               <td className="px-4 py-2">
-                <button className="w-20 ml-6 bg-black text-white h-7 rounded-md hover:bg-gray-500">
+                <button className="w-20 ml-6 bg-black text-white h-7 rounded-md hover:bg-gray-500"
+                onClick={()=>{window.open(row.fileURL, '_blank', 'noopener,noreferrer')}}>
                   View
                 </button>
               </td>
