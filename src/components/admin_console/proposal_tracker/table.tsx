@@ -7,6 +7,7 @@ export interface TableRow {
   projectId: string;
   piName: string;
   response: string;
+  agent_score: string;
   proposalStatus: string;
   meetingTimeSlot: string;
   fileURL: string;

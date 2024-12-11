@@ -6,6 +6,7 @@ export interface TableRow {
   projectId: string;
   piName: string;
   response: string;
+  agent_score: string;
   proposalStatus: string;
   meetingTimeSlot: string;
   fileURL: string;
@@ -14,6 +15,7 @@ export interface TableRow {
 const Table = () => {
   const [tableData, setTableData] = useState<TableRow[]>([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [aiScore, setAiScore] = useState("");
   const [selectedResponse, setSelectedResponse] = useState("");
 
   // Fetch table data from the backend
@@ -35,8 +37,9 @@ const Table = () => {
     fetchData();
   }, []);
 
-  const handleViewClick = (response: React.SetStateAction<string>) => {
+  function handleViewClick(response: string, score: string) {
     setSelectedResponse(response);
+    setAiScore(score);
     setIsDialogOpen(true);
   };
 
@@ -49,7 +52,10 @@ const Table = () => {
       projectId: "P12345",
       piName: "New PI",
       response: "This is a new response",
-      proposalStatus: "Pending"
+      proposalStatus: "Pending",
+      meetingTimeSlot: "",
+      fileURL: "",
+      agent_score: ""
     };
     setTableData((prevData) => [...prevData, newRow]);
   };
@@ -89,7 +95,7 @@ const Table = () => {
               <td className="px-4 py-2 flex justify-center border-2 border-black">
                 <button
                   className="bg-black text-white w-20 h-7 rounded-md hover:bg-gray-500"
-                  onClick={() => handleViewClick(row.response)}
+                  onClick={() => handleViewClick(row.response, row.agent_score)}
                 >
                   View
                 </button>
@@ -99,7 +105,7 @@ const Table = () => {
           ))}
         </tbody>
       </table>
-      <Dialog isOpen={isDialogOpen} onClose={closeDialog} response={selectedResponse} />
+      <Dialog isOpen={isDialogOpen} aiScore={aiScore} onClose={closeDialog} response={selectedResponse} />
     </div>
   );
 };

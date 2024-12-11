@@ -66,7 +66,7 @@ async function processPDF(fileData: string, agency: string): Promise<string> {
     }else{
         text= await readTextFile('r&d.txt')
     }
-    return sendPrompt(`read the guidelines provided by user: ${text}\n\nCompare this the guidelines from admin:${fileData}.\n\nAnd score the guideline provided by the user with reference to admin's guideline and score it out of 100 and explain why you gave this marks after comparison in short.`)
+    return sendPrompt(`read the guidelines provided by admin: ${text}\n------End of Admin Guildlines------\nCompare this to the proposal given by the user:${fileData}.\n------End of User Proposal------\nAnd score the guideline provided by the user with reference to admin's guideline and score it out of 100 and explain why you gave this marks after comparison in short.`)
 }
 function generateNumeric(length: number = 6): number {
     const min = Math.pow(10, length - 1); // Minimum value with the given length
@@ -108,6 +108,8 @@ export async function POST(req: Response) {
         console.log(`File content (${fileName}):`, data);
     });
     const AIres = await processPDF(fileData, "S&T");
+    const scr_prompt = `Given: \n${AIres}\nGive respose as example: 85/100 (Accepted by Agent)\nAccept only when Score > 75%`
+    const Aiscr = sendPrompt(scr_prompt)
     const record = await pb.collection("PI_proposals").create({
         PI_id: PI_id,
         Project_id: generateNumeric(4),
@@ -116,6 +118,7 @@ export async function POST(req: Response) {
         agency: "S&T",
         response: AIres,
         meetingTimeSlot: Date.now(),
+        Agent_Score: Aiscr,
     });
     
 

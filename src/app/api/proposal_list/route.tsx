@@ -22,6 +22,7 @@ export async function GET(req: Request) {
       proposalStatus: `${element.proposalStatus}`,
       meetingTimeSlot: element.meetingTimeSlot,
       fileURL: fileUrl,
+      agent_score: element.Agent_Score,
     })
     
     
