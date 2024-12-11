@@ -31,7 +31,7 @@ const Form = () => {
         e.preventDefault();
         // Handle form submission logic here
         console.log("Form submitted:", formData);
-        const auth = getCookie('Admin_Auth_token');
+        const auth = localStorage.getItem("Admin_Auth_token");
         if(auth == null){
           alert("Auth_token not found");
           return;

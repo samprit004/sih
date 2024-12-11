@@ -3,14 +3,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-function getCookie(name: string) {
-  let cookies = document.cookie.split("; ");
-  for (let cookie of cookies) {
-      let [key, value] = cookie.split("=");
-      if (key === name) return value;
-  }
-  return null;
-}
 const CustomForm = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -27,8 +19,8 @@ const CustomForm = () => {
     e.preventDefault();
     console.log("Form Data:", formData);
     const jsbody = {
-      id: getCookie('margsathi_id'),
-      Auth_token: getCookie('Auth_token'),
+      id: localStorage.getItem("margsathi_id"),
+      Auth_token: localStorage.getItem("margsathi_Auth_token"),
       aadhar_no: formData.governmentId,
       pi_id: formData.projectId,
     }

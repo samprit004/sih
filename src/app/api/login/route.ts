@@ -4,7 +4,7 @@ const pb = new PocketBase('http://127.0.0.1:8090');
 async function search_user(username: string, password: string, token: string){
   // you can also fetch all records at once via getFullList
     const records = await pb.collection('CMPDI_users').getFullList({
-      filter: `(user_email='${username}' && password='${password}' && Auth_token='${token}')`
+      filter: `(user_email='${username}' && OTP='${password}' && Auth_token='${token}')`
     });
     
     return records;

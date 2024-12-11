@@ -1,0 +1,10 @@
+
+
+.card {
+    background-color: blue;
+  }
+@media (max-width: 600px) {
+    .card{
+        background-color: blue;
+    }
+}

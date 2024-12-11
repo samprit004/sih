@@ -34,13 +34,13 @@ async function search_user(id: string|null, token: string|null){
     return null;
   }
 }
-export function getCookie(name: string) {
-  let cookies = document.cookie.split("; ");
-  for (let cookie of cookies) {
-      let [key, value] = cookie.split("=");
-      if (key === name) return value;
+export function getSession() {
+  if(typeof window !== 'undefined'){
+    const session = sessionStorage.getItem('margsathi_session')
+    if(session == null) return false;
+    else return true;
   }
-  return null;
+  return false;
 }
 
 const secretKey = "secret";
@@ -85,11 +85,11 @@ export async function logout() {
     cookies()).set("session", "", { expires: new Date(0) });
 }
 
-export async function getSession() {
-  const session = (await cookies()).get("session")?.value;
-  if (!session) return null;
-  return await decrypt(session);
-}
+// export async function getSession() {
+//   const session = (await cookies()).get("session")?.value;
+//   if (!session) return null;
+//   return await decrypt(session);
+// }
 
 export async function updateSession(request: NextRequest) {
   const session = request.cookies.get("session")?.value;

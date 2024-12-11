@@ -44,7 +44,7 @@ const SignupForm = () => {
         console.log(data)
         // add cookies in client-side @samprit
         alert('Form submitted successfully!');
-        document.cookie = `margsathi_id=${data.id}; path=/; secure; samesite=Strict`;
+        localStorage.setItem("margsathi_id",data.id)
         router.push('/invigilator/email_verification');
       } else {
         alert('User Not Found');

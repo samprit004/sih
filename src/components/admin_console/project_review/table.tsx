@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import Dialog from "./dialog";
+import Link from "next/link";
 
 export interface TableRow {
   projectId: string;
@@ -53,23 +54,17 @@ const Table = () => {
       piName: "New PI",
       response: "This is a new response",
       proposalStatus: "Pending",
+      agent_score: "",
       meetingTimeSlot: "",
-      fileURL: "",
-      agent_score: ""
+      fileURL: ""
     };
     setTableData((prevData) => [...prevData, newRow]);
   };
 
   return (
     <div className="ml-48">
-      <div className="mt-32 px-8 w-full flex justify-between">
+      <div className="mt-32 px-8 w-full">
         <h1 className="text-2xl font-semibold ml-24 underline">Proposal Overview</h1>
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
-          onClick={addRow}
-        >
-          Add Row
-        </button>
       </div>
       <table className="w-[1200px] ml-32 border-4 border-black mt-2 mx-8 content-center">
         <thead>
@@ -93,12 +88,14 @@ const Table = () => {
                 </button>
               </td>
               <td className="px-4 py-2 flex justify-center border-2 border-black">
+              <Link href="/Admin_console/proposal_overview">
                 <button
                   className="bg-black text-white w-20 h-7 rounded-md hover:bg-gray-500"
                   onClick={() => handleViewClick(row.response, row.agent_score)}
                 >
                   View
                 </button>
+                </Link>
               </td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.proposalStatus}</td>
             </tr>

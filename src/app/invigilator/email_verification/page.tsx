@@ -10,15 +10,7 @@ import { useRouter } from 'next/navigation';
 const Home: React.FC = () => {
   
   const [otp, setOtp] = useState<string>('');
-  const  = useRouter();
-  function getCookie(name: string) {
-    let cookies = document.cookie.split("; ");
-    for (let cookie of cookies) {
-        let [key, value] = cookie.split("=");
-        if (key === name) return value;
-    }
-    return null;
-  }
+  const router = useRouter();
 
   const handleOtpChange = (value: string) => {
     setOtp(value);
@@ -26,7 +18,7 @@ const Home: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const id= getCookie('margsathi_id');
+    const id= localStorage.getItem("margsathi_id");
     if(id == null){
       alert("Couldn't send otp");
       return;
@@ -50,9 +42,7 @@ const Home: React.FC = () => {
         console.log(data)
         // add cookies in client-side @samprit
         alert('otp submitted successfully!');
-        document.cookie = `margsathi_id=${data.id}; path=/; secure; samesite=Strict`;
-        document.cookie = `Auth_token=${data.Auth_token}; path=/; secure; samesite=Strict`;
-        document.cookie = `Auth_exp=${data.Auth_exp}; path=/; secure; samesite=Strict`;
+        localStorage.setItem("margsathi_Auth_token",data.Auth_token)
 
         router.push('/invigilator/ID');
       } else {

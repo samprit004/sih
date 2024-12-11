@@ -5,7 +5,32 @@ import PSide_nav from "./PSide_nav";
 import TextEditor from "@/components/Submit_vision/Texteditor";
 import Dialog2 from "./dialog2";
 
-const Proposal = () => {
+interface DialogProps {
+    isOpen: boolean; // Controls visibility
+    onClose: () => void; // Callback for closing the dialog
+    aiScore?: number; // Placeholder for AI Score (to be populated by backend)
+    response?: string; // Placeholder for response content (to be populated by backend)
+  }
+  
+  const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, aiScore, response }) => {
+        if (!isOpen) return null;
+    
+        return (
+          <div className="dialog">
+            <div className="dialog-content">
+              <button onClick={onClose}>Close</button>
+              <div>AI Score: {aiScore}</div>
+              <div>Response: {response}</div>
+            </div>
+          </div>
+        );
+      };
+interface ProposalProps {
+    aiScore?: number;
+    response?: string;
+}
+
+const Proposal: React.FC<ProposalProps> = ({ aiScore, response }) => {
     const [isNavVisible, setIsNavVisible] = useState(false);
     const [isApprovedChecked, setIsApprovedChecked] = useState(false);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -25,7 +50,7 @@ const Proposal = () => {
     return (
         <div className="w-[60%]">
             {/* Button to toggle side navigation */}
-            <div className="flex">
+            <div className="flex m-4">
                 <button onClick={() => setIsNavVisible(true)}>
                     <Image src="/menu.svg" alt="Menu Icon" width={40} height={120} />
                 </button>
@@ -35,7 +60,25 @@ const Proposal = () => {
                 isVisible={isNavVisible} 
                 onClose={() => setIsNavVisible(false)} 
             />
-            
+             <div className="flex-1 overflow-y-auto">
+          {/* AI Score Section */}
+          <div className="border-2 border-black rounded-md mb-4 m-4">
+            <h2 className="text-2xl mb-4 bg-black text-white text-left">Agent Score</h2>
+            <div className="flex items-center justify-center p-2 text-xl font-bold">
+              {aiScore !== undefined ? aiScore : "Loading..."}
+            </div>
+          </div>
+
+          {/* Acceptance Response Section */}
+          <div className="border-2 border-black rounded-md m-4">
+            <h2 className="text-2xl mb-4 bg-black text-white text-left">Acceptance Response</h2>
+            <ul className="pl-6 text-sm">
+              {response
+                ? response.split("\n").map((line, index) => <li key={index}>{line}</li>)
+                : <li>Loading...</li>}
+            </ul>
+          </div>
+        </div>
             <div className="flex">
                 <TextEditor />
             </div>

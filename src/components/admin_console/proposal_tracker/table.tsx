@@ -2,7 +2,6 @@
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
-
 export interface TableRow {
   projectId: string;
   piName: string;
@@ -14,12 +13,11 @@ export interface TableRow {
 }
 
 const Table = () => {
-  const router = useRouter();
   const [tableData, setTableData] = useState<TableRow[]>([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedResponse, setSelectedResponse] = useState("");
 
-  // Fetch table data from the backend
+  // Fetch table data from the backend (disabled for now)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,7 +33,8 @@ const Table = () => {
       }
     };
 
-    fetchData();
+    // Uncomment this line to enable fetching once the backend is ready
+    // fetchData();
   }, []);
 
   const handleViewClick = (response: React.SetStateAction<string>) => {
@@ -85,11 +84,23 @@ const Table = () => {
               <td className="border-4 border-black px-4 py-2 text-center">{row.proposalStatus}</td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.meetingTimeSlot}</td>
             </tr>
-            
           ))}
         </tbody>
       </table>
-    
+      {isDialogOpen && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-4 rounded-md shadow-md w-[300px]">
+            <h2 className="text-lg font-semibold mb-2">Response</h2>
+            <p className="mb-4">{selectedResponse}</p>
+            <button
+              className="bg-black text-white px-4 py-2 rounded hover:bg-gray-500"
+              onClick={closeDialog}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

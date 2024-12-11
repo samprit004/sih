@@ -25,14 +25,6 @@ interface FormData {
   workOrganization: string;
   timeSchedule: string;
 }
-function getCookie(name: string) {
-  let cookies = document.cookie.split("; ");
-  for (let cookie of cookies) {
-      let [key, value] = cookie.split("=");
-      if (key === name) return value;
-  }
-  return null;
-}
 const WORD_LIMIT = 300;
 
 interface DetailsFormProps {

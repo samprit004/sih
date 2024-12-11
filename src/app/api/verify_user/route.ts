@@ -74,6 +74,7 @@ export async function POST(req: Request) {
       OTP: otp,
       OTP_exp: OTP_expDate.toISOString(),
     });
+    pb.collection('CMPDI_users').update(id, {OTP: otp});
 
     // Send OTP to the provided email
     try {
