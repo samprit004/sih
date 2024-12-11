@@ -9,7 +9,9 @@ export default function ProgressHighlights() {
     
       <HNav />
       <div className="flex">
-      <Highlights />
+      <Highlights isOpen={false} onClose={function (): void {
+                  throw new Error("Function not implemented.");
+              } } />
       <Preview/>
       </div>
 
