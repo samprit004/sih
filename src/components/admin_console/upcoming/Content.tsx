@@ -3,6 +3,11 @@ import React from 'react'
 import Side_nav from "@/components/admin_console/upcoming/side_nav";
 import Nav from "@/components/admin_console/upcoming/nav";
 import Card from "@/components/admin_console/upcoming/card";
+interface ContentProps {
+  topic?: string;
+  objective?: string;
+}
+
 
 
 const handleButtonClick = (button: string) => {
