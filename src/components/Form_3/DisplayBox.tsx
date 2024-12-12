@@ -1,56 +1,128 @@
-"use client"
-import React from 'react';
+"use client";
 
-// Row Component to render each row in DisplayBox (Read-only)
-interface RowProps {
-  label: string;
-  values: string[];
-}
+import React from "react";
 
-const Row: React.FC<RowProps> = ({ label, values }) => {
-  return (
-    <tr>
-      <td className="border border-gray-400 px-4 py-2">{label}</td>
-      {values.map((value, index) => (
-        <td key={index} className="border border-gray-400 px-4 py-2">
-          {value}
-        </td>
-      ))}
-    </tr>
-  );
-};
-
-// DisplayBox Component to render the table with read-only data
 interface DisplayBoxProps {
-  rows: string[];
   data: string[][];
+  inputs: string[];
+  onInputChange: (rowIndex: number, colIndex: number, value: string) => void;
 }
 
-const DisplayBox: React.FC<DisplayBoxProps> = ({ rows, data }) => {
+const DisplayBox: React.FC<DisplayBoxProps> = ({ data, inputs, onInputChange }) => {
+  const columnLabels = [
+    "Items",
+    "Column 1",
+    "Column 2",
+    "Column 3",
+    "Column 4",
+    "Column 5",
+    "Column 6",
+  ];
+
+  const rowLabels = [
+    "Row 1",
+    "Row 2",
+    "Row 3",
+    "Row 4",
+    "Row 5",
+    "Row 6",
+    "Row 7",
+    "Row 8",
+  ];
+
   return (
-    <div className="overflow-x-auto mb-8 w-1/2"> {/* 50% width and allow horizontal scrolling */}
-      <table className="table-auto border-collapse border border-gray-400 w-full text-sm">
-        <thead>
-          <tr>
-            <th className="border border-gray-400 px-4 py-2">Items</th>
-            <th className="border border-gray-400 px-4 py-2">Total Approved Cost</th>
-            <th className="border border-gray-400 px-4 py-2">Sanctioned provision in the Year</th>
-            <th className="border border-gray-400 px-4 py-2">Expenditure incurred up to Previous year (1)</th>
-            <th className="border border-gray-400 px-4 py-2">Total Expenditure up to previous quarter of the current financial year (2)</th>
-            <th className="border border-gray-400 px-4 py-2">Expenditure in the present quarter ending</th>
-            <th className="border border-gray-400 px-4 py-2">Progressive expenditure till the end of this quarter (4) = (1)+(2)+(3)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, rowIndex) => (
-            <Row
-              key={rowIndex}
-              label={row}
-              values={data[rowIndex]} // No extra empty columns
-            />
+    <div>
+      <div className="mb-4">
+        <h2 className="text-lg font-bold mb-2">Additional Inputs</h2>
+        <ul>
+          {inputs.map((value, index) => (
+            <li key={index} className="mb-1">
+              <strong>Input {index + 1}:</strong> {value}
+            </li>
           ))}
-        </tbody>
-      </table>
+        </ul>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="table-auto border-collapse border border-gray-400 w-full text-sm">
+          <thead>
+            <tr>
+              {columnLabels.map((label, colIndex) => (
+                <th key={colIndex} className="border border-gray-400 px-4 py-2">
+                  {label}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rowLabels.map((rowLabel, rowIndex) => (
+              <tr key={rowIndex}>
+                {/* First column with labels */}
+                <td className="border border-gray-400 px-4 py-2">{rowLabel}</td>
+                {/* Non-editable cells */}
+                {data[rowIndex].map((value, colIndex) => (
+                  <td key={colIndex} className="border border-gray-400 px-4 py-2">
+                    {value}
+                  </td>
+                ))}
+              </tr>
+            ))}
+
+            {/* Total Row with inputs */}
+            <tr>
+              <td className="border border-gray-400 px-4 py-2 font-bold">Total</td>
+              {columnLabels.slice(1).map((_, colIndex) => (
+                <td key={colIndex} className="border border-gray-400 px-4 py-2 font-bold">
+                  <input
+                    type="text"
+                    value=""
+                    onChange={(e) => onInputChange(8, colIndex, e.target.value)} // 8 corresponds to the "Total" row
+                    className="w-full border border-gray-300 px-2 py-1"
+                  />
+                </td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+
+        <div>
+        <div><h1 className="text-xl font-semibold my-2">*Details to be submitted as per sanction letter</h1></div>
+        <div className="">
+          <div className="flex flex-col gap-2">
+            <div>
+            <label>Funds advanced till date</label>
+            <input type="text" /></div>
+            <div>
+            <label>expenditure incurred till date</label>
+            <input type="text" /></div>
+            <div>
+            <label>Funds advanced till date</label>
+            <input type="text" /></div>
+          </div>
+
+          <div className="flex justify-between mb-4 mt-2">
+            <div className="flex flex-col gap-2">
+              <h1>Signature of Associate Finance officer</h1>
+              <label>Sign:</label>
+              <input type="text" />
+              <label>Designation:</label>
+              <input type="text" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1>Signature of Associate Finance officer</h1>
+              <label>Sign:</label>
+              <input type="text" />
+              <label>Designation:</label>
+              <input type="text" />
+            </div>
+            
+          </div>
+          <div className="flex justify-center">
+                <div className="flex"><label>Seal</label><input type="text" /></div>
+            </div>
+        </div>
+        </div>
+      </div>
     </div>
   );
 };

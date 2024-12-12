@@ -1,61 +1,79 @@
-"use client"
-import React from 'react';
+"use client";
 
-interface RowProps {
-  label: string;
-  values: string[];
-  onInputChange: (colIndex: number, value: string) => void;
-}
-
-const Row: React.FC<RowProps> = ({ label, values, onInputChange }) => {
-  return (
-    <tr>
-      <td className="border border-gray-400 px-4 py-2">{label}</td>
-      {values.map((value, index) => (
-        <td key={index} className="border border-gray-400 px-4 py-2">
-          <input
-            type="text"
-            value={value}
-            onChange={(e) => onInputChange(index, e.target.value)}
-            className="w-1/2 border border-gray-300 px-2 py-1"
-          />
-        </td>
-      ))}
-    </tr>
-  );
-};
+import React from "react";
 
 interface TableProps {
-  rows: string[];
   data: string[][];
-  onRowChange: (rowIndex: number, colIndex: number, value: string) => void;
+  onInputChange: (rowIndex: number, colIndex: number, value: string) => void;
 }
 
-const Table: React.FC<TableProps> = ({ rows, data, onRowChange }) => {
+const Table: React.FC<TableProps> = ({ data, onInputChange }) => {
+  const columnLabels = [
+    "Items",
+    "Column 1",
+    "Column 2",
+    "Column 3",
+    "Column 4",
+    "Column 5",
+    "Column 6",
+  ];
+
+  const rowLabels = [
+    "Row 1",
+    "Row 2",
+    "Row 3",
+    "Row 4",
+    "Row 5",
+    "Row 6",
+    "Row 7",
+    "Row 8",
+  ];
+
   return (
     <div className="overflow-x-auto mb-8">
       <table className="table-auto border-collapse border border-gray-400 w-full text-sm">
-      <thead>
+        <thead>
           <tr>
-            <th className="border border-gray-400 px-4 py-2">Items</th>
-            <th className="border border-gray-400 px-4 py-2">Total Approved Cost</th>
-            <th className="border border-gray-400 px-4 py-2">Sanctioned  provision in the  Year</th>
-            <th className="border border-gray-400 px-4 py-2">Expenditure  incurred up to  Previous year  (1) (1)</th>
-            <th className="border border-gray-400 px-4 py-2">Total Expenditure up to previous quarter of the  current financial  year (2)</th>
-            <th className="border border-gray-400 px-4 py-2">Expenditure in  the present  quarter ending</th>
-            <th className="border border-gray-400 px-4 py-2">Progressive  expenditure till the  end of this quarter 
-            (4) = (1)+(2)+(3)</th>
+            {columnLabels.map((label, colIndex) => (
+              <th key={colIndex} className="border border-gray-400 px-4 py-2">
+                {label}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, rowIndex) => (
-            <Row
-              key={rowIndex}
-              label={row}
-              values={data[rowIndex]}
-              onInputChange={(colIndex, value) => onRowChange(rowIndex, colIndex, value)}
-            />
+          {rowLabels.map((rowLabel, rowIndex) => (
+            <tr key={rowIndex}>
+              {/* First column with labels */}
+              <td className="border border-gray-400 px-4 py-2">{rowLabel}</td>
+              {/* Editable cells */}
+              {data[rowIndex].map((value, colIndex) => (
+                <td key={colIndex} className="border border-gray-400 px-4 py-2">
+                  <input
+                    type="text"
+                    value={value}
+                    onChange={(e) => onInputChange(rowIndex, colIndex, e.target.value)}
+                    className="w-full border border-gray-300 px-2 py-1"
+                  />
+                </td>
+              ))}
+            </tr>
           ))}
+          
+          {/* Total Row with inputs */}
+          <tr>
+            <td className="border border-gray-400 px-4 py-2 font-bold">Total</td>
+            {columnLabels.slice(1).map((_, colIndex) => (
+              <td key={colIndex} className="border border-gray-400 px-4 py-2 font-bold">
+                <input
+                  type="text"
+                  value=""
+                  onChange={(e) => onInputChange(8, colIndex, e.target.value)} // 8 corresponds to the "Total" row
+                  className="w-full border border-gray-300 px-2 py-1"
+                />
+              </td>
+            ))}
+          </tr>
         </tbody>
       </table>
     </div>
