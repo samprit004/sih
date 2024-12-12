@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 export interface TableRow {
   id: string;
@@ -74,12 +75,12 @@ const Table = () => {
                 </button>
               </td>
               <td className="px-4 py-2 flex justify-center border-2 border-black">
-                <button
-                  className="bg-black text-white w-20 h-7 rounded-md hover:bg-gray-500"
-                  onClick={() => handleViewClick(row.response)}
-                >
+                <Link href="/Admin_console/Progress_highlights" className="bg-black text-white w-20 h-7 rounded-md hover:bg-gray-500">
+                  
+                 
+                
                   View
-                </button>
+                </Link>
               </td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.proposalStatus}</td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.meetingTimeSlot}</td>
