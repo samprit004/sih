@@ -26,7 +26,7 @@ interface DialogProps {
         );
       };
 interface ProposalProps {
-    aiScore?: number;
+    aiScore?: string;
     response?: string;
 }
 
@@ -46,6 +46,7 @@ const Proposal: React.FC<ProposalProps> = ({ aiScore, response }) => {
         setFixedSlots(slots);
         setIsDialogOpen(false);
     };
+    // console.log(response)
 
     return (
         <div className="w-[60%]">
@@ -73,9 +74,10 @@ const Proposal: React.FC<ProposalProps> = ({ aiScore, response }) => {
           <div className="border-2 border-black rounded-md m-4">
             <h2 className="text-2xl mb-4 bg-black text-white text-left">Acceptance Response</h2>
             <ul className="pl-6 text-sm">
-              {response
+                {response !== undefined ? response : <li>Loading...</li>}
+              {/* {response
                 ? response.split("\n").map((line, index) => <li key={index}>{line}</li>)
-                : <li>Loading...</li>}
+                : <li>Loading...</li>} */}
             </ul>
           </div>
         </div>

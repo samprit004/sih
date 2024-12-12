@@ -1,16 +1,38 @@
+'use client'
 import Side_nav from "@/components/admin_console/authorize_PI/side_nav";
 import Nav from "@/components/admin_console/authorize_PI/nav";
-import Table1 from "@/components/admin_console/authorize_PI/table1";
-import Table2 from "@/components/admin_console/authorize_PI/table2";
-export default function Upcoming(){
+import Table from "@/components/admin_console/authorize_PI/table";
+import PocketBase from 'pocketbase';
+const pb = new PocketBase('http://127.0.0.1:8090');
+
+interface piData{ id: string,piId: string; piName: string;
+  contactNumber: number; email: string;
+  adharNumber: number; };
+export default async function Upcoming(){
+  const records = await pb.collection('PI_records').getFullList({
+    expand: 'CMPDI_id',
+    filter: '(CMPDI_id.verify_status="Verification pending")',
+  });
+  let rec_list: piData[]= [];
+  records.forEach(e => {
+    rec_list.push({
+      id: e.id,
+      piId: e.PI_id,
+      piName: e.name,
+      contactNumber: e.phone_no,
+      email: e.expand?.CMPDI_id.user_email,
+      adharNumber: e.aadhar_no,
+    }) 
+  });
     return (
       <>
        <Nav />
       <div className="flex mt-[84px]"> {/* Offset for Nav bar */}
         <Side_nav />
         <div>
-        <Table1/>
-        <Table2/>
+          {rec_list.map(((e, idx)=>(
+            <Table key={idx} piData={e}/>
+          )))}
         </div>
       </div>
     </>

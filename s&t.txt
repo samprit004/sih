@@ -1,0 +1,1443 @@
+GUIDELINES    
+FOR  RESEARCH  PROJECTS OF  
+MINISTRY OF COAL  
+  
+FEBRUARY  2021 
+ 
+GOVERNMENT OF INDIA  
+MINISTRY OF COAL  
+SHASTRI BHAWAN  
+NEW DELHI – 110 001   
+GOVERNMENT OF INDIA  
+MINISTRY OF COAL  
+ 
+ 267310/2021/CCT1782 
+1 
+ GUIDELINES FOR S&T PROGRAMME  
+ 
+The Ministry of Coal  (MoC) , Government of India, has been supporting R&D programme in coal and lignite 
+sector since 1976.   
+ 
+The Ministry normally supports projects of shorter duration ( preferably 1 to 2 years), the findings of which, if 
+completed successfully, can be used directly for commercial exploitation and benefit to the industry. 
+However, in exceptional cases, research in newly emerging and front line areas of Science & Engineering 
+and projec ts having long terms implications are also supported.   
+These guidelines stress es upon the priority of Ministry to the ambitious plans of the GOI on Atmanirbhar 
+Bharat  and Make in India projects in line with the identified thrust areas.  
+ 
+The guidelines for implementation of the projects have been issued from time to time, since 1976. These 
+guidelines have been revised by the Ministry and its Standing Scientific Research Committee to make it 
+comprehensive and in line with latest development .  
+ 
+It will help the implementing agencies in formulating the research proposals in an organized manner and 
+facilitate evaluation and monitoring of research projects.  
+  267310/2021/CCT1783 
+2 
+ 1.0 R&D SET UP in Ministry of Coal ( MoC ) 
+ 
+A. Standing Scientific Research Committee ( SSRC )  
+Standing Scientific Research Committee (SSRC) of the Ministry of Coal under the Ch airmanship of 
+Secretary (Coal) is the Apex body to plan, programme, budget and oversee the implementation of 
+research projects and provide financial support for all activiti es related to Research and Development 
+project . It has members from statutory  bodies, industry, research institution & other ministries. The SSRC  
+may co -opt any other members whenever deemed necessary from the renowned research Institutes / 
+experts from CI L and other organizations.  
+Delegation of Power (DOP) : 
+a) To approve  S&T Project on the recommendation of Technical Sub -committee of SSRC  
+b) To approve extension of p roject duration of the ongoing S&T projects , if required.  
+c) To approve Cost Escalation of S&T Projects  
+d) Monitoring of on-going S&T projects  
+e) Termination of S&T projects on recommendation of the Technical Sub -committee of SSRC  
+f) To perform such other work as may be necessary, from time  to time, in regard to the furtherance of 
+R&D activities in coal sector  
+The committee may meet as often as necessary, but at least once  in a year.  At least 50% of the 
+committee members including Chairman of the committee, must be present for successfully conducting 
+any meeting.  
+B. Technical Sub-committee of SSRC  
+For evaluating the need of  research work and implementation, SSRC  has constituted a  Technical Sub -
+committee of SSRC  under the chairmanship of HoD(Mining), IIT -BHU / IIT -KGP/ IIT -ISM on annual 
+rotation basis. Ministry of Coal may recon stitute the committee as and when required.   
+Delegation of Power : 
+a) To recommend  new S&T proposal  for consideration of SSRC . 
+b) To approve extension of project s duration  up to 6 months . 
+c) To approve Re -appropriation of funds from one item to another in the same head i.e. Capital to 
+Capital and Revenue to revenue, within the approved project cost.  
+d) To recommend  Cost Escalation of the projects for consideration of SSRC  
+e) Monitoring of on -going S &T projects  
+f) To approve any change in specifications of equipment, change in implementing agency, scope of 
+work and the methodologies etc.  without altering the approved objective(s) of the project  and without 
+additional cost  
+g) Acceptance of completion report s of S&T projects, with information to SSRC  267310/2021/CCT1784 
+3 
+ h) To recommend t ermination of S&T projects  at any stage  if significant progress  was not made due to 
+any reason  and / or fund has not been properly utilized  
+The committee may meet as often as necessary, but at least twice  in a year. At least 50% of the 
+committee members including Chairman of the committee, must be present for successfully conducting 
+any meeting.  
+Delegation of Power to Chairman of the Technical  Sub-committee of SSRC  
+a) To approve extension of project duration up to 03 (Three ) months beyond the original schedule  to 
+avoid delay in implementation of the project  
+b) To approve increase in cost solely due to variation in exchange rate & Govt. taxes (GST etc.) which 
+should be subsequently ratified by SSRC.  
+c) One-time approval of  Re-appropriation of funds from one item to another in the same head i.e. 
+Capital to Capital and Revenue to revenue, within the approved project cost 
+2.0 NODAL AGENCY   
+ 
+Central Mine Planning and Design Institute, Ranchi, a Mini Ratna Subsidiary Company of Coal India 
+Limited is the Nodal Agency for coordinating and monitoring of S&T projects of MoC . The job of co -
+ordination involves inviting new research project proposals,  carrying out first level scrutiny, placing the 
+proposals for consideration of Technical Sub -Committee of SSRC  and SSRC , monitor the progress of 
+the on-going projects at regular intervals, preparation of S&T Budget Estimates / Revised Estimates , 
+disburse ment  of funds  to the implementing agencies based on the progress of the project , dissemination 
+of research findings and provide assistance to the nodal officers of the concerned subsidiary/company 
+for promoting their replication  in field operations.  
+The project proposals, if required, may be sent for expert opinion within CMPDI and outside  for their 
+opinion on scientific and technical merits of the projects . Nodal Agency may interact with Principal 
+Implementing / Sub -implementing Agency(s) regarding a ny clarification or modification in the project 
+proposal. If necessary, Nodal agency may call for / visit the institute/organization and discuss with Project 
+leader / Coordinator regarding project proposal. After 1st level scrutiny, Nodal agency will send the Soft 
+copies of all project proposal  (with comments received from experts) , which conforms to S&T Guidelines, 
+to all the members of the Technical Sub -Committee of SSRC for their views , as the projects shall be 
+deliberated in the  meeting of Technical sub -committee of SSRC.  
+The Nodal Agency, will keep MoC  informed of the commencement and progress  of the approved S&T 
+projects  and provide Agenda papers to Member Secretary  for arranging meetings of the Technical Sub -
+Committee of SSRC  and SSRC  and provide draf t minutes of the meeting to the Member secretary of the 
+committee(s) .   
+ 
+ 
+ 267310/2021/CCT1785 
+4 
+  
+3.0 INVITING RESEARCH PROPOSALS  
+The Nodal Ag ency shall give wide publicity of S&T Programme of MoC  and the identified thrust areas  
+through websites/email etc.  and invite proposals from Govt./ Reputed Private Research and Educational 
+Institutions, Organisations, Public Sector Undertakings and from such othe r agencies which have 
+capabilities  to take up R&D work  in India and abroad .  Nodal Agency may float Express ion of Interest 
+(EoI) on identified thrust areas for inviting project proposal s as per the norms framed and approved by 
+the chairman of the Technical Sub -committee for SSRC . 
+In case of multi institutional projects, the principal Implementing Agency shall o btain formal 
+agreement/consent from the collaborating /sub agencies  
+a) CIL subsidiaries, SCCL, NLCIL,  Govt. Research & Academic Institutions / Organisations can act as 
+Principal Implementing or Sub -implementing Agency(s) in the project.  
+b) Reputed Research Organisations / Academic Institutes in Public & private sector 
+(affiliated /recognised  by M inistry of Education  / DST  or any Govt. Body ) from India, who have past 
+track records and expertise may participate in the research project s alone or  along with  any Govt. 
+Research & Academic Institutions / Organisations and/or any subsidiary  of CIL , SCCL, NLCIL . 
+Organisation / institute from abroad may participate in the project along  with Indian Govt. agencies. 
+In above case of multi -institutional projects, the Principal Implementing Agency will enter into a 
+formal agreement with all the Sub-implementing agency(s).  
+c) To encourage participation of individual /group of  researchers / students  namely IDD, B. Tech, 
+M.Tech. and Ph.D. students  in R&D initiative, a detailed guidelines are enclosed as Annexure -II. 
+All such student projects must have at least one regular faculty as P.I. for guidance, monitoring the 
+project and purchase activities, as per the purchase rules  of the concerned institute . Also, the UC, 
+SC and liquidation are important in such projects, which can be taken care through a well-designed  
+system. Further, the student submitting the projects should have at least term of the project period 
+remaining in the Institute.  If the student passed out f rom the institute and leave the institute for any 
+other assignment, it is the responsibility of the project guide to find alternative student to complete 
+the project within the approved project schedule. The funds shall be disbursed through the 
+institution/organization concerned.   
+d) For any new institute/organization submitting project proposal, if required, a committee consisting 
+of Chairman of the Technical Sub -committee or his nominated representative along with 
+representative from MoC and repre sentative from CMPDI may visit the institute/organization before 
+taking up any project and submit the report before Technical Sub -committee during deliberation of 
+the proposal. Decision of Technical Sub -committee of SSRC in this regard will be treated as f inal.  
+e) Generally, it is the responsibility of the PI to complete the project on behalf of institute/organisation. 
+However, i n exceptional cases, the change of the host institute on account of PI moving from one 
+host institute to another host institute will  be considered in MoC subject to the present host institute 
+giving its no objection certificate and the prospective institute agreeing to the terms and conditions 
+of sanctioning of the grant. In such cases, the equipment etc. and the balance of funds will be 267310/2021/CCT1786 
+5 
+ transferred from the present institute to the proposed institute.  Decision of Technical Sub -committee 
+of SSRC in this regard will be treated as final.  
+4.0 THRUST AREAS OF RESEARCH PROJECTS  
+Thrust areas for future research in coal sector have been identified  and displayed in the MoC & CMPDI  
+website  (https://scienceandtech.cmpdi.co.in/ ) . Thrust areas  are broadly categorised as following:  
+ Advanced technology/methodology for improvement of production &  productivity from underground 
+mining and open cast Mining  
+ Improvement of safety, health and environment  
+ Waste to Wealth  
+ Alternative use of coal and clean coal technologies  
+ Coal beneficiation and utilization  
+ Exploration  
+ Innovation and indigenization (Under Make -in-India Concept)  
+Projects can be undertaken in any other areas which can be beneficial to coal industries.  Inter-, multi - 
+and trans - disciplinary projects must be encouraged.  
+Any technology which is beneficial for coal industry and being used successfully outside the country, may 
+be taken up under S&T project in India with input of indeginisation and Make in India concept  to suit 
+Indian working conditions . The same will be applicable for indeginious development of any 
+equipment/system which is being used successfully elsewhere in the world.  
+5.0 PROJECT PROPOSAL  
+The S&T proposal should be framed as per the prescribed Proforma ( Form -I). In view of rapid  evolution 
+in technology, the projects duration may be limited to  2 years. However, in exceptional situations the 
+extensions may be granted in 2 phases, each being 6 - months only so that the total duration does not 
+exceed 3 years for exceptional cases.  The methodology of filling in the Proforma and othe r details are 
+given at Annexure –I with the following details:  
+ The project submission proforma should be concise with word limitations in each item  as provided 
+in Form -I. For instance, Title - 50 words, Justif ication – 200 words, Work elements to be illustrated 
+by Bar/PERT charts only, and novelty component - not more than 100 words. Objectives of the 
+projects should not be more than 04 or 05.  
+ Project proposal should  be submitted online.  
+ How the project could be beneficial to the coal industry . 
+ Name of Project Leader (s) and Project Coordinator (s) with complete communication details 
+including e -mail & mobile No.  267310/2021/CCT1787 
+6 
+  Work plan should contain, how the proposed objective of the project ca n be achieved.  
+ Proposed methodology to be carried out during execution of the project.  Methodology should 
+contain the detailed activities in a certain time limit in Bar & P ERT chart indicating responsibility of 
+participating agencies according to each activities.  
+ Literature / web  survey bringing out clearly the recent development in the proposed field in two parts 
+i.e. in the country and in other parts of the world.  
+ R&D compone nts present in the project proposal. Specific research or development content which 
+is exclusive to this proposal shall be clearly indicated.  
+ Details of expertise available and work done in the proposed field by the institution/agency(s) 
+concerned.  
+ Details of infrastructure facilities available in the institution.  
+ The past experience and performance of Principal Implementing / Sub -implementing Agency(s) in 
+the execution of similar project vis -a-vis time schedule.  
+ The track record for performance assess ment of Academic Institutes should be referring to the 
+performance of respective PIs of the project  submitting  R&D project proposal for assessing ; whether 
+the project s given earlier to them are being properly  implemented or are suffering from cost and 
+time overrun.  
+ In case of Private Research / Private Academic Institutions/ Organisations from India and abroad  
+Credential of the institutes concern ed along with CVs of the persons involved in the project from 
+that Institute should be given in the  project proposal.  Complete address along with the contact 
+number s and e-mail ids of all persons involved in the project should be provided in the project 
+proposal.  
+ Collaborating agency should not be a vendor for the project and should contribute part of  research 
+funding.  
+ Requirement of funds with break -up under Capital and Revenue heads along with phases.  
+ Certification from implementing agencies regarding the project has not been undertaken in the past, 
+to avoid repetition of the project.  
+ In case of multi institutional projects, the role and responsibility of each implementing agency should 
+be clearly mentioned activity wise in the bar chart of the project proposal  (Form -I). 
+ Major milestones during implementation  with percentage of fund req uirement . 
+ The phasing of the fund requirement should be in line with the relevant milestones or activities.  
+ In case of development of prototype/any new equipment which require field trial permission from 
+DGMS, project proponent should discuss the matter in  advance during the formulation of proposal 
+with concerned Director of DGMS and the advice given by DGMS should be strictly follow ed to 
+avoid any delay in obtaining field trial permission from DGMS.  For field trial projects the DGMS may 267310/2021/CCT1788 
+7 
+ be kept in the conn ectivity link for ease of statutory concurrence during and on completion of the 
+project . Documentation for discussion with DGMS may be incorporated in the project proposal.  
+ To engage SC and ST candidates in research projects as per the norms of the government or at 
+least one person each from SC and ST category in each project. Consent from implementing 
+agencies in this regards should be incorporated in the project proposal  (As per the Office 
+Memorandum No: 38011/2/2019 -IFD issued by Under Secretary t o Govt. of India (Finance), Ministry 
+of Coal [MoC] on dated 28.01.2019 ). 
+ Project outlay should be inclusive of all applicable taxes/duties/charges etc. with explicit break up 
+of each taxes/duties/charges etc.  
+6.0 COST  OF ITEMS WHICH CAN FORM PART OF PROJECT PR OPOSAL  
+(i) Equipment, solely and exclusively required for the project work, if the same piece of equipment 
+or a similar one is not already available with the Principal Implementing / Sub -implementing 
+Agency(s) concerned.  
+(ii) Permanent assets like land, buildings,  etc. are normally not funded from R&D fund. However, in 
+special circumstances, such assets may be permitted to be created from R&D Fund. The item 
+wise details and justification for each item is to be furnished.  
+(iii) Manpower should normally be provided by the Principal Implementing / Sub -implementing 
+Agency(s) concerned.  However, if considered essential, a minimum  number of scientific and 
+technical personnel [Junior Research Fellows (JRFs), Senior Research Fellows (S RFs), 
+Research Associates (RAs)] may be engaged for the project  for field trial/experimental purpose . 
+It should not lead to employment beyond project duration.    
+For projects requiring more number of JRFs/SRFs/RAs, complete and full justification for 
+engag ement of JRFs/SRFs/RAs shall be provided in the project proposal.  
+In any project implementation, additional Scientific/Technical manpower  may be employed on 
+contractual basis and are co -terminus with the project . 
+(iv) Maximum of Rs. 50,000/- for organizing,  attending seminars, workshop etc. for every  
+implementing agency within the country.    
+(v) Identified consumables  with proper justification .  
+(vi) Contingency shall be limited to 5% of the total revenue cost of the project .   
+(vii) TA/DA expenses in connection with tours undertaken in the interest of the project, subject to a 
+ceiling of Rs. 3.0 lakh per institute or organization  per project . However, for projects requiring 
+TA/DA amount in excess of Rs. 3.0 lakh per institute or organization  for the entire project duration , 
+complete and detailed justification with calculations should  be provided in the project proposal  to 
+facilitate concerned committees to appreciate and take a view in the matter.  
+(viii) Engagement of the personnel durin g implementation of the project shall be the responsibility of 
+the Principal Implementing or Sub -implementing Agency(s) as the case may be. The payment to 267310/2021/CCT1789 
+8 
+ be made to the engaged personnel for the desired duration of the project shall be within the 
+relevant  norms/ Gui delines of the concerned Principal Implementing or Sub -implementing 
+Agency(s).  
+(ix) Project proposal should have signature of Project Leader (s) / Co-ordinator (s) in each page.  
+(x) Institute o verhead may be charged as per provision elaborated in Para 4.1 4 under Annexure -I. 
+7.0 ITEMS  NOT TO BE CONSIDERED UNDER S&T GRANT  
+ 
+Following items are generally not considered for funding under any S&T projects unless it is specifically 
+required for the nature of the project and approved by the concerned committee.   
+(i) Infrastructural facilities like land, building, furniture and fittings, calculators, computers, etc,    
+(ii) Salaries of permanent employees of the Principal Implementing / Sub -implementing agency(s) , 
+except in case of institutions which do not have budget for s alary & wages like CMPDI.  
+(iii) Honorarium to persons who are already in the employment of the institution,  
+(iv) Foreign travel by Indian Implementing /sub -implementing agencies  
+(v) Expenditure on account of engaging / inviting foreign experts during the project executio n 
+beyond the provisions already indicated in the proposal  
+(vi) Purchase of staff car  
+(vii) Employment of peons, khalasis, laboratory attendants, stenographers, typists etc,  
+(viii) Routine studies and operations.  
+8.0 SUBMISSION OF PROJECT PROPOSAL  
+(i) Project proposal should  be submitted in the online portal.  
+(ii) Principal Implementing Agency(s) may submit S&T proposal to Nodal Agency a s specified in 
+Form -I after  incorporating other relevant forms enclosed as Annexure.  
+(iii) The proposals can be submitted any time during the year.  
+(iv) For EoI proposal, it should be submitted within the specified time limit. 
+(v) To speed up the process, the on -line project submission in the rolling mode looks imperative. 
+For scrutinizing the projects received in the rolling mode, the cut -off dates could for pro ject 
+submission may be fixed as 31stMarch, 30thJune, 30thSeptember and 31stDecember. The 
+scrutiny, recommendation and approval of the projects received in each cycle must be done in 
+the intervening period between consecutive cycles.  
+The proponents  will be allowed to track the status of the submitted project proposal through 
+online portal  267310/2021/CCT1790 
+9 
+ 9.0 PROCEDURE FOR PROCESSING S&T PROJECT PROPOSAL   
+Initial scrutiny of the project proposal will be made by the Central Mine Planning and Design Institute 
+(CMPDI), which may interact, seek additional information, clarifications and if necessary call for /visit the 
+institute for first hand discussions with the project leader/coordinator concerned . While scrutinizing, the 
+nodal agency may seek the views of the internal and exter nal experts on the proposal . After 1st level 
+scrutiny, Nodal agency will send the Soft  copies of all project proposal  with comments of the experts , to 
+all the members of the Technical Sub -Committee of SSRC before  projects are deliberated in the meeting 
+of Technical sub -committee of SSRC.  The Technical Sub -committee of SSRC  will evaluate the project 
+proposals and if necessary, may call for clarifications/modifications.  
+The project proposals which are found feasible and benefici al to Coal industry , the Technical Sub -
+committee of SSRC  will recommend it for consideration and approval of SSRC . If the project proposal 
+are found not feasible and /or beneficial to Coal industry, Technical Sub -committee of SSRC may reject 
+the proposal for funding under S&T Grant of MoC.  Decision of Technical Sub -committee of SSRC 
+regarding recommendation/rejection of project proposal shall be treated as final.  
+The SSRC may approve the project proposal as recommended by Technical Sub -committee of SSRC, 
+after detailed deliberation. Decision of SSRC regarding approval/rejection of project proposal shall be 
+treated as final.  
+10.0 EVALUATION OF S&T PROJECT  PROPOSAL  
+The following shall be specifically looked into while carrying out technical evaluation of the propo sal: 
+ The project proposal falls within thrust areas of research projects of MoC . 
+ Past track record and expertise available with the agency concerned for carrying out the research 
+work.  
+ Progressive R&D input vis -à-vis earlier projects undertaken and similar  R&D work carried out within 
+the country  and abroad.  
+ The objectives to be  clear and well defined.  
+ Details work programme  with time frame of each activity spelt out.    
+ Realistic time frame for purchase of equipment and recruitment of manpower.  
+ Cost provisi ons  
+ Benefits to be accrued to the industry  through the proposed research work.  
+11.0 DATE OF COMMENCEMENT OF PROJECT  
+Once the project is approved by the SSRC , a formal approval letter  would be issued by MoC  and the 
+date of commencement of project, preferably, would be considered as 1st day of the next calendar month , 
+which will be communicated to the project proponent by CMPDI  through sanction letter . The zero date of 
+commencement of the project will be considered from this date . 267310/2021/CCT1791 
+10 
+ If required, on request , the date of receipt of funds by the implementing agency may be considered as 
+date of project  commencement instead of commencement date of as mentioned in sanction letter, when 
+there is perceptible lag between  these two events.  Decision of Technical Sub -committ ee of SSRC 
+regarding project commencement date shall be treated as final.  
+12.0 DISBURSEMENT OF FUND TO PROJECTS  
+Fund  shall only be disbursed to the Principal implementing agency. All the sub -implementing agenc ies 
+shall requisite fund through Principal implement ing agency and funds will be disbursed to sub -
+implementing agencies through Principal implementing agency  except CMPDI  & subsidiaries of CIL . 
+However, if any Private institute/organization carrying out the project along with subsidiaries of 
+CIL/SCCL/NLCIL,  funds will be disbursed to subsidiaries of CIL/SCCL/NLCIL for further disbursement.  
+After approval of the project, the first installment of fund will be disbursed at one go by CMPDI within one 
+months of the receipt of the request in the prescribed form (F orm-II). Request from the Principle 
+Implementing / Sub -implementing Agency(s) for disbursement of subsequent ins tallment of fund  for on -
+going projects should also be submitted two months in advance along with the details of expenditure 
+already incurred and  status of the progress of the project vis -à-vis approved work programme, in Forms 
+–III, IV and V , indicating how much fund is lying idle in their account which is liable  for payment of interest.  
+Specific approval for any deviation regarding fund requirem ent / disbursement shall have to be obtained 
+by the Principal Implementing / Sub -implementing Agency(s) separately from the respective Competent 
+Authority.  
+Private institute/organization  who are  carrying out the project alongwith any Govt. Institute/organi sation 
+shall submit fund r equisition through the Institute/organisation concerned  and it will be disbursed  to 
+Private Research / Private Academic institutions/ organisations through concerned Institute/organisation 
+and/or any subsidiary  of CIL, based on the progress of the project and as per their agreement with the 
+Private Research / Private Academic institutions/ organisations. In exceptional case, Technical sub -
+committee may instruct activity wise disburse ment of  fund to Private Resea rch / Private Academic 
+institutions/ organisations directl y. 
+Expenditure of fund  for implementing the project activities will be allowed for the project duration only.  
+If presentation and acceptance of the completed project would not be done within the app roved time 
+schedule of the project, Project proponent may separately indicate the expenditure for presentation, 
+within the approved project outlay (subject to celling of Travel limit) and get reimbursement  of the same 
+accordingly. Decision of the concerned  committee regarding the above expenditure shall be treated as 
+final.  
+13.0 MONITORING OF S&T PROJECTS  
+ Physical and financial status of all on -going S&T projects is to be monitored by CMPDI on regular 
+basis. Representatives of CMPDI may visi t the sites/locale of  project  to assess the actual progress 
+of the project and to provide necessary guidance/instructions to complete the project within 
+approved time frame.  267310/2021/CCT1792 
+11 
+  Quarterly Progress Reports and expenditure statements of the ongoing projects for the quarter 
+ending Ma rch, June, September & December, shall be submitted by Principal Implementing / Sub -
+implementing Agency(s) in the prescribed forms (Form III, IV&V) to CMPDI so as to reach by 15th 
+of the month following close of the quarter and will be scrutinized by CMPDI.   
+ Progress reports (both physical and financial) as received from Principal Implementing / Sub -
+implementing Agency(s) on quarterly basis are to be reviewed by CMPDI. The causes of delay, if 
+any, are to be discussed  & analyzed  in detail and remedial measures may be suggested.  
+ The P rincipal Implementing / Sub -implementing Agency shall submit a consolidated / interim report 
+of progress made against the objectives and approved work programme at least once in 12 months 
+to CMPDI in five (05) hard copies  together with soft copy . 
+ Progress of S&T projects funded by MoC are to be reviewed  by the Technical Sub -committee of 
+SSRC  and also by the SSRC . 
+14.0 PROJECT COMPLETION REPORT  
+ Three  hard copies  and soft copy of the Draft completion report will be sent t o General Manager (S& T), 
+CMPDIL, preferably, two (2) months prior to date of completion of the project for in -depth scrutiny of 
+the project findings. After incorporating the suggestions/modifications made by CMPDI or by the stake 
+holders, the Principal Implementing / Sub -imple menting Agency(s) will submit 60 copies of the project 
+completion report as per the details given in Form -VI along with a soft copy. The completion report 
+shall be accompanied by Final Expenditure Statement in Form -III and Form -IV and duly authenticated 
+by the Associated Finance of the Principal Implementing / Sub -implementing Agency.  An audited 
+expenditure statement/audited fund utilization certificate should be enclosed in the project completion 
+report.  
+ A certificate from General Manager of the area of th e CIL subsidiaries /SCCL/NLCIL , where the 
+research work was carried out should also be furnished  stating their views on success of the project 
+by the Principal Implementing / Sub -implementing Agency.  
+ The completion report shall include detailed  analysis related to quantified benefits  accrued on 
+implementation of that S&T project.    
+ After successful completion of the S&T projects, the Project Completion Reports will be placed for 
+consideration and approval by the Technical Sub -committee of SSRC . 
+ The project will be considered completed only after their acceptance by the Technical Sub -committee 
+of SSRC .  
+15.0 DISSEMINATION OF RESEARCH FINDINGS  
+(i)  A copy of the project completion report as received from Implementing Agency(s) will be  provided to 
+all subsidiar y companies of CIL , SCCL, NLCIL  to replicate the research findings and also to different  
+research/academic institutes engaged in research in coal and allied industries to enable widespread 
+use of the findings for the benefit of the industry.  267310/2021/CCT1793 
+12 
+ (ii) To intensi fy future research work and to identify need based research projects for coal sector, 
+workshops/seminars /webinars  to be organized from time to time.  
+(iii) The research findings of completed research projects may be  disseminated through  any leading 
+journal or “Minetech” journal being published by CMPDI. The journal is required to be  widely circulated 
+amongst the mining community.  
+(iv) Abstract  of completed projects is to be uploaded in the website of CMPDI.  
+(v) Ministry of Coal may issue directive to CIL, SCCL, NLCI L and others (to whom it may think suitable) 
+for replication  of the outcome of the successful ly completed S&T projects . MoC  may also look after 
+the business planning, commercialization, IP management, capital raising, profit sharing among the 
+license, linkages with another organization etc.  
+16.0 EXTENSION OF PROJECT DURATION  
+The Principal Implementing / Sub -implementing Agency(s) shall immediately bring to the notice of the 
+Nodal Agency, any slippage; along with corrective actions proposed to be taken up by the Principal 
+Implementing / Sub -implementing Agency(s) to minimize the slippage.  
+Request for extension of project duration should be sent using Proforma (Form VII), preferably  two 
+months prior to the date of expiry of the project in 3 copies, through the Head  of the Institution  / concerned 
+authorized person .  
+Approval for  time extension of project duration up to 3 months  may be accorded by the Chairman of the 
+Technical Sub -committee of SSRC , to avoid delay in implementation of the project . 
+Approval for extensi on of project duration up to 6 months beyond the original schedule may be accorded 
+by the Technical Sub -committee of SSRC . 
+Approval for extension of project duration beyond the original schedule may be accorded by the SSRC , 
+if required . 
+The Project Implementing Agencies are required to submit realistic timeline for project approval as well 
+as for extension. Therefore, the extension of projects may be allowed not more than two times of 6 
+months each.  However, in exceptional cases, project duration may  be extended beyond the time frame 
+as mentioned above by the Technical Sub -committee of SSRC and/or  SSRC.  
+17.0 RE-APPROPRIATION OF FUND/ REVISION OF COST OF PROJECT   
+Proposal for revision of the overall approved cost of the project would not be entertained as a  matter of 
+policy . In exceptional cases , request for revision of the project cost should be submitted by implementing 
+agencies in Proforma  (Form VI II) in 3 copies, through the Head of the Institution  / concerned authorized 
+person with detailed justificatio ns leading to cost escalation.  
+Approval for Re-appropriation of funds from one item to another in the same head i.e. Capital to Capital 
+and Revenue to Revenue  may be accorded by the Technical Sub -committee for SSRC  within the total 
+approved cost.  In except ional cases, if the Technical Sub -committee for SSRC committee permits, Re-
+appropriation of funds  may be allowed in different heads to avoid cost escalation of the project.  267310/2021/CCT1794 
+13 
+ The items for which re -appropriation is allowed, should not result in exceeding the laid down limits of 
+expenditure on that particular item as agreed for re-appropriation for further  impleme ntation of  coal 
+research projects. The overall ceiling on items su ch as travel, contingency, organizing / attending the 
+seminars for symposia  etc. should not be exceeded  the laid down provisions in the guidelines for coal 
+research projects . 
+Approval of cost escalation for the projects may be accorded by SSRC  on recommend ation of the 
+Technical Sub -committee of SSRC . 
+Chairman of the Technical sub -committee of SSRC  is however, authorized to approve increase in cost 
+solely due to variation in exchange rate and Govt. Tax (GST etc.), which should be subsequently ratified 
+by SSRC. For this purpose implementing agency will be required to submit to CMPDI item wise details 
+of imported equipment provided in the approved proposal  along with their value in foreign currency and 
+equivalent Indian rupee, present value of each of these equipment in foreign currency, corresponding 
+Indian rupee and prevailing rate of exchange , tax etc. Any approval of revision of the cost on this account 
+should be communicated to Technical Sub -committee of SSRC and SSRC in its next meeting with 
+required ca lculations and figures.  
+To avoid delay in implementation of the project , one-time approval of  Re-appropriation of funds from one 
+item to another in the same head i.e. Capital to Capital and Revenue to Revenue  may be accorded by 
+the Chairman of the Technical sub -committee of SSRC  within the total approved cost.  
+18.0 PUBLICATION OF RESEARCH PAPER  
+To restrict publication of sensitive data during wide dissemination of research finding carried out under 
+the S&T Grant of MoC , the Principal Implementing / Sub-implementing Agency(s) will require approval 
+from Chairman of the Technical Sub -committee of SSRC  through Nodal Agency.  
+Investigators may be  encouraged  to publish some of the research papers emerging out of the project 
+work in leading and widely circulated  Indian /International  Journals  If the results of research are to be 
+legally protected, the results should not be published without action being taken to secure legal protection 
+for the research results.  
+Principal Implementing / Sub -implementing Agency(s) desirous of publishing papers based on the 
+research work done under S&T Grant  funding will duly acknowledge the receipt of grant from MoC  and 
+shall provide the endorse d five (5) copies of the publication to the Nodal Agency  i.e. CMPDI .  
+19.0  PATENT OR INTELLECTUAL PROPERTY RIGHTS (IPR)  
+With a view to encourage the institutions to file patent applications on their innovations, to motivate them 
+to commercialize  their technologies and to facilitate them to reward their inventers, the following 
+instructions may be practiced as being  followed by DST.  
+I. In these instructions:  
+(a) “Institutions” means any technical, scientific or academic establishment where research work is 
+carried out through fund ing by Ministry of Coal  267310/2021/CCT1795 
+14 
+ (b) “Intellectual Property Rights” include patents, registered designs, copyrights and layout design 
+of integrated circuits.  
+(c) “Inventor” means an employee of the institution whose duties involve carrying out of scientific or 
+technical re search.  
+II. Scope : These instructions apply to those institutions receiving funds for research projects from the 
+Ministry of Coal.  
+III. Sharing of IPR : Intellectual Property Rights (IPR) will be shared between MoC and the Implementing 
+/ Sub -implementing Agency(s) in equal proportion (50:50) after successful completion and before 
+commercialization of the product/ process developed. In case, there are more than one implementing 
+Agenc ies, the proportion i.e. 50% of the IPR may be distributed among all implementing Age ncies in 
+appropriate proportion. Director Technical (RD&T), CMPDI will be the inventor / proprietor  on behalf 
+of MoC during filling of IPR . 
+IV. Inventions by Institutions : Institutions shall be encouraged to seek protection of Intellectual 
+Property Rights (IPR)  to the results of research through R&D projects. While the patent may be taken 
+in the name(s) of inventor(s), the institution shall ensure that the patent is assigned to it. The institution 
+shall get its name along with Director (T/RD&T), CMPDI entered in  the Register of Patents as the 
+inventor/ proprietor of the patent. The institution shall take necessary step for commercial exploitation 
+of the patent on exclusive/non -exclusive basis. The institution is permitted to retain the benefits and 
+earnings arisin g out of the IPR  as per the agreed terms & conditions between IPR holder (mentioned 
+in Sl. No. III) . However, the institution may determine the share of the inventor(s) and other person 
+from such actual earnings  of the concerned institute/organisation . Such share (s) shall be limited to 
+1/3rd of the actual earnings.  
+V. Inventions by institutions and industrial concerns : IPR generated through joint research by 
+institution(s) and industrial concern(s) through joint effort can be owned jointly by them as may b e 
+mutually agreed to by them through a written agreement. However, MoC will retain 50% of its share. 
+The institution and industrial concern may transfer the technology to a third party for 
+commercialization on exclusive/non -exclusive basis  with consent fro m MoC . The third party, 
+exclusively licensed to market the innovation in India must manufacture the product in India. The joint 
+owners may share the benefits and earnings arising out of commercial exploitation of IPR. The 
+institutions may determine the sha re of the invention(s) and other persons from such actual earnings. 
+Such share(s) shall not exceed 1/3rd of the actual earnings.  
+VI. While applying for the IPR, the Principal Implementing / Sub -implementing Agency(s) should clearly 
+mention the name of the S&T project under which various processes / products were developed and 
+the fact that funds for the development, for which patent is proposed to be taken were provided by 
+Ministry of Coal (MoC). Implementing agency shall file patent application  with prior appr oval from the 
+Chairman of the Technical Sub -committee of SSRC through Nodal Agency i.e. CMPDI.  
+VII. Patent Facilitating Funds : The institution (s) shall set apart not less than 25 per cent of such earnings 
+for crediting into a fund called Patent Facilitating Fun d. This Fund shall be utilized by the institution 267310/2021/CCT1796 
+15 
+ for updating the innovation, for filing new patent applications, protecting their rights against 
+infringements, for creating awareness and building competency on IPR and related issues.  
+VIII. Information : The ins titutions shall submit information relating to the details of the patent obtained, 
+the benefits and earnings arising out of IPR and the turnover of the products periodically to the funding 
+Agency (i.e. Department/Ministry) . 
+IX. Royalty -free license : The Govern ment shall have a royalty -free license  for the use of the intellectual 
+property for the purpose of the Government of India.  
+X. Any instructions issued by  Central Government time to time regarding IPR shall be strictly followed . 
+20.0 ASSETS ACQUIRED UNDER S&T GRANT  
+(i) All assets acquired under the S&T Grant  shall be the property of MoC . 
+(ii) The records of all assets procured / purchased under S&T Grant  shall be maintained by the 
+Principal Implementing / Sub -implementing Agency(s) in a bound paged register in the 
+prescribed  Proforma (Form -IV) as well as in their earmarked computing system.  
+(iii) All assets acquired under the S&T Grant  shall not, without prior approval of Technical Sub -
+committee of SSRC , be disposed off or encumbered or utilized or transfer to any other institute / 
+organisation for the purpose other than specified.  
+(iv) At the conclusion of the project, MoC  may decide whether to sell , retain in the 
+institute/ organization  or otherwise dispose off the assets which are the property of MoC . 
+ The list of all assets, including values , date of purchase and estimated life  should be 
+provided by the Heads of the Principal Implementing / Sub -implementing Agency(s) to 
+CMPDI along with their specific requests, if any, for disposal / retention  /transfer to any 
+other institute, at the en d of the project . 
+ List of equipment should also be placed in the website of the concerned institute  
+indicating the project title under  which it was procured from the S&T Grant . 
+ The request for disposal / retention as received from Principal Implementing / sub-
+implementing Agency(s) will be placed for consideration and approval of the Technical 
+Sub-committee of SSRC.  
+ The decision of Technical Sub -committee of SSRC  will be communicated to the Principal 
+Implementing / sub -implementing Agency(s).  
+(v) The equipment / instrument procured for a specific purpose/application in a specialized set -up 
+typically designed and constructed at the site of implementation may be allowed to be retain ed 
+by the Principal Implementing / sub -implementing Agency(s) as thes e equipment might not be 
+useful / utilized for other purpose.  
+However, if any profit earned  after successful completion of the project utilizing the above 
+equipment, it shall be intimated to CMPDI at the end of every financial year, with details of the 
+place of implementation and benefits acquired . 267310/2021/CCT1797 
+16 
+ (vi) In case of transfer / shifting of assets to other places after successful completion of the project, 
+the Principal Implementing / sub -implementing Agency(s) shall submit a proposal for cost of 
+packing, transporta tion (including transit insurance), overhauling etc. to the Nodal Agency for 
+consideration of the Technical Sub -committee of SSRC . 
+(vii) After written communication from the Nodal Agency (CMPDI), with due approval of the 
+Technical Sub -committee of SSRC , the equipment may be disposed off as per the rules and 
+regulations followed by the organization/Institute concerned , with an intimation to CMPDI . 
+Funds collected  (if any) during disposal of assets , to be subsequently credited to CMPDI 
+account for credit to the  MoC.  
+(viii) Any decision of Technical Sub -committee of SSRC  regarding retention/return/disposal /transfer  
+of assets shall be treated as final.  
+21.0 AUDIT OF ACCOUNTS  
+It shall be the responsibility of Principal Implementing / Sub -implementing Agency(s) to get the accou nts 
+pertaining to the S&T Grant  audited, regularly and furnish the copy of audited statement to CMPDI. The 
+Comptroller and Auditor General (CAG) of India at his discretion shall have the right of access to the 
+books and accounts of the Principal Implementi ng / Sub -implementing Agency(s) for the fund received 
+from MoC . In case of adverse remarks/audit para on the project being funded from this fund, the Principal 
+Implementing / Sub -implementing Agency(s) shall immediately bring such remarks para to the notic e of 
+the Nodal Agency, along with their reply to such para remarks.   
+22.0 INTEREST ON GRANT  
+If a part or whole of the fund is kept in a bank account earning interest, the interest earned, if any, shall 
+be reported to CMPDI. The interest thus earned will be trea ted as a credit to the institute to be adjusted 
+towards further installments of fund under  the project  or to be subsequently credited to CMPDI account 
+for credit to the MoC  on completion of the project . Fund received from CMPDI shall not be parked in bank  
+account not earning interest.  
+23.0 TERMINATION OF A PROJECT  
+The SSRC  reserves the right to  terminate a project at any stage if it is convinced that the fund has not 
+been properly utilized or appropriate progress is not being made or any other reason s, on the 
+recommendation  of Technical Sub -committee of SSRC . There will be no financial penalty  in case of 
+termination of any S&T project  if all the approved activities have been followed by the implementing 
+agencies . 
+SSRC is empowered to take any action against the Project Implementing Agency in case of failure to 
+complete the project  due to negligence /lackadaisical approach , despite being given repeated extensions. 
+This will discourage intentional or avoidable delay in execution of research Projects and submission o f 
+unrealistic/ underestimated schedule for project completion. This may include (a) banning/black listing 
+etc for certain period of time, (b) recovery of full or part of the disbursed fund if approved activities are 
+not followed, (c) displaying the banning  list in the web portal etc.  
+ 267310/2021/CCT1798 
+17 
+ ANNEXURE – I 
+GENERAL INFORMATION AND INSTRUCTIONS  
+FOR PREPERATION OF RESEARCH AND DEVELOPMENT PROPOSALS  
+1.0 GENERAL .  
+ 
+1.1 Before filling in the prescribed format for S&T project proposal, please read the GUIDELINES FOR 
+FORMULATION, IMPLEMENTATION AND MONITORING OF COAL RESEARCH PROJECTS OF 
+Ministry of Coal , carefully.   
+1.2    The proposal should be prepared and submitted strictly according to the format prescribed in this  
+document.  
+1.3  Please also read explanatory notes and detailed instructions carefully for completing each section of 
+the prescribed format while preparing the proposal.  
+1.4  Initially proposal should be submitted online for scrutiny by CMPDI. If project p roposal is found suitable 
+for further consideration, the Principal Implementing Agency(s) would be informed for submission of 
+soft copy  through email , after incorporating suggestions/ additions / modifications, if any, to:  
+ General Manager (S&T), CMPDI  
+ Central Mine Planning & Design Institute Ltd.   
+Gondwana Place , Kanke Road, Ranchi - 834 031.  
+2.0 DOCUMENTS/ENCLOSURES REQUIRED WITH THE PROPOSAL  
+(i)          Detailed project proposal for S&T Grant of MoC  (In Form -I) 
+(ii) Endorsement from the Head of the I nstitution (on letter head in Form I A)  
+(ii) In case of a multi institutional project, the formal agreement/ consent letter in Form -IA, between 
+Principal Implementing Agency(s) and collaborating Sub -implementing Agency(s).  
+(iii) Details of Equipment other than Compu ter Hardware / Software already procured during last seven 
+years under S&T Grant of Ministry of Coal / R&D fund of CIL - which are related to the S&T / R&D 
+Project ( In Form -IX) 
+(v) Details of Computers, Software and accessories already procured during last th ree years under 
+S&T Grant of Ministry of Coal / R&D fund of CIL - which are related to the S&T / R&D Project ( In 
+Form -X) 
+(vi) Details of manpower cost ( salary and wages) ( In Form -XI) 
+(vii) Details of travel expenditure (TA/DA) ( In Form -XII) 
+(viii) Supporting documents/ resolution of the academic institutes, University / Board / Governing Council 
+for the salary/wages of Senior Research Fellows / Junior Research Fellows / Research Associates.  
+(ix) Supporting documents of Overhead Cost required by academic institutes o r the Guidelines of 
+concerned University / Board / Governing Council resolutions.  267310/2021/CCT1799 
+18 
+ 3.0     IMPORTANT NOTES ON PROJECT FORMULATION  
+(a) Principal Implementing / Sub -implementing Agency(s) shall confine their project to the specific 
+aspects of a problem which can be studied in depth in the scheduled period and are of benefit to 
+Coal industry. For identifying the specific aspects to be studied, the following should be 
+considered:   
+(b) After deciding on a broad topic of research, National and International status should be reviewed.   
+(c) Identify the critical gap areas.   
+(d) Identify the component of gap areas which can be studied in depth within the project scope & time 
+frame and applied/used for the benefit of the industry.  
+(e) Identify the institutions/experts who can contribute effectively to the project.   
+(f) The proposal need not be limited to one agency rather an attempt should be made to pool the 
+expertise available with various agencies.  
+(g) Mission oriented multi agency, time targeted projects are preferred to projects limited to l aboratory 
+investigations or findings which cannot find ready application for the benefit of the industry. The 
+whole idea is that after completion of project, findings should bring tangible benefits to the industry.   
+(h) While formulating the proposal, it shoul d be ensured that scientific and technical details are clearly 
+spelt out, avoid generalities.   
+(i) Proposals for Analysis/Study generally not to be considered as S&T Project. These type of 
+proposals must include specific R&D component and outcome of which can be replicated in other 
+areas/fields.  
+4.0  INSTRUCTIONS FOR FILLING UP THE PROFORMA (FORM - I) 
+ Please read additional instructions given in the following pages before filling the corresponding section 
+of the format (Form –I). 
+4.1 Definition of Problem   
+ Please give precise technical statement of only those issues which the project is expected to cover 
+within the scheduled duration.  
+4.2    Objective s  
+ Instead of an essay, it is suggested that objectives should be spelt out in a pointed language, keeping 
+in view the subject area to be addressed.  
+4.3      Justification for selecting the subject area  
+ The importance of the project should be brought out in this section in the light of international and 
+national state of knowledge on the subject and the benefits to the industry likely to be de rived due to 
+successful completion of the project.  
+  267310/2021/CCT1800 
+19 
+ 4.4      Methodology  
+ It is essential that, the experts in the selected subject area of researc h should get a clear understanding 
+of research technique to be adopted. Further, the description should indicate precisely as to how the 
+stated objectives will be achieved. Discuss various methods of approach in order of priority.  
+4.5      Work Elements  
+ Entire project activities are to be broken down to specific work elements in consonance with the 
+objectives and methodology defined in earlier  section.  
+4.6      Time Schedule  
+ On the basis of work elements identified earlier, time schedule shall be drawn. Specific indications of 
+milestones shall be identified. These milestones will help in periodic evaluation of the progress of the 
+project and disbursement of fund. It is to be emphasized that the lead time for creation of infrastructural 
+facilities needs to be indicated on realistic basis.  
+4.7      Financial Outlay  
+ All costs shall be expressed in Rupees ( INR) only. Foreign exchange, if required, for purchase of 
+equipment or consumable, shall also be separately mentioned in terms of specified foreign currency 
+and exchange rate adopted. Also include customs duty and other such charges, if applicable.  
+Foreign Exchange c omponent in the Capital should be minimized.  
+4.8      Outlay - Land and Building  
+ Permanent assets like land, buildings, etc. are normally not funded from R&D fund.  However, in special 
+circumstances, such assets may be permitted to be created from R&D Fund. The item wise details and 
+justification for each item is to be furnished.  
+4.9      Outlay – Equipment   
+ List of all items of equipment with broad specification and quantity without make and model shall be 
+provided. After the project is approved, the Principal Implementing / Sub -implementing Ag ency(s) may 
+go for upgraded version so long as the basic characteristics and costs are comparable to those 
+mentioned in the proposal. Installation charges, inland transport, insurance etc., if required additionally, 
+to be separately mentioned.  
+4.10    Justification for Equipment   
+ Justification for each item and number of equipment required (including its accessories, specific 
+characteristics, resolution etc.) in relation to specific experiment / measurements / test contemplated 
+in the project is to be provided. A certificate is to be enclosed by the Head of the Institute that equipment 
+proposed to be procured for the experimental purpose is not readily available with the institute (Form 
+1A). Duplication of the infrastructural facilities from S&T Grant  is not permitted. In case of a demand 
+for import of equipment, furnish reasons as to why indigenous models, if available cannot be used.  
+ 
+ 267310/2021/CCT1801 
+20 
+ 4.11    Outlay - Manpower  
+Salary and wages of the permanent employees of the Principal Implementing / Sub -implementing 
+Agency(s) are normally not admissible under S&T Grant . Though major scientific and technical work 
+is to be carried out by the Project Leader/Coordinator and co -investigators, some additional scientific 
+and technical personnel (JRFs/SRFs/RAs) may be engaged for working desired duration on the 
+project. Engagement of the personnel for implementation of the project shall be the responsibility of 
+the Principal Implement ing or Sub -implementing Agency(s) as the case may be. The payment to be 
+made to the engaged personnel for the desired duration of the project shall be within the relevant 
+norms/Guidelines of the concerned related Principal Implementing or Sub -implementing Agency(s).  
+In case of engaging of technical personnel (JRFs/SRFs/RAs) in the research project, it is required to 
+engage SC and ST candidates in research projects as per the norms of the Government or at least 
+one person each from SC and ST category in each  project. This is as per the Office Memorandum 
+dated 28.01.2019, issued by Under Secretary to the Govt. of India (Finance), MoC.  
+4.12    Justification for Manpower  
+ Justification for number and level of staff to be engaged and also the resolution of the institution 
+regarding wages of the JRFs/SRFs/RAs.  
+4.13    Outlay - Contingency  
+ Special requirements not covered under normal heads for any projects , may be indicated under this 
+section. Contingencies are meant to cover incidental expenditure and other miscellaneous expenditure 
+likely to be incurred  during project implementation, due to increase in travel/ transport expenses / 
+changes of TA/DA, salary revision of research associates, porter charges and additional expenses  
+during preparation of project c ompletion report etc. This should  be limited to 5% of the total revenue 
+cost of the project.  
+4.14     Institute Overhead Cost  with Justification  
+For meeting the cost of academic expense including infrastructural facilities , Institutional Overhead Cost 
+for academic/research institutes  shall be within the provision mentioned as follows:  
+a) For projects costing up to Rs: 1 .0 crore :Not more than 10% of the t otal cost for educational 
+institutions and  8% for laboratories and institutions under Central Government 
+Departments/Agencies  except CSIR laboratories ; 
+b) For projects costing more than Rs. 1.0 crore and upto Rs.5.0 Cr. :Rs. 15.0 lakh o r 10% of Total 
+project cost, whichever is less:  
+c) For projects costing more than 5.0 Cr. and upto Rs. 20.0 Crore. Maximum Rs. 20.0 lakh will 
+be provided as overheads ; and 
+d) For projects costing more than Rs. 20.0 Crore : the quantum will be decided on a case to case 
+basis and the dec ision of the approving committee will be treated as final.  
+ 
+ 267310/2021/CCT1802 
+21 
+ 4.15    Time Schedule - Bar /Pert Chart  
+ The proposal shall be supported by a BAR chart on time scale / PERT network showing duration of 
+various work elements/activities. The activities should be broken down to sub activities/ sub sub -
+activities to enable close and fruitful monitoring of the projects . In case of multi -institutional projects, 
+role and responsibilities of all implementing agencies should be clearly mentioned against each 
+activities . 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  267310/2021/CCT1803 
+22 
+ ANNEXURE -II 
+The following norms will be applicable to individual centric Extra Mural Research ( EMR ) projects (i.e proposals 
+submitted by an individual researcher or a group of researchers students  etc.) funded by the Ministry of Coal , 
+Government of India  
+(i) Equipment:  
+Full cost of equipment/s which is/are specifically recomme nded/approved by SSRC  be provided 
+without discriminating the type of institutions (Public. Private. NGO etc.) . Ownership o f such equipment 
+shall be MoC  and these shall not be disposed of without obtaining prior approval of the authority which 
+sanctioned the gra nt-in-aid. At the end of the project a specific request be made by the grantee 
+institution for re tention/transfer of these equipment to the Institute subject to the institute in ensuring 
+proper upkeep of these equipment and making these available to the ot her researchers on 
+recommendation of MoC.  A list of such equipment be placed in the website of the concerned institute  
+(ii) Emoluments:  
+The emoluments for manpower (other than JR F, SRF, RA and Research Scientist) to be fixed as per 
+the norms framed by DST.  
+(iii) Overheads:  
+Towards meeting the cost of academic expenses including infrastructura l facilities, institute overhead 
+may be charged as mentioned below : 
+a) for projects costing upto  Rs 1 crore , 10% of the total cost for educational institutions and NGOs and 
+8% fo r laboratories and institutions under Central Government Departments/Agencies;  
+b) for projects costing more than Rs 1 .0 crore a nd upto  Rs. 5 .0 crore , overheads of Rs 15 .0 lakh or 
+10% of total cost whichever is less,  
+c) for projects costing more than 5.0 crore and upto  Rs 20 .0 crore , Rs 20.0 lakh will be provided as 
+overheads, and  
+d) for projects costing more than Rs. 20.0 crore. the quantum will be decided on a case to case basis  
+(iv) Travel & Contingencies.  
+Maximum of Rs. 50,000/ - each per annum may be provided for Tr avel and Contingencies . Higher 
+amount, based on the recommendations of the Expert Committee, to be provided where the research 
+work involves field work or/and project has many investigators / institutions and larger manpower. The 
+contingency amount may als o be used fo r paying Regist ration fees for attending international 
+conferences . 
+(v) Consumables / Supplies & Materials:  
+The amount may be fixed by SSRC based on the recommendations of the Technical Sub -committee 
+of SSRC.  267310/2021/CCT1804 
+23 
+ (vi) Flexibility in Recurring budget:  
+a) Though  different allocations are made under va rious heads in recurring budget such as 
+manpower, consumables, contingency, travel, etc., the investigator has been given flexibility to 
+use upto 10% funds sanctioned under each recurring heads (consumables, travel, contingency 
+etc. but not manpower budget) . The PI will inform the Technical Sub -committee accordingly. The 
+Technical Sub -committee in such cases will issue the revised sanction within the said limit of 10 
+percent and within already approved overall recurri ng budget allocation . 
+b) The Investigator will have the flexibility to appoint more or lesser number of staff and change the 
+designation of manpower within  the sanctioned manpower budget  
+(vii) Disbursement of fund  
+Submission of fund requisition shall be through the  involved Institute/organisation Agency and it will be 
+disbursed to Private Research / Private Academic institutions/ organisations through that 
+Institute/organisation and/or any subsidiary of CIL . Fund disbursement shall be activity wise. On 
+completion of  certain activities further fund will be disbursed  based on the progress of the project.  Cost 
+of equipment shall be disbursed to the implementing agency in the first year at one go to avoid delay 
+in implementation of the project.  
+(viii) Extension of Projects  
+Extension of project up  to six months can be granted by the Technical Sub -committee of SSRC , if it 
+does not involve incr ease in the cost of the project. In other cases, approval are required from SSRC 
+with recommendation of the Technical Sub -committee of SSRC.  
+(ix) Transfer of PI from one Institute to another Institute  
+The student submitting the projects should have at least term of the project period remaining in the 
+Institute.  If the student passed out from the institute and leave the institute for any other assig nment, it 
+is the responsibility of the project guide to find alternative student to complete the project within the 
+approved project schedule.  
+In exceptional cases, t he change of the host institute on account of PI moving from one host institute 
+to another  host institute will be considered in MoC  subject to the present host institute giving its no 
+objection certificate and the prospective institute agreeing to the terms and conditions of sanctioning 
+of the grant . In such cases, the equipment etc . and the ba lance of funds will be transferred from the 
+present institute to the proposed institute . 
+ 
+ 
+ 267310/2021/CCT1805 
+24 
+ FORM – I 
+PROJECT PROPOSAL FOR S&T GRANT OF MoC  
+1 PROJECT TITLE  :  
+2 Name and address of principal Implementing Agency(s)  
+Name of Project Leader/Coordinator/Principle 
+Investigator  :  
+3 Name and address of Sub -Implementing Agency(s)  
+Name of Co -investigator(s)  :  
+4 Definition of the issue  (Max. 300 words)  :  
+5 Objectives  (Specific and not more than 2 -3) :  
+6 Justification for subject area  (Max. 200 words)  :  
+7 How the project is beneficial to coal industry    
+8 Work Plan  (Max. 100 words)  :  
+8.1 Methodology  (Max. 200 words)  :  
+8.2 Organization of work elements  (Max. 200 words)  :  
+8.3 Time schedule of activities giving Milestones (also 
+include a Bar Chart/PERT Chart)  :  
+9 Details of proposed outlay                                                                              (Rs.in lakhs)  
+Sl. No.  Items   Total cost estimated  
+   Total project 
+cost  1st Year  2nd Year  3rd Year  
+ Capital Expenditure       
+9.1 Land & Building  :     
+9.2 Equipment  :     
+9.3 Total Capital (9.1+9.2) :     
+ Revenue Expenditure       
+9.4 Salaries / allowances  :     
+9.5 Consumables  :     
+9.6 Travel  :     
+9.7 Attending or organizing Workshop/Seminar  :     
+9.8 Total Revenue expenditure (9.4+9.5+9.6+9.7) :     
+9.9 Contingency  :     
+9.10 Institutional Overhead  :     
+9.11 Applicable taxes/duties/charges etc.       
+ 
+9.12 Grand  Total  
+(9.3+ 9.8+9.9+9.10+9.11) : 
+:     
+Foreign Exchange Component:  
+Name of the Foreign Currency:  
+Exchange Rate:                               Date : 
+  267310/2021/CCT1806 
+25 
+ 10.0 Phasing of fund requirement ( in percentage) with respect to activities/milestone  
+11.0 Outlay for land & Building:  
+(Rs. in lakhs)  
+Building:     
+Sl. No.  Item Plinth Area  Type of Bldg.  Estimated Cost  
+1.     
+2.     
+Total      
+12.0 Justification for land & building:  
+13.0 Outlay for Equipment:  
+Generic Name of equipment and 
+accessories with major 
+specifications  Number  Imported/  
+Indigenous  Estimated Cost   
+(Rs.in lakhs)  Foreign Exchange 
+Component  
+1.      
+2.      
+3.      
+Total       
+ 
+Note: - 
+(i)  Include GST, installation charges, inland transport, insurance etc.  
+(ii) For the imported equipment, import duty concessions available for research/S&T/ Environment / Protection 
+/ Ecology protection projectors will be availed of, wherever applicable.  
+(iii) A Certificate to the effect that imported equipment is essential to the project and in the long run will save/not 
+save foreign exchange.  
+(iv)Please elaborate whether the imported equipment will help/not help, in indigenization of technology.  
+14.0 Justification for Equipment:  
+15.0 Outlay for consumable materials:  
+Head  Particular  Outlay  
+1st Yr. 2nd Yr. 3rd Yr. Total  
+ Q     
+ B     
+ F     
+ E     267310/2021/CCT1807 
+26 
+  Q     
+ B     
+ F     
+ E     
+ 
+Q - Quantity/Number  
+B - Outlay in Rs. Lakhs  
+F - FE Components  
+E - Exchange rate adopted  
+ 
+16.0 Curriculum – Vitae of Project Proponents, Viz. Principal Investigator/ Proj ect leader and Co -
+investigator.  
+ - Educational Qualifications.  
+ - Past Experience in the field of research & industry  
+ - Number of research projects handled  
+ - Commercial application of research findings of other research projects handled by the 
+investigator(s) in the past  
+ - Papers published (India / Abroad) by the Investigators, etc.  
+17.0 Past experience  
+ Details of expertise available and work done in the proposed field by the institution/agency(s) 
+concerned.  
+ Details of infrastructure facilities available in the institution.  
+ The past experience and performance of Principal Implementing / Sub -implementing Agency(s) 
+in the execution of similar project vis -a-vis time schedule.  
+ The track record for performance assessment of Academic Institutes should be referring to the 
+performance of respective PIs of the project  submitting R&D project p roposal for assessing; 
+whether the projects given earlier to them are being properly  implemented or are suffering from 
+cost and time overrun.  
+18.0 Others  
+ Discussions with DGMS, in case of projects requiring field trials in the mines .  
+ Literature/ web surv ey bringing out clearly the recent development in the proposed field in two 
+parts i.e. in the country and in other parts of the world.  
+ R&D components present in the project proposal. Specific research or development content which 
+is exclusive to this prop osal shall be clearly indicated.  
+ 267310/2021/CCT1808 
+27 
+  
+ 
+FORM – IA 
+ENDORSEMENT F ROM 
+THE HEAD OF THE INSTITUTION  
+(To be given on the letter head)  
+ 
+Project Title : 
+ 
+1. Certified that the Company/Institute intends to undertake above project with 
+Dr/Sri/Smt…………………………………………… as a  Project Leader/Coordinator/Principal 
+Investigator of the project.  
+2. Certified that necessary infrastructure facilities shall be made available to Project Team. 
+Accommodation, transport, manpower etc. will be provided at the project site to the research t eam for 
+undertaking the field work.  
+3. Certified that equipment proposed to be procured from the S&T Grant  are not readily available in the 
+Company/Institute for the purpose.  
+4. The company/Institute assumes to undertake the financial and other management responsibilities of 
+the project.  
+ 
+Name and signature           
+of Head of the Company/Institution  
+         (With seal)  
+ 
+Date:  
+Place:  
+ 
+ 
+ 
+ 
+ 267310/2021/CCT1809 
+28 
+ FUND REQUISITION                                                                                                 FORM -II 
+Name of the project………………………………………………………………………….,  
+Project Code:………………………………………………………………………………..  
+Name of the Company/Institution……………………………………………………………  
+Statement of fund requirement for the (year / period) ……………………………………                                                                                                     ( Rs. in lakhs)  
+Items  Total 
+approved 
+Cost 
+ Total Fund 
+Received as 
+on ……………  Interest 
+Earned 
+ 
+ Expenditure 
+incurred till 
+date 
+ 
+ Balance fund 
+available as on date 
+…….  
+ Fund provision 
+in corresponding 
+Year (As per 
+sanction)  Fund Required for the 
+……………… 
+(year/period)  
+ (1) (2) (3) (4) (5) = (2) + (3) – (4)   
+A. Land & Building      
+B. Capital equipment      
+C. Manpower      
+D. Consumables      
+E. Travel      
+F. Contingencies      
+G. Attending/organizing  
+workshop/seminar etc.      
+Total  
+ 
+   Fund received till date:   
+Signature of Associate Finance Officer          Signature of Project Leader/Coordinator                                                                                                                             
+Name……………………………….                                                              Name……………………… …………                      
+Designation………………………                                                               Designation…………………………  
+  Seal ………………………………           
+Note: To be submitted in triplicate  267310/2021/CCT1810 
+29 
+ QUARTERLY EXPENDITURE STATEMENT                                                                    FORM -III 
+ 
+Project Name ………………………………………………………………………………………………………………….  
+Project Code: ………………………………….  
+Name of Company/Institute - …………………………………..  
+Statement of Expenditure for S&T Grant of MoC  
+Expenditure statement for the  quarter ending …………...                                                                                           ( Rs. In lakhs)  
+Items  Total 
+approved 
+cost*  Sanctioned 
+provision in the 
+Year………  Expenditure 
+incurred up to 
+Previous year  
+ 
+ 
+(1) Total Expenditure  
+up to previous 
+quarter of the 
+current financial 
+year 
+(2) Expenditure in 
+the present 
+quarter ending 
+……………….  
+ 
+(3) Progressive 
+expenditure till the 
+end of this quarter  
+ 
+ 
+(4) =  (1)+(2)+(3)  
+A. Land & Building  
+B. Capital equipment  
+C. Manpower  
+D. Consumable  
+E. TA/DA  
+F. Contingencies  
+G. Attending/organizing  
+Seminar etc.  
+H. Others        
+Total        
+*Details to be submitted as per sanction letter  
+ 
+ Funds advanced till date……………………                                        Signature of Associate Finance Officer      Signature  of Project Leader/Coordinator                                                                                                                             
+ Expenditure incurred till date ……            Name……………………………….               Name…………………………………  
+ Unspent Balance in hand……………                        Designation………………………                  Designation…………………………   
+        Seal ……………………… ………  
+Note:  
+(i) Expenditure under each specific heads should be limited to the amount funded by SSRC . Additional expenditure, if any, over and above the sanctioned 
+provision is not admissible.  
+(ii) To be submitted in triplicate  
+        267310/2021/CCT1811 
+30 
+ FORM -IV 
+ 
+QUARTERLY EXPENDITURE STATEMENT ON CAPITAL EQUIPMENT  
+Project Name ………………………………………………………………………………………………………………….  
+Project Code :  
+Name of Company/Institute …..  
+Statement of Expenditure for S&T Grant of MoC …………………………… ………  
+Details of Expenditure on capital equipment for the quarter ending ……………………..  
+(Rs. In lakhs)  
+Name of the 
+equipment/*assets 
+with make, model 
+and major 
+specifications  Name of the 
+supplier  No. of units  
+ 
+ 
+ 
+(1) Unit value  
+ 
+ 
+ 
+(2) Total value  
+ 
+ 
+ 
+(1) x (2)  Total 
+Approved 
+Cost 
+ Progressive Capital 
+expenditure from date 
+of start of project till 
+this quarter ending 
+………………..  
+    
+    
+*In case of land/buildings mention area and type of building.  
+. 
+Signature of Associate Finance Officer             Signature of Project Leader/Coordinator                                                                                                                             
+Name ……………………………….                                  Name …………………………………                              
+Designation ………………………                         Designation …………………………   
+      Seal ……………………………..  
+ 
+ 
+Note:  
+(i) Expenditure under the specified  equipment should be limited to the  amount funded by SSRC . Additional expenditure, if any, 
+over and above the sancti oned provision is not admissible.  
+(ii) To be submitted in triplicate  
+ 
+ 267310/2021/CCT1812 
+31 
+ FORM –V 
+QUARTERLY STATUS REPORT FOR S&T  PROJECT OF MoC  
+ 
+1. Name of the Project with project code  
+ :  
+2. Progress for the Q/E  
+ :  
+3. Principal Implementing Agency(s)  
+ :  
+4. Sub-implementing  Agency(s)  : 
+  
+5. Project Co -ordinator /Leader  / Principle 
+Investigator  :  
+6. Date of commencement  
+ :  
+7. Approved date of completion  
+ :  
+8. Bar chart of activities as approved by SSRC  
+including latest status of these activities in the 
+same Bar chart (in different colour) to facilitate 
+monitoring of progress of the project  :  
+9. Details of work done during the quarter  :  
+ 
+ 
+10. Slippage, if any, and reasons thereof  (Tentative 
+date of completion, activity -wise to be submitted  
+herewith ) :  
+ 
+11. Corrective actions taken and to be taken to 
+overcome slippage.  :  
+12. Work expected to be done in next Quarter  :  
+13. Quarterly expenditure statements in Forms -III & 
+IV :  
+Note:  Quarterly progress reports should be submitted in triplicate by Principal Implementing  / Sub -implementing  
+Agency(s) to General Manager (S&T), CMPDI so as to reach by 15th of the month following close of the quarter.  267310/2021/CCT1813 
+32 
+  
+FORM – VI 
+PROJECT COMPLETION REPORT  
+1. Title of the project  
+2. Project Code  
+3. Date of commencement  
+4. Approved date of completion (As approved originally)  
+5. Actual date of completion  
+6. Objectives as stated in the Proposal  
+7. The work programme as proposed an d approved by SSRC  
+8. Details of the work done during the project run indicating the areas actually 
+covered and as proposed in the original work programme.  
+9. The extent to which the objectives as outlined in the original project proposal have 
+been fulfill ed. 
+10. The reasons for not covering all the areas (if any) of the scope of the study.  
+11. The need or otherwise to take up further studies in the areas not covered under 
+this study.  
+12. Conclusions and recommendations with quantification of benefits to th e industry.  
+13. Scope of application of findings of the study in the coal industry.  
+14.  Name of persons associated with project and type of expertise developed by them.  
+15. The final expenditure statement in form III & IV and duly authenticated by 
+associ ated finance of the company.  
+N O T E:  
+(i) Fifty (50) copies of report shall be submitted in bounded form along with a softcopy  
+(ii)      The cover page amongst others shall mention “Funded under S&T Grant of MoC ” 
+ 
+ 
+ 267310/2021/CCT1814 
+33 
+  
+FORM – VII  
+ 
+EXTENSION OF PROJECT DURATION  
+ 
+ 
+3 copies of the proposal to be sent through Head of the Institution to reach two 
+months prior to the approved completion date.  
+ 
+ 
+1.    Name of the project with project code  
+ 
+2.    Name of the Principal Implementing / Sub -implementing Agency  
+ 
+3.    Name of Project Leader/Coordinator/ Principle Investigator  
+ 
+4.    Date of start of the project  
+ 
+5.    Scheduled date of completion of the project  
+ 
+6.    Approved objective(s)  
+ 
+7.    Approved work programme alongwith schedule  
+ 
+8.   Details of work done alongwith approved time schedule of work plan (Bar  
+chart)  
+ 
+9.  Revised Bar Chart / PERT Network of activities alongwith justification for 
+indicated items of time schedule.  
+ 
+10.   Time Extension proposed and reasons for seeking the extension  
+ 
+11.   Total cost of the project and actual expenditure incurred (Form -III, IV & V).   
+ 
+ 
+Signature of Project Leader                           Signature of Project Coordinator  
+Name…………………………                         Name…………………………………..  
+Design ation…………………                          Designation……………………………  267310/2021/CCT1815 
+34 
+  
+ FORM – VIII 
+REVISION OF THE COST OF THE PROJECT/RE -APPROPRIATION OF FUNDS  
+3 copies of the proposal to be sent through Head of the Institution to reach 2 
+months prior to the date of requirement of additional funds/re -appropriation.  
+1. Name of the project with project code  
+2. Name of the Princip al Implementing / Sub -implementing Agency  
+3. Name of project Leader/ Coordinator/ Principle Investigator  
+4. Date o f start of the project  
+5. Scheduled date of completion of the project  
+6. Approved objective  
+7. Approved work programme alongwith schedule  
+8. Details of work done alongwith actual time schedule (Bar Chart)  
+9. Total approved cost alongwith its break -up as p er Para 8 of Form -I 
+10. Revised time schedule, if applicable.  
+11. Actual expenditure till last quarter in Form – III & IV  
+12. Revised cost of the project vis -à-vis the approved cost and reasons & 
+justification for the revision / re -appropriation sought.  
+Signature of Associate Finance Officer         Signature of Project Leader  
+Name……………………………..                   Name…………………………………..  
+Designation…………………………..             Designation……………………………  267310/2021/CCT1816 
+35 
+ FORM – IX  
+ 
+Details of Equipment other than Comput er Hardware / Software already procured under S&T Scheme  of Ministry of 
+Coal / R&D fund of CIL in the past - which are related to the below mentioned S&T project  
+ 
+Name of the Project:                                                                                                               
+ 
+Project Code:  
+ 
+Principal Implementing Agency(s):  
+ 
+Sub Implementing Agency(s):  
+ 
+Sl.No  Details of 
+Equipment  No. of 
+Sets Make & 
+Model  Year of 
+Procurement  Name of the S&T/R&D Project 
+against which procured  Status of 
+equipment  Remark  
+      
+ 
+   
+ 
+ 
+Note:  
+ 
+(i) A list of all equipment procured for the last seven years from S&T/R&D Fund  giving the status and its present 
+utilisation.  
+(ii) The status should cover whether the equipment is in working condition or under breakdown. If under breakdown, 
+can it be repaired & used in this research  project?  
+(iii) In the light of the above please give detailed justification for procurement of additional equipment wh en such 
+equipment  had been procured earlier under other S&T/R&D funding . 
+(iv) This form should be signed by Project Leader and Project Coordinator and to be incorporated in the project 
+proposal.  267310/2021/CCT1817 
+36 
+ FORM – X  
+ 
+Details of Computers, Software and accessor ies already procured under S&T Scheme of Ministry of Coal / R&D fund 
+of CIL in the past - which are related to the below mentioned S&T project  
+ 
+Name of the Project:   
+ 
+Project Code:  
+ 
+Principal Implementing Agency(s):  
+ 
+Sub Implementing Agency(s):  
+ 
+Sl.No  Details of 
+Computers/software  No. 
+of 
+Sets Make & 
+Model  Year of 
+Procurement  Name of the 
+S&T/R&D Project 
+against which 
+procured  Present condition of the  
+equipment/instrument  
+ Remarks  
+ 
+ 
+ 
+ 
+Note:  
+ 
+(i) A list of all computer & accessories procured for the last three years from S&T/R&D Fund giving the status and its 
+present utilisation.  
+(ii) The status should cover whether the computer & accessories are in working condition or under breakdown. If under 
+breakdown, can it be repaired & used in this research  project?  
+(iii) In the light of the above please give detailed justification for procurement of additional equipment wh en such 
+equipment  had been procured earlier under other S&T/R&D funding . 
+(iv) This form should be signed by Project Leader and Project Coordinator a nd to be incorporated in the project 
+proposal.  267310/2021/CCT1818 
+37 
+ FORM – XI  
+ 
+DETAILS OF MANPOWER COST (SALARY AND WAGES)  
+ 
+Name of the Project:                                                                                                                      
+ 
+Project Code:  
+ 
+Principal Implementing Agency(s):  
+ 
+Sub Implementing Agency(s):  
+ 
+Sl. 
+No. Designation  No. 
+of 
+Persons  Total No. of 
+months  
+required/persons  Salary/month,  
+InRs. Total salary  
+(3 x 4 x 5), 
+InRs. Year-wise phasing, In Rs. 
+1 2 3 4 5 6 1st Yr. 2nd Yr. 3rd Yr. 
+      
+    
+ 
+Note:  
+ 
+ Engagement of the personnel (Research Associate/Research Assistant/Research Fellow/JRF/SRF) for implementation of 
+the project shall be the responsibility of the Principal Implementing or Sub -implementing Agency(s) as the case may be. 
+The payment to be made to the engaged personnel for the desired duration of the projec t shall be within the relevant 
+Norms/Guidelines of the concerned related Principal Implementing or Sub -implementing Agency(s).  
+ Salaries of permanent employees of the Principal Implement ing / S ub-implementing Agency(s) are not admissible   
+ The form should be jointly signed by Project Leader/Coordinator and Associated Finance Officer of the Principal 
+Implementing /Sub -implementing Agency(s) and to be incorporated in the project proposal.  
+ 
+ 267310/2021/CCT1819 
+38 
+ FORM – XII  
+ 
+DETAILS OF TRAVEL EXPENDITURE (TA/DA)  
+ 
+Name of the Project:                                                                                                     
+ 
+Project Code:  
+ 
+Principal Implementing Agency(s):  
+ 
+Sub Implementing Agency(s):  
+ 
+Designation  From  
+(Place  
+To 
+Place)  Approx.  
+Distance,  
+In Km  Mode  Fare,  
+ 
+InRs.. No. of  
+Trips  Total travel  
+Expenses  
+(5 X 6),  
+InRs. No. of days  
+Involved for 
+Daily  
+Allowance 
+(DA),  
+InRs. Rate 
+of DA 
+per 
+day, 
+InRs. Total 
+DA 
+(8 x 9), 
+InRs. Total 
+TA+DA  
+(7+10),  
+InRs. 
+1 2 3 4 5 6 7 8 9 10 11 
+ 
+ 
+ 
+ 
+ 
+NB: 
+ The form should be jointly signed by Project Leader/Coordinator and Associated Finance Officer of the Princip al 
+Implementing Agency(s)/Sub -implementing Agency(s) and to be incorporated in the project proposal.  267310/2021/CCT1820 
+39 
+  
+ 
+ 
+ 
+ 
+For further information/any clarification, please contact  
+ 
+(i) Director Technical (RD&T), Central Mine Planning &  Design Institute Limited (A Subsidiary of 
+Coal India Limited), Gondwana Place, Kanke Road, Ranchi – 834 031, Jharkhand, India;  
+Phone: +91 651 2230010/2231850, Fax: +91 651 2233066/2231447/2230826  
+email: dirrdt.cmpdi@coalindia.in  
+ 
+(ii) General Manager (S &T), Central Mine Planning & Design Institute Limited (A Subsidiary of Coal 
+India Limited), Gondwana Place, Kanke Road, Ranchi – 834 031, Jharkhand, India;  
+Phone: +91 651 2231148 , Fax: +91 651 2231148  
+email: gmsnt.cmpdi@coalindia.in  
+ 
+            website: https://scienceandtech.cmpdi.co.in  
+ 
+ 
+ 
+ 
+ 267310/2021/CCT1821

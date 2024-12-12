@@ -2,11 +2,13 @@
 import Link from "next/link";
 import Image from 'next/image';
 import  { useState } from "react";
-import { cookies } from "next/headers";
+import { useRouter } from "next/navigation";
 import OtpInput from "../email_verf/otp_input";
 
 
 const Form = () => {
+  
+  const router = useRouter();
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -24,11 +26,16 @@ const Form = () => {
         e.preventDefault();
         // Handle form submission logic here
         console.log("Form submitted:", formData);
+        const auth = localStorage.getItem("margsathi_Auth_token");
+        if(auth == null){
+          alert("Auth_token not found");
+          return;
+        }
         try {
           const jsbody = {
             username: formData.username,
             password: formData.password,
-            type: "PI",
+            Auth_token: auth,
           }
           const response = await fetch('/api/login', {
             method: 'POST',
@@ -40,9 +47,11 @@ const Form = () => {
     
           if (response.ok) {
             const data = await response.json();
-            console.log(data)
+            console.log(data);
+            sessionStorage.setItem('margsathi_session', JSON.stringify(data))
             // add cookies in client-side @samprit
             alert('Form submitted successfully!');
+            router.push("/invigilator/overview");
           } else {
             alert('User Not Found');
           }
@@ -71,7 +80,7 @@ const Form = () => {
               <div>
                <div  className="text-xl mt-4 ">Enter OTP:</div>
                 <div className="mt-2">
-               <OtpInput onChange={(otp: string) => console.log(otp)} />
+               <OtpInput onChange={(otp: string) => formData.password=otp} />
 
                <div>Don’t receive any e-mail? 
             <button className='hover:text-blue-600 font-semibold' >Try Again.</button>
@@ -109,9 +118,9 @@ const Form = () => {
 
         </div>
         <div className='flex justify-center items-center mt-2'>
-        <Link href="/invigilator/register"><button>Not registered yet?  <b><u><a href="">Register</a></u></b></button></Link>
+        <Link href="/register"><button>Not registered yet?  <b><u>Register</u></b></button></Link>
             <div className='border-black border-2 ml-4 h-6'></div>
-            <Link href="/register">
+            <Link href="/">
             <button className='ml-4'>Proposal approved?<b><u>Approved Login</u></b></button></Link>
             </div>
         </>

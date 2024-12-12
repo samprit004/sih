@@ -1,24 +1,24 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-const Table2 = () => {
+const Table = ({ piData }:{piData:{
+      id: string,
+      piId: string,
+      piName: string,
+      contactNumber: number,
+      email: string,
+      adharNumber: number,
+    }}) => {
   // Table data stored as an array of objects
-  const piData = [
-    {
-      piId: "PI001",
-      piName: "Dr. Aditi Sharma",
-      contactNumber: "+91 6473248368",
-      email: "aditi@gmail.com",
-      adharNumber: "1234 5678 9123",
-    },
-  ];
 
   // State to control the second table's data
   const [credentials, setCredentials] = useState({
     username: "null",
     password: "null",
   });
+  const router = useRouter();
 
   // State to enable the "Generate Credentials" and "Send" buttons
   const [isVerified, setIsVerified] = useState(false);
@@ -39,15 +39,16 @@ const Table2 = () => {
   };
 
   // Handlers
-  const handleVerifyPI = () => {
+  const handleVerifyPI = async () => {
     setIsVerified(true);
+        
     setVerificationMessage("PI Verified Successfully!");
   };
 
   const handleGenerateCredentials = () => {
     if (isVerified && !isGenerated) {
       setCredentials({
-        username: piData[0].email, // Use email from the PI table
+        username: piData.email, // Use email from the PI table
         password: generateRandomString(8), // Generate an 8-character random password
       });
       setIsGenerated(true); // Mark credentials as generated
@@ -62,14 +63,39 @@ const Table2 = () => {
     setVerificationMessage("");
   };
 
-  const handleSend = () => {
-    alert("Credentials sent successfully!");
+  const handleSend = async () => {
+    try {
+      const jsbody = {
+        id: piData.id,
+        username: credentials.username,
+        password: credentials.password,
+      }
+      const response = await fetch('/api/PI_verfication', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsbody),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        // add cookies in client-side @samprit
+        alert('Credentials sent successfully!');
+        router.refresh();
+      } else {
+        alert('User Not Found');
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <div className="p-8  ml-60 w-full space-y-8">
-      
-    <div className="p-4 border-4 border-black mt-4 rounded-md">
+      <h1 className="text-2xl font-bold "><u>PI Management</u></h1>
+    <div className="p-4 border-4  border-black  mt-4 rounded-md">
       {/* PI Details Table */}
       <table className="w-full border-collapse border-2 border-black text-left mb-6">
         <thead >
@@ -82,15 +108,13 @@ const Table2 = () => {
           </tr>
         </thead>
         <tbody>
-          {piData.map((data, index) => (
-            <tr key={index} className="hover:bg-gray-50">
-              <td className="border-4 border-black px-4 py-2">{data.piId}</td>
-              <td className="border-4 border-black px-4 py-2">{data.piName}</td>
-              <td className="border-4 border-black px-4 py-2">{data.contactNumber}</td>
-              <td className="border-4 border-black px-4 py-2">{data.email}</td>
-              <td className="border-4 border-black px-4 py-2">{data.adharNumber}</td>
+            <tr className="hover:bg-gray-50">
+              <td className="border-4 border-black px-4 py-2">{piData.piId}</td>
+              <td className="border-4 border-black px-4 py-2">{piData.piName}</td>
+              <td className="border-4 border-black px-4 py-2">{piData.contactNumber}</td>
+              <td className="border-4 border-black px-4 py-2">{piData.email}</td>
+              <td className="border-4 border-black px-4 py-2">{piData.adharNumber}</td>
             </tr>
-          ))}
         </tbody>
       </table>
      
@@ -165,4 +189,4 @@ const Table2 = () => {
   );
 };
 
-export default Table2;
+export default Table;

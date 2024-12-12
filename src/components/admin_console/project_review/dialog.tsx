@@ -5,7 +5,7 @@ import Link from "next/link";
 interface DialogProps {
   isOpen: boolean; // Controls visibility
   onClose: () => void; // Callback for closing the dialog
-  aiScore?: number; // Placeholder for AI Score (to be populated by backend)
+  aiScore?: string; // Placeholder for AI Score (to be populated by backend)
   response?: string; // Placeholder for response content (to be populated by backend)
 }
 

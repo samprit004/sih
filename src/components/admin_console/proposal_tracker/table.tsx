@@ -1,33 +1,29 @@
 'use client';
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-interface TableRow {
+export interface TableRow {
+  id: string;
   projectId: string;
   piName: string;
   response: string;
+  agent_score: string;
   proposalStatus: string;
   meetingTimeSlot: string;
+  fileURL: string;
 }
 
 const Table = () => {
-  const [tableData, setTableData] = useState<TableRow[]>([
-    {
-      projectId: "P123",
-      piName: "Dr. John Doe",
-      response: "This is a sample response for design purposes.",
-      proposalStatus: "Pending",
-      meetingTimeSlot: "2024-12-12 10:00 AM",
-    },
-  ]);
+  const [tableData, setTableData] = useState<TableRow[]>([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedResponse, setSelectedResponse] = useState("");
 
-  // Fetch table data from the backend (disabled for now)
+  // Fetch table data from the backend
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/proposals"); // Replace with your API endpoint
+        const response = await fetch("/api/proposal_list"); // Replace with your API endpoint
         if (response.ok) {
           const data = await response.json();
           setTableData(data);
@@ -39,8 +35,7 @@ const Table = () => {
       }
     };
 
-    // Uncomment this line to enable fetching once the backend is ready
-    // fetchData();
+    fetchData();
   }, []);
 
   const handleViewClick = (response: React.SetStateAction<string>) => {
@@ -74,7 +69,8 @@ const Table = () => {
               <td className="border-4 border-black px-4 py-2 text-center">{row.projectId}</td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.piName}</td>
               <td className="px-4 py-2">
-                <button className="w-20 ml-6 bg-black text-white h-7 rounded-md hover:bg-gray-500">
+                <button className="w-20 ml-6 bg-black text-white h-7 rounded-md hover:bg-gray-500"
+                onClick={()=>{window.open(row.fileURL, '_blank', 'noopener,noreferrer')}}>
                   View
                 </button>
               </td>

@@ -99,6 +99,7 @@ const Content = () => {
             <Card
               key={index}
               description={project.cardText}
+              location={project.location}
               viewDetails={() => handleViewDetails(project.description, project.location)}
             />
           ))}

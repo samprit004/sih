@@ -1,35 +1,46 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import Dialog from "./dialog";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-interface TableRow {
+export interface TableRow {
+  id: string;
   projectId: string;
   piName: string;
   response: string;
+  agent_score: string;
   proposalStatus: string;
+  meetingTimeSlot: string;
+  fileURL: string;
 }
 
 const Table = () => {
-  const [tableData, setTableData] = useState<TableRow[]>([
-    {
-      projectId: "P12345",
-      piName: "John Doe",
-      response: "This is a sample response for design purposes.",
-      proposalStatus: "Pending",
-    },
-  ]);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [selectedResponse, setSelectedResponse] = useState("");
+  const [tableData, setTableData] = useState<TableRow[]>([]);
+  const router = useRouter();
 
-  const handleViewClick = (response: string) => {
-    setSelectedResponse(response);
-    setIsDialogOpen(true);
+  // Fetch table data from the backend
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/proposal_list"); // Replace with your API endpoint
+        if (response.ok) {
+          const data = await response.json();
+          setTableData(data);
+        } else {
+          console.error("Failed to fetch data");
+        }
+      } catch (error) {
+        console.error("Error fetching table data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  function handleViewClick(id: string) {
+    router.push(`/Admin_console/proposal_overview?id=${id}`)
   };
 
-  const closeDialog = () => {
-    setIsDialogOpen(false);
-  };
+
 
   return (
     <div className="ml-48">
@@ -52,26 +63,24 @@ const Table = () => {
               <td className="border-4 border-black px-4 py-2 text-center">{row.projectId}</td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.piName}</td>
               <td className="px-4 py-2">
-                <button className="w-20 ml-6 bg-black text-white h-7 rounded-md hover:bg-gray-500">
+                <button className="w-20 ml-6 bg-black text-white h-7 rounded-md hover:bg-gray-500"
+                onClick={()=>{window.open(row.fileURL, '_blank', 'noopener,noreferrer')}}>
                   View
                 </button>
               </td>
               <td className="px-4 py-2 flex justify-center border-2 border-black">
-              <Link href="/Admin_console/proposal_overview">
                 <button
                   className="bg-black text-white w-20 h-7 rounded-md hover:bg-gray-500"
-                  onClick={() => handleViewClick(row.response)}
+                  onClick={() => handleViewClick(row.id)}
                 >
                   View
                 </button>
-                </Link>
               </td>
               <td className="border-4 border-black px-4 py-2 text-center">{row.proposalStatus}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Dialog isOpen={isDialogOpen} onClose={closeDialog} response={selectedResponse} />
     </div>
   );
 };

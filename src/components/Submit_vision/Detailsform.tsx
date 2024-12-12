@@ -10,6 +10,7 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import { Document, Packer, Paragraph, TextRun } from "docx";
+import { useRouter } from 'next/navigation';
 
 interface FormData {
   projectTitle: string;
@@ -24,7 +25,6 @@ interface FormData {
   workOrganization: string;
   timeSchedule: string;
 }
-
 const WORD_LIMIT = 300;
 
 interface DetailsFormProps {
@@ -40,11 +40,12 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
   progress,
   setProgress,
 }) => {
-  const [isNavVisible, setIsNavVisible] = useState(false);
+  const router = useRouter();
+
+  const [isNavVisible, setIsNavVisible] = useState(false); // Manage Side_nav visibility
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDownloadDropdownVisible, setIsDownloadDropdownVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("S&T"); // Tracks the selected category
-  const dropdownRef = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   const [tableData, setTableData] = useState<{ [key: string]: string }>({});
 
@@ -87,11 +88,12 @@ const DetailsForm: React.FC<DetailsFormProps> = ({
     setProgress(progressValue);
   }, [formData]);
 
-  const handleDownloadPDF = () => {
+  const handleDownloadPDF = async () => {
     if (!previewRef.current) return;
 
     const previewElement = previewRef.current;
     const textContent = previewElement.innerText;
+    const canvas = await html2canvas(previewElement, { scale: 2 });
 
     const pdf = new jsPDF('p', 'mm', 'a4');
     const pageWidth = pdf.internal.pageSize.getWidth();

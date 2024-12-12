@@ -1,21 +1,31 @@
+import { login } from '@/app/lib';
 import PocketBase from 'pocketbase';
 const pb = new PocketBase('http://127.0.0.1:8090');
-async function search_user(username: string, password: string, type: string){
+async function search_user(username: string, password: string, token: string){
   // you can also fetch all records at once via getFullList
     const records = await pb.collection('CMPDI_users').getFullList({
-      filter: `(user_email='${username}' && password='${password}' && user_type='${type}')`
+      filter: `(user_email='${username}' && OTP='${password}' && Auth_token='${token}')`
     });
+    
     return records;
-  }
-  
+}
+
+/**
+ * 
+ * @param req - username, password, Auth_token
+ * @returns message, id, Auth_token, Auth_exp
+ */
 export async function POST(req: Request) {
-  const { username, password, type } = await req.json();
-  const user = await search_user(username, password, type);
+  const { username, password, Auth_token } = await req.json();
+  const user = await search_user(username, password, Auth_token);
+  console.log(user)
   if(user.length > 0){
     const jsbody = {
+      id: user[0].id,
       Auth_token: user[0].Auth_token,
       Auth_exp: user[0].Auth_exp,
     }
+    login({id:jsbody.id, Auth_token:jsbody.Auth_token});
     return new Response(JSON.stringify(jsbody))
   }
   return new NotFoundError("User Not Found!!")
