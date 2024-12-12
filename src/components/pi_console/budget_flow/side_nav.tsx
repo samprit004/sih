@@ -40,6 +40,14 @@ const Side_nav = () => {
        Budget Flow
         </button>
         </Link>
+        <Link href='/pi_console/fund_records'>
+        <button
+          className={`text-md font-semibold px-5 py-3 rounded-lg ${activeButton === 'Fund Records' ? 'bg-white text-black' : 'text-white'}`}
+          onClick={() => setActiveButton('Fund Records')}
+        >
+       Fund Records
+        </button>
+        </Link>
         
       </div>
     </div>

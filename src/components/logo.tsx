@@ -9,7 +9,7 @@ const Logo = () => {
     <div>
       <Link href='/'>
       <Image
-        className='ml-8 mt-8'
+        className='ml-10 mt-10'
         src="/Main logo.svg"
         alt="Next.js logo"
         width={120}
