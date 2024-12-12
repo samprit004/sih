@@ -10,23 +10,23 @@ interface TableProps {
 const Table: React.FC<TableProps> = ({ data, onInputChange }) => {
   const columnLabels = [
     "Items",
-    "Column 1",
-    "Column 2",
-    "Column 3",
-    "Column 4",
-    "Column 5",
-    "Column 6",
+    "total approved cost*",
+    "Sectioned provision in the year",
+    "expenditure incurred up to previous year (1)",
+    "Total Expenditure up to previous quater of the current financial year(2)",
+    "Expenditure in the present quater ending(3)",
+    "progressive expenditure till the end of this quater (4) = (1)+(2)+(3)",
   ];
 
   const rowLabels = [
-    "Row 1",
-    "Row 2",
-    "Row 3",
-    "Row 4",
-    "Row 5",
-    "Row 6",
-    "Row 7",
-    "Row 8",
+    "A. land & Building",
+    "B. Capital Equipement",
+    "C. Man Power",
+    "D. consumable",
+    "E. TA/DA",
+    "F. contingencies",
+    "G. attending /organizing seminar ect.",
+    "H. others",
   ];
 
   return (

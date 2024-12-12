@@ -132,7 +132,7 @@ const Main: React.FC = () => {
       <div className="border-black border-t-2 w-full mt-[10%]"></div>
       
       <div className="flex">
-        <div className="mt-[1%] px-4 w-1/2">
+        <div className="mt-[1%] px-4 w-1/2 h-[100vh] overflow-y-auto">
           <div className="flex justify-between">
             <div className="flex">
               <button className="flex items-center gap-4">
@@ -166,11 +166,11 @@ const Main: React.FC = () => {
             ></div>
           </div>
 
-          <h1 className="text-2xl font-bold mb-6">Editable Table with Input Fields</h1>
+          <h1 className="text-2xl font-bold mb-6">Quaterly Expenditure Statement</h1>
 
           {/* Input Boxes */}
           <div className="flex flex-col flex-wrap gap-4 mb-6">
-            {["Label 1", "Label 2", "Label 3", "Label 4"].map((label, index) => (
+            {["Project Name", "Project Code", "Name of company/institute", "Expenditure statement for the quater ending"].map((label, index) => (
               <div key={index} className="flex flex-col">
                 <label htmlFor={`input-${index}`} className="mb-2 text-sm font-medium">
                   {label}
@@ -235,7 +235,7 @@ const Main: React.FC = () => {
 
           <div className="bg-white h-[100vh] m-8 overflow-y-auto">
             <div className="p-4">
-              <h2 className="text-xl font-bold mt-10 mb-4">Display Data</h2>
+              <h2 className="text-xl font-bold mt-10 mb-4">Quaterly Expenditure Statement</h2>
               <DisplayBox data={data} inputs={inputs} onInputChange={handleInputChange} />
             </div>
           </div>
