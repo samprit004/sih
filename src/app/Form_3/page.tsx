@@ -1,6 +1,8 @@
 import Form from "@/components/Form_3/Form";
-import Main from "@/components/Form_3/Main";
+
+import Main from "@/components/Form_3/Main"
 import Nav from "@/components/Form_3/Nav";
+import Table from "@/components/Form_3/Table";
 
 
 
