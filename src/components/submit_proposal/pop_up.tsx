@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Table = () => {
@@ -21,9 +22,11 @@ const Table = () => {
               Scaling up the conversion of CO2 to methanol and value-added chemicals.
             </td>
             <td className="px-4 py-2 flex justify-center border-b border-black">
+              <Link href={"/pi_console/upcoming"}>
               <button className="flex justify-center bg-black text-white items-center w-24 h-7 rounded-md hover:bg-gray-500">
                 View
               </button>
+              </Link>
             </td>
             <td className="border border-black px-4 py-2 text-center">Drafted</td>
           </tr>
